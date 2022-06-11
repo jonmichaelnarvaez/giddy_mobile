@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "giddy_mobile",
+    "slug": "giddy_mobile",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
