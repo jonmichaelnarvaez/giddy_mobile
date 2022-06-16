@@ -11,8 +11,10 @@ This application was built using [Expo Bare Workflow](https://docs.expo.dev/intr
 # Why Expo?
 Although Expo is some what new to the industry they have made tremendous strides in helping bridge the gap between web and mobile development. We chose Expo bare workflow so we can always access native api's when needed but also for Expo's package manager `expo install` and deployment procedures `expo build/deploy/update` as well as the ability to build at a rapid pase.
 
-**Expo update June 2022**
-
+**[Expo update June 2022] (https://appjs.co)** 
+- Publish updates with Expo
+- Push Notifications Update
+- Major updates to native API access.
 # Quick Start
 - You must have [Node JS](https://nodejs.org) installed.
 - You must have [Watchman](https://watchman.org) installed.
