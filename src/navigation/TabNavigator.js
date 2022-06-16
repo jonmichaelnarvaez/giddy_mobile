@@ -80,7 +80,9 @@ const CalendarStack = () => {
                 name="Personal Info"
                 component={PersonalInformation}
                 options={{
-                presentation: "modal"
+                presentation: "modal",
+                // headerShown: false,
+                headerTransparent: true
             }}/>
         </Stack.Navigator>
     )
