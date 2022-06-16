@@ -2,12 +2,12 @@
 This application was built using [Expo Bare Workflow](https://docs.expo.dev/introduction/managed-vs-bare/#bare-workflow).
 
 # Application Lifecycle Events
-- [] Create iOS & Android Certificates & access
+- [ ] Create iOS & Android Certificates & access
 - [x] User Flow && design kick-off **June 13, 2022**
-- [] Create app components && complete application UI *in development*
-- [] Begin middleware creation && connect drupal api's
-- [] Run Test & QA
-- [] Submit application && art work to iOS and Android markets
+- [ ] Create app components && complete application UI *in development*
+- [ ] Begin middleware creation && connect drupal api's
+- [ ] Run Test & QA
+- [ ] Submit application && art work to iOS and Android markets
 # Why Expo?
 Although Expo is some what new to the industry they have made tremendous strides in helping bridge the gap between web and mobile development. We chose Expo bare workflow so we can always access native api's when needed but also for Expo's package manager `expo install` and deployment procedures `expo build/deploy/update`.
 
