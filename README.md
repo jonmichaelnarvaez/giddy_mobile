@@ -5,15 +5,14 @@ This application was built using [Expo Bare Workflow](https://docs.expo.dev/intr
 ... pending
 
 # Quick Start
-You must have [Node JS](https://nodejs.org) installed.
-You must have [Watchman](https://watchman.org) installed.
+- You must have [Node JS](https://nodejs.org) installed.
+- You must have [Watchman](https://watchman.org) installed.
 
 ###### Start with iOS
 ```
 yarn start   -----> opens ios simulator
-
 ```
-###### add new dependencies
+###### Add new dependencies
 ```
 expo install (packageName) --> add new dependencies to the project
 ```
