@@ -3,6 +3,7 @@ Built with [Expo Bare Workflow](https://docs.expo.dev/introduction/managed-vs-ba
 # Application Lifecycle Events
 - [ ] Create iOS & Android Certificates & Team Access
 - [x] User Flow && design kick-off **June 13, 2022**
+- [x] Delegate deliverables to Team Leads **June 13, 2022** [Asana Mobile](https://app.asana.com/0/1202390205827772/calendar)
 - [ ] Create app components && complete application UI **_Active Development_**
 - [ ] Begin middleware creation && connect drupal api's
 - [ ] Run Test & QA
