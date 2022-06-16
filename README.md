@@ -1,10 +1,9 @@
 # GIDDY MOBILE
-This application was built using [Expo Bare Workflow](https://docs.expo.dev/introduction/managed-vs-bare/#bare-workflow).
-
+Built with [Expo Bare Workflow](https://docs.expo.dev/introduction/managed-vs-bare/#bare-workflow).
 # Application Lifecycle Events
-- [ ] Create iOS & Android Certificates & access
+- [ ] Create iOS & Android Certificates & Team Access
 - [x] User Flow && design kick-off **June 13, 2022**
-- [ ] Create app components && complete application UI *in development*
+- [ ] Create app components && complete application UI **_Active Development_**
 - [ ] Begin middleware creation && connect drupal api's
 - [ ] Run Test & QA
 - [ ] Submit application && art work to iOS and Android markets
