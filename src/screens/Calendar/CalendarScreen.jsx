@@ -24,6 +24,7 @@ function HomeScreen() {
       <StatusBar hidden/>
           <View style={{height: '50%', width: '100%', paddingTop: '5%'}}>
               <CalendarList 
+              horizontal={true}
               style={{
                 height: 350
               }}
@@ -64,7 +65,7 @@ function HomeScreen() {
                 // Enable or disable scrolling of calendar list
                 scrollEnabled={true}
                 // Enable or disable vertical scroll indicator. Default = false
-                showScrollIndicator={true}
+                showScrollIndicator={false}
                 markedDates={{
                   '2022-06-16': {dots: [vacation, massage, workout], selected: true, marked: true, selectedColor: '#00adf5'},
                   '2022-07-17': {marked: true},

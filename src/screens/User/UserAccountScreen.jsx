@@ -34,10 +34,12 @@ export default function UserAccountScreen() {
             <ScrollView>
                 <Text style={styles.categoryTitle}>Account</Text>
 
-                <View style={styles.contentWrapper}>
-                    <Text>Personal Information</Text>
-                    <EvilIcons name="chevron-right" size={24} color="black"/>
-                </View>
+                <Pressable onPress={() => navigation.navigate('Personal Info')}>
+                    <View style={styles.contentWrapper}>
+                        <Text>Personal Information</Text>
+                        <EvilIcons name="chevron-right" size={24} color="black"/>
+                    </View>
+                </Pressable>
 
                 <Divider/>
                 <Pressable onPress={() => navigation.navigate('Preferences')}>
