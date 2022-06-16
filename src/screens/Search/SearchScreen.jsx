@@ -11,6 +11,9 @@ export default function SearchScreen() {
       <View style={styles.searchWrapper}>
         <SearchBar/>
       </View>
+      <View>
+        
+      </View>
     </SafeAreaView>
   )
 }
@@ -23,6 +26,7 @@ const styles = StyleSheet.create({
         width: windowWidth
     },
     searchWrapper: {
+      paddingTop: '5%',
       width: windowWidth / 1.1
     },
 })

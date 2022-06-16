@@ -33,10 +33,17 @@ export default function UserAccountScreen() {
             </ImageBackground>
             <ScrollView>
                 <Text style={styles.categoryTitle}>Account</Text>
-
                 <Pressable onPress={() => navigation.navigate('Personal Info')}>
                     <View style={styles.contentWrapper}>
                         <Text>Personal Information</Text>
+                        <EvilIcons name="chevron-right" size={24} color="black"/>
+                    </View>
+                </Pressable>
+
+                <Divider/>
+                <Pressable onPress={() => navigation.navigate('Personal Info')}>
+                    <View style={styles.contentWrapper}>
+                        <Text>Favorites</Text>
                         <EvilIcons name="chevron-right" size={24} color="black"/>
                     </View>
                 </Pressable>
@@ -49,6 +56,28 @@ export default function UserAccountScreen() {
                     </View>
                 </Pressable>
                 <Divider/>
+                <Text style={styles.categoryTitle}>Help</Text>
+               <Pressable>
+               <View style={styles.contentWrapper}>
+                    <Text>Terms & Conditions</Text>
+                    <EvilIcons name="chevron-right" size={24} color="black"/>
+                    </View>
+               </Pressable>
+               <Divider/>
+               <Pressable>
+               <View style={styles.contentWrapper}>
+                    <Text>Privacy Policy</Text>
+                    <EvilIcons name="chevron-right" size={24} color="black"/>
+                    </View>
+               </Pressable>
+               <Divider/>
+               <Pressable>
+               <View style={styles.contentWrapper}>
+                    <Text>Cookie Policy</Text>
+                    <EvilIcons name="chevron-right" size={24} color="black"/>
+                    </View>
+               </Pressable>
+               <Divider/>
             </ScrollView>
 
         </SafeAreaView>

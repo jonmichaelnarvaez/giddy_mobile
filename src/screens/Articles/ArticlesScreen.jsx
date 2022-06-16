@@ -23,7 +23,8 @@ export default ArticlesScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        width: windowWidth,
-        paddingTop: '15%'
+        justifyContent: 'center',
+        alignItems: 'center'
+
     }
 });

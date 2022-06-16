@@ -33,8 +33,8 @@ const Stack = createNativeStackNavigator();
 function LogoTitle() {
     return (<Image
         style={{
-        height: 45,
-        width: 125
+        height: 35,
+        width: 100
     }}
         source={require('../assets/logos/Giddy_blue.png')}/>)
 }
@@ -56,13 +56,18 @@ const CalendarStack = () => {
                         <Avatar.Image
                             size={40}
                             style={{
-                            backgroundColor: '#777'
+                            backgroundColor: '#777',
+                            
                         }}
                             source={require('../assets/images/avatar.jpg')}/>
                     </Pressable>
                 ),
                 headerTransparent: true,
-                headerBlurEffect: 'light',
+                // headerBlurEffect: 'light',
+                // headerStyle: {
+                //     backgroundColor: '#161c45'
+                // }
+                
             }}/>
             <Stack.Screen name="Account" component={UserAccountScreen}/>
             <Stack.Screen
@@ -83,7 +88,16 @@ const CalendarStack = () => {
 const AnalyticStack = () => {
     return (
         <Stack.Navigator>
-            <Stack.Screen name=" " component={AnalyticsScreen} options={{headerShown: false}}/>
+            <Stack.Screen name=" " component={AnalyticsScreen} options={{
+                headerTitle: (props) => <LogoTitle {...props}/>,
+                headerShown: true,
+                headerTransparent: true,
+                // headerBlurEffect: 'light',
+                // headerStyle: {
+                //     backgroundColor: '#161c45'
+                // }
+                
+            }}/>
         </Stack.Navigator>
     )
 }
@@ -104,8 +118,15 @@ const ArticleStack = () => {
         <Stack.Navigator screenOptions={{
             headerShown: false
         }}>
-            <Stack.Screen name=" " component={ArticlesScreen}  options={{
-                headerShown: true
+            <Stack.Screen name=" " component={ArticlesScreen}   options={{
+                headerTitle: (props) => <LogoTitle {...props}/>,
+                headerShown: true,
+                headerTransparent: true,
+                // headerBlurEffect: 'light',
+                // headerStyle: {
+                //     backgroundColor: '#161c45'
+                // }
+                
             }}/>
             <Stack.Screen name="Article Detail" component={ArticleDetailScreen}  options={{
                 headerShown: true,
@@ -120,7 +141,14 @@ const SearchStack = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen name=" " component={SearchScreen} options={{
-                headerShown: false
+                headerTitle: (props) => <LogoTitle {...props}/>,
+                headerShown: true,
+                headerTransparent: true,
+                // headerBlurEffect: 'light',
+                // headerStyle: {
+                //     backgroundColor: '#161c45'
+                // }
+                
             }}/>
         </Stack.Navigator>
     )
