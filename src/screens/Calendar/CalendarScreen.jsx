@@ -5,55 +5,27 @@ import {
     View,
     StyleSheet,
     Text,
-    ScrollView,
+    
     Dimensions,
     Pressable,
-    Alert
+    
 } from 'react-native';
 // icons
 import {Feather} from "@expo/vector-icons"
 // calendar
 import {CalendarList} from 'react-native-calendars';
+// navigation
+import { useNavigation } from '@react-navigation/native';
+
 
 const windowWidth = Dimensions
     .get('window')
     .width;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'flex-start',
-        alignItems: 'center'
-    },
-    contentContainer: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'rgba(255, 255, 255, 01)',
-        height: 100,
-        width: windowWidth,
-        marginTop: 20,
-        borderRadius: 50
-    },
-    addEvent: {
-        backgroundColor: "#161c45",
-        height: 35,
-        width: 35,
-        borderRadius: 25,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 10
-    },
-    today: {
-        textTransform: 'uppercase',
-        fontWeight: 'bold',
-        fontSize: 25,
-        paddingTop: "13%",
-        paddingLeft: 25
-    }
-
-})
 
 function HomeScreen() {
+
+    const navigation = useNavigation();
 
     // test information
     const vacation = {
@@ -140,8 +112,8 @@ function HomeScreen() {
                 </View>
                 <Text style={styles.today}>Today</Text>
                 <View style={styles.contentContainer}>
-                    <Text>You don't have any events!</Text>
-                    <Pressable onPress={() => Alert.alert('Add a new event!')}>
+                    <Text>Add your first event! </Text>
+                    <Pressable onPress={() => navigation.navigate('New Event')}>
                     <View style={styles.addEvent}>
                         <Feather name="plus" color="#ededed" size={20}/>
                     </View>
@@ -154,3 +126,49 @@ function HomeScreen() {
 }
 
 export default HomeScreen;
+
+const styles = StyleSheet.create({
+  container: {
+      flex: 1,
+      justifyContent: 'flex-start',
+      alignItems: 'center'
+  },
+  contentContainer: {
+    flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      backgroundColor: 'rgba(255, 255, 255, 01)',
+      height: 100,
+      width: windowWidth,
+      marginTop: 20,
+      padding: 20,
+      borderRadius: 20,
+      shadowColor: '#777',
+    shadowOffset: {
+        width: 0,
+        height: 10
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,
+    elevation: 5
+      
+  },
+  addEvent: {
+      backgroundColor: "#161c45",
+      height: 35,
+      width: 35,
+      borderRadius: 25,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: 10
+  },
+  today: {
+      textTransform: 'uppercase',
+      fontWeight: 'bold',
+      fontSize: 25,
+      paddingTop: "13%",
+      paddingLeft: 25
+  },
+  
+
+})

@@ -7,6 +7,7 @@ import CalendarScreen from '../screens/Calendar/CalendarScreen';
 import AnalyticsScreen from '../screens/Analytics/AnalyticsScreen';
 import ArticlesScreen from '../screens/Articles/ArticlesScreen';
 import SettingsScreen from '../screens/Settings/SettingsScreen';
+import AddScreen from '../screens/Calendar/AddScreen';
 // navigation
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -25,6 +26,9 @@ const App = () => {
             <Stack.Screen name="Articles" component={ArticlesScreen}/>
             <Stack.Screen name="Analytics" component={AnalyticsScreen}/>
             <Stack.Screen name="Search" component={SettingsScreen}/>
+            <Stack.Group screenOptions={{presentation: 'modal'}}>
+                <Stack.Screen name="New Event" component={AddScreen}/>
+            </Stack.Group>
         </Stack.Navigator>
     )
 };

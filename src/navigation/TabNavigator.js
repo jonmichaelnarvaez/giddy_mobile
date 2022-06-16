@@ -56,12 +56,13 @@ const CalendarStack = () => {
                         <Avatar.Image
                             size={40}
                             style={{
-                            backgroundColor: '#161c45'
+                            backgroundColor: '#777'
                         }}
                             source={require('../assets/images/avatar.jpg')}/>
                     </Pressable>
                 ),
-                headerTransparent: true
+                headerTransparent: true,
+                headerBlurEffect: 'light',
             }}/>
             <Stack.Screen name="Account" component={UserAccountScreen}/>
             <Stack.Screen
@@ -91,7 +92,7 @@ const AddStack = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen
-                name="+"
+                name="New Event"
                 component={AddScreen}
               />
         </Stack.Navigator>
@@ -139,7 +140,7 @@ const TabNavigator = () => {
                 left: 20,
                 right: 20,
                 elevation: 0,
-                backgroundColor: '#16145c',
+                backgroundColor: '#161c45',
                 borderRadius: 15,
                 height: 80,
                 ...styles.shadow
@@ -149,7 +150,6 @@ const TabNavigator = () => {
                 name="Home"
                 component={CalendarStack}
                 options={{
-                headerShown: false,
                 tabBarIcon: ({size, color}) => {
                     return (
                         <View
