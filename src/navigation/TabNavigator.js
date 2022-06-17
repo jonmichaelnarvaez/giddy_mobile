@@ -5,7 +5,7 @@ import {
     Text,
     Pressable,
     Image,
-    TouchableOpacity
+    Alert
 } from 'react-native';
 // react native paper
 import {Avatar} from 'react-native-paper';
@@ -16,6 +16,7 @@ import {useNavigation} from '@react-navigation/native';
 // icons
 import {AntDesign} from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 // screens
 import CalendarScreen from '../screens/Calendar/CalendarScreen';
 import ArticlesScreen from '../screens/Articles/ArticlesScreen';
@@ -120,6 +121,12 @@ const ArticleStack = () => {
                 headerTitle: (props) => <LogoTitle {...props}/>,
                 headerShown: true,
                 headerTransparent: true,
+                headerRight: () => 
+                (
+                <Pressable onPress={() => Alert.alert('Open Favorites page')}>
+                    <FontAwesome5 name="grin-hearts" size={28} color="#aad0f8" />
+                </Pressable>
+                )
                 // headerBlurEffect: 'light',
                 // headerStyle: {
                 //     backgroundColor: '#161c45'

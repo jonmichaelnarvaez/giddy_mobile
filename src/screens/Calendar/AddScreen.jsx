@@ -4,7 +4,7 @@ import React from 'react'
 export default function AddScreen() {
   return (
     <View style={styles.container}>
-      <Text>AddScreen</Text>
+      <Text>New event details live here.</Text>
     </View>
   )
 }

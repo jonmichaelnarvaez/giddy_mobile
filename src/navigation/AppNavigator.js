@@ -27,7 +27,7 @@ const App = () => {
             <Stack.Screen name="Analytics" component={AnalyticsScreen}/>
             <Stack.Screen name="Search" component={SettingsScreen}/>
             <Stack.Group screenOptions={{presentation: 'modal'}}>
-                <Stack.Screen name="New Event" component={AddScreen}/>
+                <Stack.Screen options={{headerTransparent: true,}} name="New Event" component={AddScreen}/>
             </Stack.Group>
         </Stack.Navigator>
     )
