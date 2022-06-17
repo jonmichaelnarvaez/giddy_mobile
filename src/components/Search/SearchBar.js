@@ -63,10 +63,10 @@ const styles = StyleSheet.create({
     padding: 12,
     paddingLeft: 20,
     paddingRight: 20,
-    borderRadius: 20,
-    borderColor: '#888888',
-    fontSize: 18,
-    height: 50,
+    borderRadius: 10,
+    borderColor: '#161c45',
+    fontSize: 16,
+    height: 40,
   }
 })
 
