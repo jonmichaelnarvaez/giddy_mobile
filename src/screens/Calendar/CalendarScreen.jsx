@@ -5,10 +5,8 @@ import {
     View,
     StyleSheet,
     Text,
-    
     Dimensions,
     Pressable,
-    
 } from 'react-native';
 // icons
 import {Feather} from "@expo/vector-icons"
@@ -57,18 +55,18 @@ function HomeScreen() {
                         style={{
                         height: 350
                     }}
-                        markingType={'multi-dot'}
+                        markingType={'period'}
                         theme={{
                         backgroundColor: '#ffffff',
                         calendarBackground: 'transparent',
                         textSectionTitleColor: '#b6c1cd',
                         textSectionTitleDisabledColor: '#d9e1e8',
-                        selectedDayTextColor: '#ffffff',
-                        todayTextColor: '#00adf5',
+                        selectedDayTextColor: '#c60000',
+                        todayTextColor: '#aad0f8',
                         dayTextColor: '#161c45',
                         textDisabledColor: '#d9e1e8',
-                        dotColor: '#00adf5',
-                        selectedDotColor: '#ffffff',
+                        dotColor: '#aad0f8',
+                        selectedDotColor: '#aad0f8',
                         arrowColor: 'orange',
                         disabledArrowColor: '#d9e1e8',
                         monthTextColor: '#161c45',
@@ -94,7 +92,7 @@ function HomeScreen() {
                             ],
                             selected: true,
                             marked: true,
-                            selectedColor: '#00adf5'
+                            selectedColor: '#aad0f8'
                         },
                         '2022-07-17': {
                             marked: true

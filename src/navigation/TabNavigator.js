@@ -70,20 +70,25 @@ const CalendarStack = () => {
                 // }
                 
             }}/>
-            <Stack.Screen name="Account" component={UserAccountScreen}/>
+            <Stack.Screen name="Account" component={UserAccountScreen} options={{
+                headerTransparent: true,
+                headerTitle: (props) => <LogoTitle {...props}/>,
+            }}/>
             <Stack.Screen
                 name="Preferences"
                 component={PreferenceScreen}
                 options={{
-                presentation: "modal"
+                presentation: "modal",
+                headerTitle: (props) => <LogoTitle {...props}/>,
+                headerTransparent: true,
             }}/>
             <Stack.Screen
                 name="Personal Info"
                 component={PersonalInformation}
                 options={{
                 presentation: "modal",
-                // headerShown: false,
                 headerTransparent: true,
+                headerTitle: (props) => <LogoTitle {...props}/>,
             }}/>
         </Stack.Navigator>
     )
@@ -106,6 +111,9 @@ const AddStack = () => {
             <Stack.Screen
                 name="New Event"
                 component={AddScreen}
+                options={{
+                    headerTitle: (props) => <LogoTitle {...props}/>
+                }}
               />
         </Stack.Navigator>
     )
@@ -176,7 +184,6 @@ const TabNavigator = () => {
                 backgroundColor: '#161c45',
                 borderRadius: 15,
                 height: 80,
-                ...styles.shadow
             }
         }}>
             <Tab.Screen

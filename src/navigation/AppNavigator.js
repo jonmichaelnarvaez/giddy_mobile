@@ -13,6 +13,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
+function LogoTitle() {
+    return (<Image
+        style={{
+        height: 35,
+        width: 100
+    }}
+        source={require('../assets/logos/Giddy_blue.png')}/>)
+}
+
 const App = () => {
     
 
@@ -27,7 +36,9 @@ const App = () => {
             <Stack.Screen name="Analytics" component={AnalyticsScreen}/>
             <Stack.Screen name="Search" component={SettingsScreen}/>
             <Stack.Group screenOptions={{presentation: 'modal'}}>
-                <Stack.Screen options={{headerTransparent: true,}} name="New Event" component={AddScreen}/>
+                <Stack.Screen options={{headerTransparent: true,
+                headerTitle: (props) => <LogoTitle {...props}/>
+                }} name="New Event" component={AddScreen}/>
             </Stack.Group>
         </Stack.Navigator>
     )
