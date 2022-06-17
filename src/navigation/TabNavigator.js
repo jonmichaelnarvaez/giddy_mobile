@@ -82,22 +82,20 @@ const CalendarStack = () => {
                 options={{
                 presentation: "modal",
                 // headerShown: false,
-                headerTransparent: true
+                headerTransparent: true,
             }}/>
         </Stack.Navigator>
     )
 }
 const AnalyticStack = () => {
     return (
-        <Stack.Navigator>
-            <Stack.Screen name=" " component={AnalyticsScreen} options={{
+        <Stack.Navigator >
+            <Stack.Screen name="Analytic Screen" component={AnalyticsScreen} options={{
                 headerTitle: (props) => <LogoTitle {...props}/>,
                 headerShown: true,
                 headerTransparent: true,
-                // headerBlurEffect: 'light',
-                // headerStyle: {
-                //     backgroundColor: '#161c45'
-                // }
+                headerBlurEffect: 'light',
+                
                 
             }}/>
         </Stack.Navigator>
@@ -118,7 +116,8 @@ const AddStack = () => {
 const ArticleStack = () => {
     return (
         <Stack.Navigator screenOptions={{
-            headerShown: false
+            headerShown: false,
+            
         }}>
             <Stack.Screen name=" " component={ArticlesScreen}   options={{
                 headerTitle: (props) => <LogoTitle {...props}/>,
@@ -199,6 +198,7 @@ const TabNavigator = () => {
                 component={AnalyticStack}
                 options={{
                 headerShown: false,
+                headerTransparent: true,
                 tabBarIcon: ({size, color}) => {
                     return (
                         <View
@@ -260,12 +260,12 @@ export default TabNavigator;
 
 const styles = StyleSheet.create({
     shadow: {
-        shadowColor: '#777',
+        shadowColor: '#171717',
         shadowOffset: {
             width: 0,
             height: 10
         },
-        shadowOpacity: 0.25,
+        shadowOpacity: 0.35,
         shadowRadius: 3.5,
         elevation: 5
     },
