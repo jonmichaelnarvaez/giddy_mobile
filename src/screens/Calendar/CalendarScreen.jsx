@@ -112,7 +112,7 @@ function HomeScreen() {
                 </View>
                 <Text style={styles.today}>Today</Text>
                 <View style={styles.contentContainer}>
-                    <Text>Add your first event! </Text>
+                    <Text style={{fontWeight: '200'}}>Create your first event </Text>
                     <Pressable onPress={() => navigation.navigate('New Event')}>
                     <View style={styles.addEvent}>
                         <Feather name="plus" color="#ededed" size={20}/>
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      backgroundColor: 'rgba(255, 255, 255, 01)',
+      backgroundColor: 'rgba(255, 255, 255, .45)',
       height: 100,
       width: windowWidth,
       marginTop: 20,
