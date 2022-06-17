@@ -94,9 +94,6 @@ const AnalyticStack = () => {
                 headerTitle: (props) => <LogoTitle {...props}/>,
                 headerShown: true,
                 headerTransparent: true,
-                headerBlurEffect: 'light',
-                
-                
             }}/>
         </Stack.Navigator>
     )

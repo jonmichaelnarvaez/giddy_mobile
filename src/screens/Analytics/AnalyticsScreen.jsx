@@ -11,20 +11,15 @@ import {
 
 const screenWidth = Dimensions.get("screen").width;
 
-const progressData = {
-  labels: ["Swim", "Bike", "Run"], // optional
-  data: [0.4, 0.6, 0.8]
-};
-
 const DATA = {
-  labels: ["January", "February", "March", "April", "May", "June"],
+  labels: ["This", "is", "where", "data", "goes", "!"],
   datasets: [
     {
       data: [20, 45, 28, 80, 99, 43],
-      color: () => '#aa0000', // optional
+      color: () => '#aad0f8', // optional
     }
   ],
-  legend: ["Your Progress"]
+  legend: ["Data Title"]
 };
 
 const chartConfig = {
