@@ -12,9 +12,10 @@ const passcodeLength = 4;
 const _keySize = width / 4;
 const _passcodeSpacing = (width - 3 * _keySize) / 2;
 const _passCodeSize = width / (passcodeLength + 2);
-const _correctPasscode = '1166';
+const _correctPasscode = '1177';
 
 const PassCodeKeyboard = ({ onPress }) => {
+
   return (
     <View
       style={{
@@ -42,7 +43,7 @@ const PassCodeKeyboard = ({ onPress }) => {
                 <MaterialCommunityIcons
                   name='keyboard-backspace'
                   size={42}
-                  color='rgba(0,0,0,0.3)'
+                  color='#161c45'
                 />
               ) : (
                 <Text
@@ -86,7 +87,7 @@ const PassCode = ({ passcode, isValid }) => {
               {passcode[i] && (
                 <MotiView
                   key={`passcode-${i}-${i}`}
-                  from={{ scale: 0, backgroundColor: '#7a49a5' }}
+                  from={{ scale: 0, backgroundColor: '#161c45' }}
                   animate={{
                     scale:
                       isValid && passcode.length === passcodeLength
@@ -94,10 +95,10 @@ const PassCode = ({ passcode, isValid }) => {
                         : 1,
                     backgroundColor:
                       isValid && passcode.length === passcodeLength
-                        ? '#72C17F'
-                        : '#7a49a5',
+                        ? '#aad0f8'
+                        : '#161c45',
                   }}
-                  exit={{ scale: 0, backgroundColor: '#7a49a5' }}
+                  exit={{ scale: 0, backgroundColor: '#161c45' }}
                   transition={{
                     type: 'timing',
                     duration: 500,

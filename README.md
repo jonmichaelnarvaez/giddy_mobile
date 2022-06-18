@@ -19,6 +19,7 @@ Although Expo is some what new to the industry they have made tremendous strides
 - You must have [Node JS](https://nodejs.org) installed.
 - You must have [Watchman](https://watchman.org) installed.
 - Clone project & create your branch
+- Run `expo install expo-dev-client` to install dev client on your simulator.
 
 ###### Start with iOS
 ```
@@ -35,3 +36,4 @@ expo install (packageName) --> add new dependencies to the project
 2. react-native-chart-kit ----> [react-native-chart-kit](https://www.npmjs.com/package/react-native-chart-kit)
 3. react-native-walkthrough-tooltip ----> [react-native-walkthrough-tooltip](https://www.npmjs.com/package/react-native-walkthrough-tooltip)
 4. react-native-confetti-cannon ----> [react-native-confetti-cannon](https://www.npmjs.com/package/react-native-confetti-cannon)
+5. react-native-onboarding-swiper ----> [react-native-onboarding-swiper](https://www.npmjs.com/package/react-native-onboarding-swiper)

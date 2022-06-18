@@ -1,37 +1,104 @@
-import {StyleSheet, Text, View, SafeAreaView} from 'react-native'
-import React from 'react'
-import {Button} from 'react-native-paper'
-import { useNavigation } from '@react-navigation/native'
+import React from 'react';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import Onboarding from 'react-native-onboarding-swiper';
 
-export default function OnboardingScreen() {
+
+
+const Dots = ({selected}) => {
+    let backgroundColor;
+
+    backgroundColor = selected ? 'rgba(255, 255, 255, 0.8)' : 'rgba(255, 255, 255, 0.3)';
+
+    return (
+        <View 
+            style={{
+                width:6,
+                height: 6,
+                marginHorizontal: 3,
+                backgroundColor
+            }}
+        />
+    );
+}
+
+const Skip = ({...props}) => (
+    <TouchableOpacity
+       OnPress={() => navigation.navigate('Authenticate')}
+        style={{marginHorizontal:10}}
+        {...props}
+    >
+        <Text style={{fontSize:16, color:"#ededed"}}>Skip</Text>
+    </TouchableOpacity>
+);
+
+const Next = ({...props}) => (
+    <TouchableOpacity
+        style={{marginHorizontal:10}}
+        {...props}
+    >
+        <Text style={{fontSize:16, color:"#ededed"}}>Next</Text>
+    </TouchableOpacity>
+);
+
+const Done = ({...props}) => (
+    <TouchableOpacity
+    onPress={() => navigation.navigate('Authenticate')}
+        style={{marginHorizontal:10}}
+        {...props}
+    >
+        <Text style={{fontSize:16,  color:"#ededed"}}>Done</Text>
+    </TouchableOpacity>
+);
+
+const OnboardingScreen = () => {
 
   const navigation = useNavigation();
 
     return (
-        <SafeAreaView style={styles.container}>
-            <Text>Onboarding</Text>
-            <Button
-                onPress={() => navigation.navigate("Authenticate")}
-                mode="contained"
-                style={{
-                backgroundColor: "#aad0f8",
-                margin: 20
-            }}>Sign-In / Register</Button>
-            <Button
-                onPress={() => navigation.navigate("Password")}
-                mode="contained"
-                style={{
-                backgroundColor: "#161c45",
-                margin: 20
-            }}>Pass code</Button>
-        </SafeAreaView>
-    )
-}
+        <Onboarding
+        SkipButtonComponent={Skip}
+        NextButtonComponent={Next}
+        DoneButtonComponent={Done}
+        DotComponent={Dots}
+        onSkip={() => navigation.navigate("Authenticate")}
+        onDone={() => navigation.navigate("Authenticate")}
+        pages={[
+          {
+            backgroundColor: '#aad0f8',
+            // image: <Image source={require('../assets/onboarding-img1.png')} />,
+            title: 'Sexual Health Tracker',
+            subtitle: 'A New Way to Track your ED',
+          },
+          {
+            backgroundColor: '#161c45',
+            // image: <Image source={require('../assets/onboarding-img2.png')} />,
+            title: 'ED Tracker',
+            subtitle: 'A New way to Track your shit...',
+          },
+          {
+            backgroundColor: '#e9bcbe',
+            // image: <Image source={require('../assets/onboarding-img3.png')} />,
+            title: 'Period & Ovulation',
+            subtitle: "Keep Track of your Period & Ovulation Cycle",
+          },
+          {
+            backgroundColor: '#161c45',
+            // image: <Image source={require('../assets/onboarding-img3.png')} />,
+            title: 'Giddy',
+            subtitle: "The worlds leading Sexual Health Platform",
+          },
+        ]}
+      />
+    );
+};
+
+export default OnboardingScreen;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-})
+  container: {
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center'
+  },
+});
