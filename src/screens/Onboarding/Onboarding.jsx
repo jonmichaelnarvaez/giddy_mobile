@@ -52,6 +52,7 @@ const Done = ({...props}) => (
     </TouchableOpacity>
 );
 
+
 const OnboardingScreen = () => {
 
   const navigation = useNavigation();
@@ -63,7 +64,6 @@ const OnboardingScreen = () => {
         SkipButtonComponent={Skip}
         NextButtonComponent={Next}
         DoneButtonComponent={Done}
-        
         DotComponent={Dots}
         onSkip={() => navigation.navigate("Authenticate")}
         onDone={() => navigation.navigate("Authenticate")}
