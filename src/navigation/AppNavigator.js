@@ -15,6 +15,7 @@ const Stack = createNativeStackNavigator();
 
 function LogoTitle() {
     return (<Image
+        resizeMode="center"
         style={{
         height: 35,
         width: 100
@@ -23,8 +24,6 @@ function LogoTitle() {
 }
 
 const App = () => {
-    
-
     return (
         <Stack.Navigator>
             <Stack.Screen

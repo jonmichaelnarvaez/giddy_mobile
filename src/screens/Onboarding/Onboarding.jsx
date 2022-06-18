@@ -17,6 +17,7 @@ const Dots = ({selected}) => {
                 width:6,
                 height: 6,
                 marginHorizontal: 3,
+                borderRadius: 3,
                 backgroundColor
             }}
         />
@@ -70,25 +71,25 @@ const OnboardingScreen = () => {
         pages={[
           {
             backgroundColor: '#aad0f8',
-            image: <Image  style={{height: 130, width: 370,  justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
+            image: <Image resizeMode="center"  style={{height: 130, width: 370,  justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
             title: 'Sexual Health Tracker',
             subtitle: 'A New Way to Track your ED',
           },
           {
             backgroundColor: '#161c45',
-            image: <Image style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
+            image: <Image resizeMode="center" style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
             title: 'ED Tracker',
             subtitle: 'A New way to Track your shit...',
           },
           {
             backgroundColor: '#e9bcbe',
-            image: <Image  style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
+            image: <Image  resizeMode="center"  style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
             title: 'Period & Ovulation',
             subtitle: "Keep Track of your Period & Ovulation Cycle",
           },
           {
             backgroundColor: '#161c45',
-            image: <Image  style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
+            image: <Image  resizeMode="center" style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
             title: 'Giddy',
             subtitle: "The worlds leading Sexual Health Platform",
           },

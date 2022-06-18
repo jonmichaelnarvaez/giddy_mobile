@@ -33,6 +33,7 @@ const Stack = createNativeStackNavigator();
 
 function LogoTitle() {
     return (<Image
+    resizeMode='center'
         style={{
         height: 35,
         width: 100
