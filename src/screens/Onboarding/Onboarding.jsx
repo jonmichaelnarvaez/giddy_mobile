@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Onboarding from 'react-native-onboarding-swiper';
+import { StatusBar } from 'expo-status-bar';
 
 
 
@@ -56,10 +57,13 @@ const OnboardingScreen = () => {
   const navigation = useNavigation();
 
     return (
+      <>
+      <StatusBar hidden/>
         <Onboarding
         SkipButtonComponent={Skip}
         NextButtonComponent={Next}
         DoneButtonComponent={Done}
+        
         DotComponent={Dots}
         onSkip={() => navigation.navigate("Authenticate")}
         onDone={() => navigation.navigate("Authenticate")}
@@ -90,6 +94,7 @@ const OnboardingScreen = () => {
           },
         ]}
       />
+      </>
     );
 };
 
