@@ -7,7 +7,8 @@ import {
     ImageBackground,
     Dimensions,
     ScrollView,
-    Pressable
+    Pressable,
+    Linking,
 } from 'react-native'
 // navigation
 import {useNavigation} from '@react-navigation/native';
@@ -15,10 +16,13 @@ import {useNavigation} from '@react-navigation/native';
 import {Divider} from 'react-native-paper';
 // icons
 import {EvilIcons} from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const windowWidth = Dimensions
     .get("window")
     .width
+
+
 
 export default function UserAccountScreen() {
     const navigation = useNavigation();
@@ -56,6 +60,8 @@ export default function UserAccountScreen() {
                     </View>
                 </Pressable>
                 <Divider/>
+                <Divider style={{backgroundColor: "transparent", paddingBottom: 20}}/>
+                {/* Help Category */}
                 <Text style={styles.categoryTitle}>Help</Text>
                <Pressable>
                <View style={styles.contentWrapper}>
@@ -77,7 +83,26 @@ export default function UserAccountScreen() {
                     <EvilIcons name="chevron-right" size={24} color="black"/>
                     </View>
                </Pressable>
+               <Divider style={{backgroundColor: "transparent", paddingBottom: 20}}/>
+
+                {/* Learn More */}
+                <Text style={styles.categoryTitle}>Learn More</Text>
+                <Pressable onPress={() => Linking.openURL('https://giddyhealth.com/')}>
+                   <View style={styles.contentWrapper}>
+                    <Text>Giddy + Health</Text>
+                    <MaterialCommunityIcons name="pill" size={24} color="black" />
+                    </View>
+               </Pressable>
                <Divider/>
+               <Pressable onPress={() => Linking.openURL('https://eddiebygiddy.com/')}>
+               <View style={styles.contentWrapper}>
+                    <Text>Eddie by Giddy</Text>
+                    <EvilIcons name="link" size={24} color="black"/>
+                    </View>
+               </Pressable>
+               <Divider/>
+               <Divider style={{backgroundColor: 'transparent', paddingBottom: 110}}/>
+
             </ScrollView>
 
         </SafeAreaView>
