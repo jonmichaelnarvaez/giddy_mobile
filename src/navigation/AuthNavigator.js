@@ -41,7 +41,11 @@ const AuthStack = () => {
                 name="Passcode"
                 component={PassCodeV1}
                 options={{
-                headerShown: false
+                headerShown: true,
+                headerTransparent: true,
+                headerTitle: (props) => <LogoTitle {...props}/>,
+                headerBackButtonMenuEnabled: false,
+                headerBackTitleStyle: {color: "#aad0f8"}
             }}/>
         </Stack.Navigator>
     )

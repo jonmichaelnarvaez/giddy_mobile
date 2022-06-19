@@ -42,7 +42,7 @@ export default function AuthenticateScreen() {
             </View>
             <MotiView transition={{
                 type: "timing",
-                duration: 1500,
+                duration: 1000,
                 delay: 50
             }}
                 from={{
