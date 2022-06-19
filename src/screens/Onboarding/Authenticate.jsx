@@ -88,12 +88,14 @@ export default function AuthenticateScreen() {
                     </Button>
                 </View>
                 <View style={styles.forgotPasswordView}>
-                    <Text style={styles.registerText}>Register</Text>
+                  {/* Do we need to add a register screen? If we can onboard with 
+                  just email and password, a new user to the DB should prompt an 
+                  agreement page & create a new user. */}
+                    {/* <Text style={styles.registerText}>Register</Text> */}
                     <Text style={styles.forgotText}>Forgot your password?</Text>
                 </View>
                 <Divider color="#ededed"/>
                 <View style={styles.registerView}>
-                    {/* <Text onPress={() => navigation.navigate('Passcode')} style={styles.codeText}>Enter your pin</Text> */}
                     <Button onPress={() => Alert.alert("Facial Recognition")}>
                         <MaterialCommunityIcons name="face-recognition" size={30} color="#aad0f8"/>
                     </Button>
@@ -155,7 +157,7 @@ const styles = StyleSheet.create({
     forgotPasswordView: {
         padding: 20,
         flexDirection: "row",
-        justifyContent: "space-between"
+        justifyContent: "flex-end"
     },
     forgotText: {
         color: 'rgba(255,255,255,0.5)',
