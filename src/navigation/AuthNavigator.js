@@ -38,7 +38,7 @@ const AuthStack = () => {
                 headerShown: false
             }}/>
             <Stack.Screen
-                name="Password"
+                name="Passcode"
                 component={PassCodeV1}
                 options={{
                 headerShown: false
