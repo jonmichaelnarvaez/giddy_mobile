@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     forgotText: {
-        color: '#161c45'
+        color: 'rgba(255,255,255,0.5)',
     },
     codeText: {
         color: '#161c45'
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     registerText: {
-        color: '#161c45'
+        color: 'rgba(255,255,255,0.5)',
     },
     submitButton: {
         paddingTop: 25,
