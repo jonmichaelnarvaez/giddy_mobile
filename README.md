@@ -27,10 +27,12 @@ Although Expo is some what new to the industry they have made tremendous strides
 - Run `expo install expo-dev-client` to install dev client on your simulator.
 
 ###### Start with iOS
+> You will need to replace the simulator number for it to work properly.
 ```
 yarn start   -----> opens ios simulator
 ```
 ###### Add new dependencies
+> Why not yarn or npm? Expo manager keeps track of all the dependencies to ensure they co-exist inside the application.
 ```
 expo install (packageName) --> add new dependencies to the project
 ```
