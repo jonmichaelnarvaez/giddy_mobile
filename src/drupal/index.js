@@ -201,7 +201,7 @@ export const userRegPhoneCodeCheck = async ({phoneNumber,validationNumber}) => {
       }
     }
   );
-  
+
   if(response.data.valid === true){
     RCTNetworking.clearCookies(() => {});
     const uids = await AsyncStorage.getItem('userUidData')
@@ -545,25 +545,25 @@ if(passwordValidation == true){
   }
 };
 
-export const getUserOrderHistory = async () => {
-  RCTNetworking.clearCookies(() => {});
-  const token = await AsyncStorage.getItem('authToken')
-  const response = await drupalApi.post(
-    `/commerce_appstore/records`,
-    {
-      type:'tokens'
-    },
-    {
-      headers:{
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        "Authorization" : `Bearer ${token}`
-      }
-    }
-  );
-  const orders = (response.data.orders)
-  return{orders:orders};
-}
+// export const getUserOrderHistory = async () => {
+//   RCTNetworking.clearCookies(() => {});
+//   const token = await AsyncStorage.getItem('authToken')
+//   const response = await drupalApi.post(
+//     `/commerce_appstore/records`,
+//     {
+//       type:'tokens'
+//     },
+//     {
+//       headers:{
+//         'Content-Type': 'application/json',
+//         'Accept': 'application/json',
+//         "Authorization" : `Bearer ${token}`
+//       }
+//     }
+//   );
+//   const orders = (response.data.orders)
+//   return{orders:orders};
+// }
 
 export const getUserEventHistory = async () => {
   RCTNetworking.clearCookies(() => {});
@@ -667,6 +667,7 @@ export const getUserCalendar = async () => {
       }
     }
   );
+
   const sortedEventsList =[];
   if(response.data.user_events.length > 0){
     response.data.user_events.map(event => event.sessions.map((session, key) => {
@@ -726,6 +727,7 @@ export const getUserBookmarked = async () => {
       }
     }
   );
+
   const sortedEventsList =[];
   if(response.data.user_bookmarked_events.length > 0){
     response.data.user_bookmarked_events.map((event, key)  => {
@@ -1110,6 +1112,7 @@ export const getModEvents = async () => {
       }
     }
   );
+  
   const events = (response.data.events)
   if(response.data.events.length > 0){
     response.data.events.map(event => event.sessions.map((session, key) => {
