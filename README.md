@@ -1,5 +1,7 @@
 # GIDDY MOBILE
 Built with [Expo Bare Workflow](https://docs.expo.dev/introduction/managed-vs-bare/#bare-workflow).
+# Architeture 
+![drupal   react native](https://user-images.githubusercontent.com/105945733/174606053-8c16836f-ffef-4aff-8c5f-4b04591c435b.jpeg)
 # Application Lifecycle Events
 - [ ] Create iOS & Android Certificates & Team Access
 - [x] User Flow && design kick-off **June 13, 2022**
