@@ -23,7 +23,7 @@ Although Expo is some what new to the industry they have made tremendous strides
 # Quick Start
 - You must have [Node JS](https://nodejs.org) installed.
 - You must have [Watchman](https://watchman.org) installed.
-- Clone project & create your branch
+- Create your branch
 - Run `expo install expo-dev-client` to install dev client on your simulator.
 
 ###### Start with iOS
