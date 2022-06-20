@@ -10,8 +10,8 @@ export default function App() {
 
     return (
         <NavigationContainer>
-            <AuthStack/>
-           {/* <AppStack/>   */}
+            {/* <AuthStack/> */}
+           <AppStack/>  
         </NavigationContainer>
     );
 }

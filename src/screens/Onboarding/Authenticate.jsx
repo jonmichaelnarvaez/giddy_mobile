@@ -30,8 +30,7 @@ export default function AuthenticateScreen() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <View
-                style={styles.topView}>
+            <View style={styles.topView}>
                 <Image
                     style={{
                     width: 250,
@@ -40,7 +39,8 @@ export default function AuthenticateScreen() {
                     source={require("../../assets/logos/Giddy_blue.png")}
                     resizeMode="center"/>
             </View>
-            <MotiView transition={{
+            <MotiView
+                transition={{
                 type: "timing",
                 duration: 1000,
                 delay: 50
@@ -55,7 +55,8 @@ export default function AuthenticateScreen() {
             }}
                 exit={{
                 opacity: 0
-            }} style={styles.bottomView}>
+            }}
+                style={styles.bottomView}>
                 <Text style={styles.heading}>Hey there,{`\n`}
                     good looking.</Text>
                 <View style={styles.formView}>
@@ -88,21 +89,23 @@ export default function AuthenticateScreen() {
                     </Button>
                 </View>
                 <View style={styles.forgotPasswordView}>
-                  {/* Do we need to add a register screen? If we can onboard with 
-                  just email and password, a new user to the DB should prompt an 
+                    {/* Do we need to add a register screen? If we can onboard with
+                  just email and password, a new user to the DB should prompt an
                   agreement page & create a new user. */}
                     {/* <Text style={styles.registerText}>Register</Text> */}
-                    <Text style={styles.forgotText}>Forgot your password?</Text>
+
+                    <Text style={styles.forgotText}>Reset Password</Text>
+
                 </View>
                 <Divider color="#ededed"/>
                 <View style={styles.registerView}>
                     <Button onPress={() => Alert.alert("Facial Recognition")}>
-                        <MaterialCommunityIcons name="face-recognition" size={30} color="#aad0f8"/>
+                        <MaterialCommunityIcons name="face-recognition" size={30} color="#ededed"/>
                     </Button>
                     <Button
                         onLongPress={() => Alert.alert("Wow, that was a long press! Just tap it")}
                         onPress={() => navigation.navigate('Passcode')}>
-                        <Octicons name="number" size={30} color="#aad0f8"/>
+                        <Octicons name="number" size={30} color="#ededed"/>
                     </Button>
                 </View>
             </MotiView>
@@ -160,7 +163,7 @@ const styles = StyleSheet.create({
         justifyContent: "flex-end"
     },
     forgotText: {
-        color: 'rgba(255,255,255,0.5)',
+        color: 'rgba(255,255,255,0.5)'
     },
     codeText: {
         color: '#161c45'
@@ -175,7 +178,7 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     registerText: {
-        color: 'rgba(255,255,255,0.5)',
+        color: 'rgba(255,255,255,0.5)'
     },
     submitButton: {
         paddingTop: 25,
