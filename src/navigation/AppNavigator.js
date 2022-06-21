@@ -32,6 +32,7 @@ const App = () => {
                 />
             <Stack.Screen name="Calendar" component={CalendarScreen} />
             <Stack.Screen name="Articles" component={ArticlesScreen}/>
+            
             <Stack.Screen name="Analytics" component={AnalyticsScreen}/>
             <Stack.Screen name="Search" component={SettingsScreen}/>
             <Stack.Group screenOptions={{presentation: 'modal'}}>

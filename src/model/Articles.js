@@ -6,7 +6,8 @@ export const POSTS = [
         author: "Jane Doe",
         authorImage:'',
         copy: "Lorem Ipsum is Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum,\n \n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum\n \n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum",
-        imageUrl: "https://getmegiddy.com/sites/default/files/2021-12/Biomarkers_Awareness_Cover.jpg"
+        imageUrl: "https://getmegiddy.com/sites/default/files/2021-12/Biomarkers_Awareness_Cover.jpg",
+        leadingSentence:"Wow, this is a sample sentence! Leading text will live here."
     },
     {
         id: 'b',
@@ -15,7 +16,8 @@ export const POSTS = [
         author: "Jane Doe",
         authorImage:'',
         copy: "Lorem Ipsum is Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum,\n \n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum\n \n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum",
-        imageUrl: "https://getmegiddy.com/sites/default/files/2022-06/Help-for-ED-May-Be-at-Your-Fingertips-With-Online-Sex-Therapy_Hero.jpg"
+        imageUrl: "https://getmegiddy.com/sites/default/files/2022-06/Help-for-ED-May-Be-at-Your-Fingertips-With-Online-Sex-Therapy_Hero.jpg",
+        leadingSentence:"Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum"
         
     },
     {
@@ -25,7 +27,8 @@ export const POSTS = [
         author: "Jane Doe",
         authorImage:'',
         copy: "Lorem Ipsum is Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum,\n \n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum\n \n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum",
-        imageUrl: "https://getmegiddy.com/sites/default/files/2022-06/Electrolytes%E2%80%94Shoud-you-be-drinking-sports-drinks-after-sex_P_Hero.jpg"
+        imageUrl: "https://getmegiddy.com/sites/default/files/2022-06/Electrolytes%E2%80%94Shoud-you-be-drinking-sports-drinks-after-sex_P_Hero.jpg",
+        leadingSentence:"Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum"
     
     },
     {
@@ -35,7 +38,8 @@ export const POSTS = [
         author: "Jane Doe",
         authorImage:'',
         copy: "Lorem Ipsum is Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum,\n \n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum\n \n Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum",
-        imageUrl: "https://getmegiddy.com/sites/default/files/2022-06/Improving-the-Quality-of-Care-for-Ovarian-Cancer-Patients_Hero.jpg"
+        imageUrl: "https://getmegiddy.com/sites/default/files/2022-06/Improving-the-Quality-of-Care-for-Ovarian-Cancer-Patients_Hero.jpg",
+        leadingSentence:"Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum"
     
     },
 ]
