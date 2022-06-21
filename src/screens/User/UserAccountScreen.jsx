@@ -22,8 +22,6 @@ const windowWidth = Dimensions
     .get("window")
     .width
 
-
-
 export default function UserAccountScreen() {
     const navigation = useNavigation();
 

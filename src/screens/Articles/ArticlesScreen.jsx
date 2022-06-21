@@ -12,13 +12,14 @@ import SearchBar from "../../components/Search/SearchBar";
 import {POSTS} from "../../model/Articles";
 // custom components
 import CategoryList from "../../components/Article/CategoryList";
+import ArticlesList from "../../components/Analytics/Articles";
 
 const windowWidth = Dimensions
     .get("window")
     .width;
 const ArticlesScreen = () => {
     const [scrollYValue,
-        setScrollYValue] = useState(new Animated.Value(0))
+        setScrollYValue] = useState(new Animated.Value(0));
 
     const clampedScroll = Animated.diffClamp(Animated.add(scrollYValue.interpolate({
         inputRange: [
@@ -42,7 +43,8 @@ const ArticlesScreen = () => {
             </View>
         </View>
         <View style={styles.postContainer}>
-            <Text style={styles.posts}>Posts go here ...</Text>
+            {/* <Text style={styles.posts}>Posts go here ...</Text> */}
+            <ArticlesList/>
         </View>
         </>
     );
