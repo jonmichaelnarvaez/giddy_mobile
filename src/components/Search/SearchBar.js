@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
   },
   formField: {
     borderWidth: 1,
-    padding: 12,
     paddingLeft: 20,
     paddingRight: 20,
     borderRadius: 10,

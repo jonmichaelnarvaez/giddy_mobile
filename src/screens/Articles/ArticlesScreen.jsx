@@ -34,16 +34,8 @@ const ArticlesScreen = () => {
     return (
         <>
         <SearchBar clampedScroll={clampedScroll}/>
-        <View style={styles.container}>
-            <View
-                style={{
-                top: '55%',
-            }}>
-                <CategoryList/>
-            </View>
-        </View>
         <View style={styles.postContainer}>
-            {/* <Text style={styles.posts}>Posts go here ...</Text> */}
+            <CategoryList/>
             <ArticlesList/>
         </View>
         </>
@@ -55,17 +47,17 @@ export default ArticlesScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
         width: windowWidth
     },
     postContainer: {
-        flex: 2,
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         alignItems: 'center',
+        paddingTop: '45%'
     },
     posts: {
         justifyContent: 'center',
-        alignItems :'center'
+        alignItems :'center',
     },
 });
