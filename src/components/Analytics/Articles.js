@@ -8,22 +8,24 @@ import {
     Dimensions,
     Pressable,
     SafeAreaView,
-    TouchableOpacity,
+    TouchableOpacity
 } from 'react-native';
 // third party libraries
 import {useNavigation} from '@react-navigation/native';
 // temp data
 import {POSTS} from '../../model/Articles'
 
-const windowWidth = Dimensions.get('window').width
-    
+const windowWidth = Dimensions
+    .get('window')
+    .width
+
 export default function ArticlesList() {
-  const navigation = useNavigation();
-    
-  const handlePress = ({posts}) => {
-    navigation.navigate('Article Detail', {posts});
-  };
-  
+    const navigation = useNavigation();
+
+    const handlePress = ({posts}) => {
+        navigation.navigate('Article Detail', {posts});
+    };
+
     const [refreshing,
         setRefreshing] = useState(false)
 
@@ -32,75 +34,69 @@ export default function ArticlesList() {
     }
 
     const Header = () => {
-      return (
-          <View style={styles.header}>
-              <Text numberOfLines={2} style={styles.headerText}>What's New</Text>
-          </View>
-      )
-  };
+        return (
+            <View style={styles.header}>
+                <Text numberOfLines={2} style={styles.headerText}>What's New</Text>
+            </View>
+        )
+    };
 
-  const Footer = () => {
-      return (
-          <View style={styles.footer}>
-              <Text style={styles.footerText}>Loading...</Text>
-          </View>
-      );
-  };
-  
-  const renderItem = ({item}) => {
-    
-     return (
-          <Item
-         
-          imageUrl={{
-          url: item.imageUrl}}
-          category={item.category}
-          title={item.title}
-          leadingSentence={item.leadingSentence}/>
-    
-     )
-  };
+    const Footer = () => {
+        return (
+            <View style={styles.footer}>
+                <Text style={styles.footerText}>Loading...</Text>
+            </View>
+        );
+    };
 
-  const Item = ({imageUrl, category, title, leadingSentence}) => (
-    <Pressable onPress={handlePress}>
-    <View style={styles.articlesWrapper}>
-        <Image
-            resizeMode='cover'
-            source={imageUrl}
-            style={{
-            width: windowWidth - 5,
-            height: 250
-        }}/>
-        <Text style={styles.category}>{category}</Text>
-        <Text
-            numberOfLines={2}
-            style={{
-            fontWeight: 'bold',
-            textTransform: 'uppercase',
-            fontSize: 18
-        }}>{title}</Text>
-        <Text style={styles.leadingSentence}>{leadingSentence}</Text>
-    </View>
-    </Pressable>
+    const renderItem = ({item}) => {
 
-);
+        return (<Item
+            imageUrl={{
+            url: item.imageUrl
+        }}
+            category={item.category}
+            title={item.title}
+            leadingSentence={item.leadingSentence}/>)
+    };
+
+    const Item = ({imageUrl, category, title, leadingSentence}) => (
+        <Pressable onPress={handlePress}>
+            <View style={styles.articlesWrapper}>
+                <Image
+                    resizeMode='cover'
+                    source={imageUrl}
+                    style={{
+                    width: windowWidth - 5,
+                    height: 250
+                }}/>
+                <Text style={styles.category}>{category}</Text>
+                <Text
+                    numberOfLines={2}
+                    style={{
+                    fontWeight: 'bold',
+                    textTransform: 'uppercase',
+                    fontSize: 18
+                }}>{title}</Text>
+                <Text style={styles.leadingSentence}>{leadingSentence}</Text>
+            </View>
+        </Pressable>
+
+    );
 
     return (
         <SafeAreaView>
-            {/* <Header/> */}
             <FlatList
-            data={POSTS}
-            keyExtractor={item => item.id}
-            renderItem={renderItem}
-            showsVerticalScrollIndicator={false}
-            refreshing={refreshing}
-            onRefresh={handleRefresh}            
-            initialNumToRender={10}
-            ItemSeparatorComponent={Platform.OS !== 'android' && (({highlighted}) => (<View style={styles.separator}/>))}
-            ListHeaderComponent={Header}
-            ListFooterComponent={Footer}
-            />
-            {/* <Footer/> */}
+                data={POSTS}
+                keyExtractor={item => item.id}
+                renderItem={renderItem}
+                showsVerticalScrollIndicator={false}
+                refreshing={refreshing}
+                onRefresh={handleRefresh}
+                initialNumToRender={10}
+                ItemSeparatorComponent={Platform.OS !== 'android' && (({highlighted}) => (<View style={styles.separator}/>))}
+                ListHeaderComponent={Header}
+                ListFooterComponent={Footer}/>
         </SafeAreaView>
     );
 }

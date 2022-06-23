@@ -7,7 +7,7 @@
       "**/*"
     ],
     "plugins": [
-      "react-native-health"
+      ["react-native-app-clip", {"name": "Giddy"}]
     ]
   }
 }

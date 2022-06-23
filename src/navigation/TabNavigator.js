@@ -40,6 +40,15 @@ function LogoTitle() {
     }}
         source={require('../assets/logos/Giddy_blue.png')}/>)
 }
+function GiddyToday() {
+    return (<Image
+    resizeMode='center'
+        style={{
+        height: 35,
+        width: 150
+    }}
+        source={require('../assets/logos/giddy_today.png')}/>)
+}
 
 const CalendarStack = () => {
 
@@ -127,7 +136,7 @@ const ArticleStack = () => {
             
         }}>
             <Stack.Screen name=" " component={ArticlesScreen}   options={{
-                headerTitle: (props) => <LogoTitle {...props}/>,
+                headerTitle: (props) => <GiddyToday {...props}/>,
                 headerShown: true,
                 headerTransparent: true,
                 headerRight: () => 
