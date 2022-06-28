@@ -19,7 +19,7 @@ export default function ArticleCard() {
         initialNumToRender={10}
         refreshing={true}
         onRefresh={() => {
-            <Spinner/>
+            // <Spinner/>
         }}
         style={styles.card}
         data={POSTS}

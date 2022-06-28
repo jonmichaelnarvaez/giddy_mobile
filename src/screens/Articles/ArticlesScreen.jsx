@@ -12,7 +12,7 @@ import SearchBar from "../../components/Search/SearchBar";
 import {POSTS} from "../../model/Articles";
 // custom components
 import CategoryList from "../../components/Article/CategoryList";
-import ArticlesList from "../../components/Analytics/Articles";
+import ArticlesList from "../../components/Article/Articles";
 
 const windowWidth = Dimensions
     .get("window")

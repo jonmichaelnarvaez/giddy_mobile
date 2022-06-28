@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Spinner() {
   return (
-    <View>
+    <View style={styles.bgDrop}>
       <Text style={styles.loading}>Loading...</Text>
     </View>
   )
@@ -14,5 +14,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         justifyContent:'center',
         alignItems: 'center',
+    },
+    bgDrop: {
+      backgroundColor: 'red',
     },
 })

@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 // third party libraries
 import {Avatar, Button, Divider} from 'react-native-paper'
 import { MotiView } from 'moti'
+// import { useNavigation } from '@react-navigation/native'
 //icons
 import {EvilIcons} from '@expo/vector-icons'
 
@@ -10,6 +11,7 @@ import {EvilIcons} from '@expo/vector-icons'
 const windowWidth = Dimensions.get('screen').width
 
 export default function PersonalInformation() {
+  // const navigation = useNavigation();
 
   const [isOpened, setIsOpened] = useState(true)
 
@@ -17,7 +19,7 @@ export default function PersonalInformation() {
     <>
     <MotiView style={styles.container} transition={{type: "timing", duration: 1000, delay: 100}} from={{opacity: 0}} animate={{opacity: isOpened ? 1 : 0}} exit={{opacity: 0}}>
           <View style={styles.avatarContainer}>
-          <Pressable onPress={() => navigation.navigate("Account")}>
+          <Pressable>
               <Avatar.Image
                   size={110}
                   style={{
@@ -27,6 +29,14 @@ export default function PersonalInformation() {
               }}
                   source={require('../../assets/images/avatar.jpg')}/>
           </Pressable>
+          <MotiView style={styles.userName}  transition={{type: "timing", duration: 1000, delay: 100}} from={{opacity: 0}} animate={{opacity: isOpened ? 1 : 0}} exit={{opacity: 0}}>
+            <Text>Jon-Michael Narvaez</Text>
+            <Pressable onPress={() => alert('Edit your profile')}>
+              <View style={styles.editProfile}>
+              <Text style={styles.editProfileText}>Edit profile</Text>
+              </View>
+            </Pressable>
+          </MotiView>
           </View>
     </MotiView>
     <Divider style={{backgroundColor: 'transparent', padding: 10}}/>
@@ -69,5 +79,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: windowWidth,
     padding: 15
+  },
+  userName: {
+    justifyContent :'center',
+    paddingLeft: 15,
+  },
+  editProfile: {
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    marginTop: 10,
+    
+  },
+  editProfileText: {
+    justifyContent: 'center', alignItems: 'center', color: "#aad0f8"
   },
 });

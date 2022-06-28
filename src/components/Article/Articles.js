@@ -14,6 +14,8 @@ import {
 import {useNavigation} from '@react-navigation/native';
 // temp data
 import {POSTS} from '../../model/Articles'
+// custom Components
+import CategoryList from './CategoryList';
 
 const windowWidth = Dimensions
     .get('window')
@@ -36,7 +38,7 @@ export default function ArticlesList() {
     const Header = () => {
         return (
             <View style={styles.header}>
-                <Text numberOfLines={2} style={styles.headerText}>What's New</Text>
+                <Text numberOfLines={2} style={styles.headerText}>The Latest</Text>
             </View>
         )
     };
@@ -44,7 +46,7 @@ export default function ArticlesList() {
     const Footer = () => {
         return (
             <View style={styles.footer}>
-                <Text style={styles.footerText}>Loading...</Text>
+                <Text style={styles.footerText}>Loading more content...</Text>
             </View>
         );
     };
@@ -86,6 +88,7 @@ export default function ArticlesList() {
 
     return (
         <SafeAreaView>
+            <CategoryList/>
             <FlatList
                 data={POSTS}
                 keyExtractor={item => item.id}
@@ -132,7 +135,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     footer: {
-        backgroundColor: 'white',
+        backgroundColor: 'transparent',
         width: windowWidth,
         height: 45,
         justifyContent: 'center',

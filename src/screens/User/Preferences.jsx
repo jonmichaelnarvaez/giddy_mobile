@@ -1,3 +1,4 @@
+import React, {useState} from 'react'
 import {
     StyleSheet,
     Text,
@@ -5,20 +6,28 @@ import {
     Dimensions,
     ImageBackground,
     ScrollView,
-    SafeAreaView
+    SafeAreaView,
+    Pressable
 } from 'react-native'
-import React from 'react'
 // react-native-paper
 import {Switch, Divider} from 'react-native-paper'
+// icons 
+import {EvilIcons} from '@expo/vector-icons';
+// navigation
+import { useNavigation } from '@react-navigation/native';
+
 
 const windowWidth = Dimensions
     .get("window")
     .width
 
 export default function PreferenceScreen() {
+
      // toggle switches general -- need to change hooks to match switch
-     const [isSwitchOn, setIsSwitchOn] = React.useState(false);
+     const [isSwitchOn, setIsSwitchOn] = useState(false);
      const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
+     const navigation = useNavigation();
+
     return (
         <ScrollView>
            <SafeAreaView>
@@ -39,15 +48,34 @@ export default function PreferenceScreen() {
                 </View>
                 <Divider/>
                 <Text style={styles.categoryTitle}>notifications</Text>
+                <Pressable onPress={() => navigation.navigate('Sexual Notifications')}>
                 <View style={styles.contentWrapper}>
-                    <Text>Notifications</Text>
-                    <Switch value={isSwitchOn} onValueChange={onToggleSwitch}/>
+                    <Text>Sexual Health</Text>
+                    <EvilIcons name="chevron-right" size={24} color="black"/>
                 </View>
+                </Pressable>
                 <Divider/>
+                <Pressable onPress={() => navigation.navigate('Period Ovulation')}>
                 <View style={styles.contentWrapper}>
-                    <Text>New Articles</Text>
-                    <Switch value={isSwitchOn} onValueChange={onToggleSwitch}/>
+                    <Text>Period & Ovulation</Text>
+                    <EvilIcons name="chevron-right" size={24} color="black"/>
                 </View>
+                </Pressable>
+                <Divider/>
+                <Pressable onPress={() => navigation.navigate('EdNotifications')}>
+                <View style={styles.contentWrapper}>
+                    <Text>Erectile Dysfunction</Text>
+                    <EvilIcons name="chevron-right" size={24} color="black"/>
+                </View>
+                </Pressable>
+                <Divider/>
+                <Pressable onPress={() => navigation.navigate('Article Notifications')}>
+                <View style={styles.contentWrapper}>
+                    <Text>Articles</Text>
+                    <EvilIcons name="chevron-right" size={24} color="black"/>
+                </View>
+                </Pressable>
+                <Divider/>
            </SafeAreaView>
         </ScrollView>
     )

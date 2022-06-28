@@ -24,9 +24,13 @@ import ArticleDetailScreen from '../screens/Articles/ArticleDetailScreen';
 import AnalyticsScreen from '../screens/Analytics/AnalyticsScreen';
 import UserAccountScreen from '../screens/User/UserAccountScreen';
 import SearchScreen from '../screens/Search/SearchScreen';
-import AddScreen from '../screens/Calendar/AddScreen';
 import PreferenceScreen from '../screens/User/Preferences';
 import PersonalInformation from '../screens/User/PersonalInformation'
+import ArticlesNotifications from '../screens/User/articles/articlesNotifications';
+import SexualHealthNotifications from '../screens/User/sh/sexualHealthNotifications';
+import EdNotifications from '../screens/User/ed/edNotifications';
+import PeriodOvulationNotifications from '../screens/User/po/periodOvulationNotifications';
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -88,18 +92,35 @@ const CalendarStack = () => {
                 name="Preferences"
                 component={PreferenceScreen}
                 options={{
-                presentation: "modal",
+                // presentation: "modal",
                 headerTitle: (props) => <LogoTitle {...props}/>,
                 headerTransparent: true,
             }}/>
-            <Stack.Screen
+           <Stack.Screen
                 name="Personal Info"
                 component={PersonalInformation}
                 options={{
-                presentation: "modal",
                 headerTransparent: true,
                 headerTitle: (props) => <LogoTitle {...props}/>,
             }}/>
+           <Stack.Group screenOptions={{presentation: 'modal'}}>
+            <Stack.Screen name="Article Notifications" component={ArticlesNotifications} options={{
+                headerTransparent: true,
+                headerTitle: (props) => <LogoTitle {...props}/>,
+            }}/>
+            <Stack.Screen name="Sexual Notifications" component={SexualHealthNotifications} options={{
+                headerTransparent: true,
+                headerTitle: (props) => <LogoTitle {...props}/>,
+            }}/>
+            <Stack.Screen name='EdNotifications' component={EdNotifications} options={{
+                headerTransparent: true,
+                headerTitle: (props) => <LogoTitle {...props}/>,
+            }} />
+            <Stack.Screen name="Period Ovulation" component={PeriodOvulationNotifications} options={{
+                headerTransparent: true,
+                headerTitle: (props) => <LogoTitle {...props}/>,
+            }}/>
+            </Stack.Group>
         </Stack.Navigator>
     )
 }
@@ -115,19 +136,6 @@ const AnalyticStack = () => {
     )
 }
 
-const AddStack = () => {
-    return (
-        <Stack.Navigator>
-            <Stack.Screen
-                name="New Event"
-                component={AddScreen}
-                options={{
-                    headerTitle: (props) => <LogoTitle {...props}/>
-                }}
-              />
-        </Stack.Navigator>
-    )
-}
 
 const ArticleStack = () => {
     return (
@@ -135,7 +143,7 @@ const ArticleStack = () => {
             headerShown: false,
             
         }}>
-            <Stack.Screen name=" " component={ArticlesScreen}   options={{
+            <Stack.Screen name=" " component={ArticlesScreen}   options={{ 
                 headerTitle: (props) => <GiddyToday {...props}/>,
                 headerShown: true,
                 headerTransparent: true,
@@ -152,6 +160,7 @@ const ArticleStack = () => {
                 
             }}/>
             <Stack.Screen name="Article Detail" component={ArticleDetailScreen}  options={{
+                // tabBarStyle: {display: 'none'}, do we want to show or hide navigation?
                 headerShown: true,
                 headerTitle: ' ',
                 headerTransparent: true,
