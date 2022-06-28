@@ -30,7 +30,7 @@ import ArticlesNotifications from '../screens/User/articles/articlesNotification
 import SexualHealthNotifications from '../screens/User/sh/sexualHealthNotifications';
 import EdNotifications from '../screens/User/ed/edNotifications';
 import PeriodOvulationNotifications from '../screens/User/po/periodOvulationNotifications';
-
+import FavoritesScreen from '../screens/User/FavoriteScreen'
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -96,6 +96,14 @@ const CalendarStack = () => {
                 headerTitle: (props) => <LogoTitle {...props}/>,
                 headerTransparent: true,
             }}/>
+            <Stack.Screen
+            name="Favorites"
+            component={FavoritesScreen}
+            options={{
+                headerTitle: (props) => <LogoTitle {...props}/>,
+                headerTransparent: true,
+            }}
+            />
            <Stack.Screen
                 name="Personal Info"
                 component={PersonalInformation}

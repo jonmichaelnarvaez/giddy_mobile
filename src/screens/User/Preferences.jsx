@@ -22,11 +22,19 @@ const windowWidth = Dimensions
     .width
 
 export default function PreferenceScreen() {
+    // navigation hook
+    const navigation = useNavigation();
+     // select Ovulation tracker
+     const [isOvulationSwitchOn, setIsOvulationSwitchOn] = useState(false);
+     const onToggleOvulationSwitch = () => setIsOvulationSwitchOn(!isOvulationSwitchOn);
 
-     // toggle switches general -- need to change hooks to match switch
-     const [isSwitchOn, setIsSwitchOn] = useState(false);
-     const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
-     const navigation = useNavigation();
+     // select ed tracker 
+     const [isEdSwitchOn, setIsEdSwitchOn] = useState(false);
+     const onToggleEdSwitch = () => setIsEdSwitchOn(!isEdSwitchOn);
+
+     // select sexual tracker
+     const [isSexualSwitchOn, setIsSexualSwitchOn] = useState(false);
+     const onToggleSexualSwitch = () => setIsSexualSwitchOn(!isSexualSwitchOn);
 
     return (
         <ScrollView>
@@ -34,17 +42,17 @@ export default function PreferenceScreen() {
            <Text style={styles.categoryTitle}>Select a Tracker</Text>
                 <View style={styles.contentWrapper}>
                     <Text>Ovulation & Pregnancy Tracker</Text>
-                    <Switch value={isSwitchOn} onValueChange={onToggleSwitch}/>
+                    <Switch onPress={() => null} value={isOvulationSwitchOn} onValueChange={onToggleOvulationSwitch}/>
                 </View>
                 <Divider/>
                 <View style={styles.contentWrapper}>
                     <Text>ED Tracker</Text>
-                    <Switch value={isSwitchOn} onValueChange={onToggleSwitch}/>
+                    <Switch value={isEdSwitchOn} onValueChange={onToggleEdSwitch}/>
                 </View>
                 <Divider/>
                 <View style={styles.contentWrapper}>
                     <Text>Sexual Health Tracker</Text>
-                    <Switch value={isSwitchOn} onValueChange={onToggleSwitch}/>
+                    <Switch value={isSexualSwitchOn} onValueChange={onToggleSexualSwitch}/>
                 </View>
                 <Divider/>
                 <Text style={styles.categoryTitle}>notifications</Text>
