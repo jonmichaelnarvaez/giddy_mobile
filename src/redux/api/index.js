@@ -9,15 +9,13 @@ const endTimeOption = { hour: 'numeric', minute: 'numeric'};
 const currentTime = (Date.now())/100
 const currentDatetimeTime = (Date.now())/1000
 
-// Not sure if we will need a time converter?
-// const TimeConverter = (timeOptions,time,duration = 0) =>{
-//   let endtime = (Number(duration)*3600*1000)
-//   let date = (Number(time)*1000)+endtime;
-//   date = (new Intl.DateTimeFormat('en-US',timeOptions).format(date));
-//   return date;
-// }
+const TimeConverter = (timeOptions,time,duration = 0) =>{
+  let endtime = (Number(duration)*3600*1000)
+  let date = (Number(time)*1000)+endtime;
+  date = (new Intl.DateTimeFormat('en-US',timeOptions).format(date));
+  return date;
+}
 
-// register new user
 export const registerUser = async ({ username, email, password }) => {
     RCTNetworking.clearCookies(() => {});
     try { 
@@ -36,7 +34,6 @@ export const registerUser = async ({ username, email, password }) => {
       const userUids = {uuid:uuid, uid:uid};
       await AsyncStorage.setItem('userUidData', JSON.stringify(userUids))
       const user = {};
-
       const login = async (username, password, user) => {
         const response = await drupalApi.post(
           '/user/login?_format=json',
@@ -84,6 +81,33 @@ export const registerUserMoreData = async ({firstname, lastname, dateofbirth, ge
   return{step:4};
 }
 
+export const militaryIdCheck = async ({militaryID}) =>{
+  RCTNetworking.clearCookies(() => {});
+  const uids = await AsyncStorage.getItem('userUidData')
+  let parsedUids = JSON.parse(uids);
+  const token = await AsyncStorage.getItem('regAuthToken')
+  const response = await drupalApi.patch(
+    `/jsonapi/user/user/${parsedUids.uuid}`, 
+    { 
+      "data": {
+        "type": "user--user",
+        "id": parsedUids.uuid,
+        "attributes": {
+          "field_military_id": militaryID,
+          "field_military": true,
+        }
+      } 
+    },
+    {
+      headers:{
+        'Content-Type': 'application/vnd.api+json',
+        'Accept': 'application/vnd.api+json',
+        "Authorization" : `Bearer ${token}`
+      }
+    }
+  );
+  return{step:6};
+}
 
 export const userRegTosSign = async () =>{
   RCTNetworking.clearCookies(() => {});
@@ -201,7 +225,6 @@ export const userRegPhoneCodeCheck = async ({phoneNumber,validationNumber}) => {
       }
     }
   );
-
   if(response.data.valid === true){
     RCTNetworking.clearCookies(() => {});
     const uids = await AsyncStorage.getItem('userUidData')
@@ -545,25 +568,25 @@ if(passwordValidation == true){
   }
 };
 
-// export const getUserOrderHistory = async () => {
-//   RCTNetworking.clearCookies(() => {});
-//   const token = await AsyncStorage.getItem('authToken')
-//   const response = await drupalApi.post(
-//     `/commerce_appstore/records`,
-//     {
-//       type:'tokens'
-//     },
-//     {
-//       headers:{
-//         'Content-Type': 'application/json',
-//         'Accept': 'application/json',
-//         "Authorization" : `Bearer ${token}`
-//       }
-//     }
-//   );
-//   const orders = (response.data.orders)
-//   return{orders:orders};
-// }
+export const getUserOrderHistory = async () => {
+  RCTNetworking.clearCookies(() => {});
+  const token = await AsyncStorage.getItem('authToken')
+  const response = await drupalApi.post(
+    `/commerce_appstore/records`,
+    {
+      type:'tokens'
+    },
+    {
+      headers:{
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        "Authorization" : `Bearer ${token}`
+      }
+    }
+  );
+  const orders = (response.data.orders)
+  return{orders:orders};
+}
 
 export const getUserEventHistory = async () => {
   RCTNetworking.clearCookies(() => {});
@@ -667,7 +690,6 @@ export const getUserCalendar = async () => {
       }
     }
   );
-
   const sortedEventsList =[];
   if(response.data.user_events.length > 0){
     response.data.user_events.map(event => event.sessions.map((session, key) => {
@@ -727,7 +749,6 @@ export const getUserBookmarked = async () => {
       }
     }
   );
-
   const sortedEventsList =[];
   if(response.data.user_bookmarked_events.length > 0){
     response.data.user_bookmarked_events.map((event, key)  => {
@@ -1112,7 +1133,6 @@ export const getModEvents = async () => {
       }
     }
   );
-  
   const events = (response.data.events)
   if(response.data.events.length > 0){
     response.data.events.map(event => event.sessions.map((session, key) => {
@@ -1124,4 +1144,3 @@ export const getModEvents = async () => {
 
   return{events:events, eventsHaveLoaded:true};
 }
-

@@ -4,6 +4,7 @@ import React, {useState} from 'react'
 import {Avatar, Button, Divider} from 'react-native-paper'
 import { MotiView } from 'moti'
 // import { useNavigation } from '@react-navigation/native'
+
 //icons
 import {EvilIcons} from '@expo/vector-icons'
 
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
   container:{
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    paddingTop: '15%',
+    paddingTop: '25%',
     paddingLeft: "7%"
   },
   containerTwo: {
