@@ -19,7 +19,7 @@ const category = [
 
 const Item = ({title}) => (
     <View style={styles.item}>
-        <Text style={styles.title}>{title}</Text>
+        <Text numberOfLines={2} style={styles.title}>{title}</Text>
     </View>
 );
 
@@ -37,12 +37,12 @@ export default function CategoryList() {
 
 const styles = StyleSheet.create({
     item: {
-        backgroundColor: '#777',
-        padding: 5,
-        marginHorizontal: 15,
+        backgroundColor: '#0B2B50',
+        padding: 15,
+        marginHorizontal: 8,
         height: 50,
-        width: 80,
-        borderRadius: 18,
+        width: 140,
+        borderRadius: 100,
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 50,

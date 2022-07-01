@@ -96,14 +96,7 @@ const CalendarStack = () => {
                 headerTitle: (props) => <LogoTitle {...props}/>,
                 headerTransparent: true,
             }}/>
-            <Stack.Screen
-            name="Favorites"
-            component={FavoritesScreen}
-            options={{
-                headerTitle: (props) => <LogoTitle {...props}/>,
-                headerTransparent: true,
-            }}
-            />
+
            <Stack.Screen
                 name="Personal Info"
                 component={PersonalInformation}
@@ -146,18 +139,16 @@ const AnalyticStack = () => {
 
 
 const ArticleStack = () => {
+    const navigation = useNavigation();
     return (
-        <Stack.Navigator screenOptions={{
-            headerShown: false,
-            
-        }}>
+        <Stack.Navigator >
             <Stack.Screen name=" " component={ArticlesScreen}   options={{ 
                 headerTitle: (props) => <GiddyToday {...props}/>,
                 headerShown: true,
                 headerTransparent: true,
                 headerRight: () => 
                 (
-                <Pressable onPress={() => Alert.alert('Open Favorites page')}>
+                <Pressable onPress={() => navigation.navigate('Favorites')}>
                     <FontAwesome5 name="grin-hearts" size={28} color="#aad0f8" />
                 </Pressable>
                 )
@@ -167,6 +158,14 @@ const ArticleStack = () => {
                 // }
                 
             }}/>
+            <Stack.Screen
+            name="Favorites"
+            component={FavoritesScreen}
+            options={{
+                headerTitle: (props) => <LogoTitle {...props}/>,
+                headerTransparent: true,
+            }}
+            />
             <Stack.Screen name="Article Detail" component={ArticleDetailScreen}  options={{
                 // tabBarStyle: {display: 'none'}, do we want to show or hide navigation?
                 headerShown: true,
@@ -200,16 +199,16 @@ const TabNavigator = () => {
             screenOptions={{
             headerShown: false,
             tabBarInactiveTintColor: '#fff',
-            tabBarActiveTintColor: '#aad0f8',
+            tabBarActiveTintColor: '#BCE6E9',
             tabBarShowLabel: false,
             tabBarStyle: {
                 position: 'absolute',
                 bottom: 25,
-                left: 20,
-                right: 20,
+                left: 10,
+                right: 10,
                 elevation: 0,
-                backgroundColor: '#161c45',
-                borderRadius: 15,
+                backgroundColor: '#0B2B50',
+                borderRadius: 20,
                 height: 80,
             }
         }}>

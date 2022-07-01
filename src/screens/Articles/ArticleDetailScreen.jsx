@@ -3,7 +3,6 @@ import {
     Text,
     StyleSheet,
     ImageBackground,
-    Button,
     View,
     ScrollView
 } from "react-native";
@@ -11,13 +10,13 @@ import React from "react";
 
 export default function ArticleDetailScreen({route}) {
 
-    const {post} = route.params;
+    const {posts} = route.params;
 
     return (
-        <SafeAreaView key={post.id} style={styles.container}>
+        <SafeAreaView key={posts.id} style={styles.container}>
             <ImageBackground
                 source={{
-                uri: post.imageUrl
+                uri: posts.imageUrl
             }}
                 style={styles.image}
                 resizeMode="cover">
@@ -27,15 +26,15 @@ export default function ArticleDetailScreen({route}) {
                     justifyContent: "center",
                     alignItems: 'center'
                 }}>
-                    <Text style={styles.title}>{post.title}</Text>
-                    <Text style={styles.author}>Written by: {post.author}</Text>
+                    <Text style={styles.title}>{posts.title}</Text>
+                    <Text style={styles.author}>Written by: {posts.author}</Text>
                 </View>
             </ImageBackground>
             <ScrollView style={{
                 padding: 12
             }}>
                 <Text style={styles.text}>
-                    {post.copy}</Text>
+                    {posts.copy}</Text>
             </ScrollView>
         </SafeAreaView>
     );

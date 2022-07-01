@@ -7,42 +7,13 @@ const windowWidth = Dimensions.get("window").width
 const SearchBar = (props) => {
     const [searchQuery,
         setSearchQuery] = React.useState('');
+
     const onChangeSearch = query => setSearchQuery(query);
     
-    // animation
-    const {clampedScroll} = props;
-    
-    const searBarTranslate = clampedScroll.interpolate({
-        inputRange: [
-            0, 50
-        ],
-        outputRange: [
-            0, -(250)
-        ],
-        extrapolate: 'clamp'
-    });
-
-    const searchBarOpacity = clampedScroll.interpolate({
-        inputRange: [
-            0, 10
-        ],
-        outputRange: [
-            1, 0
-        ],
-        extrapolate: 'clamp'
-    });
-
     return (
         <Animated.View
             style={[
-            styles.container, {
-                transform: [
-                    {
-                        translateY: searBarTranslate
-                    }
-                ],
-                opacity: searchBarOpacity
-            }
+            styles.container, 
         ]}>
             <TextInput onChange={(e) => setSearchQuery(e.target.value)} value={searchQuery}  placeholder="Search" style={styles.formField} placeholderTextColor={'#d6d6d7'}/>
         </Animated.View>
@@ -51,11 +22,9 @@ const SearchBar = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    top: 100,
+    bottom: 50,
     width: windowWidth - 40,
     left: 20,
-    zIndex: 99,
     backgroundColor: 'transparent'
   },
   formField: {

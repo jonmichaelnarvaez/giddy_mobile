@@ -16,6 +16,7 @@ import {useNavigation} from '@react-navigation/native';
 import {POSTS} from '../../model/Articles'
 // custom Components
 import CategoryList from './CategoryList';
+import SearchBar from '../Search/SearchBar';
 
 const windowWidth = Dimensions
     .get('window')
@@ -35,13 +36,6 @@ export default function ArticlesList() {
         setRefreshing(prevState => !prevState)
     }
 
-    const Header = () => {
-        return (
-            <View style={styles.header}>
-                <Text numberOfLines={2} style={styles.headerText}>The Latest</Text>
-            </View>
-        )
-    };
 
     const Footer = () => {
         return (
@@ -59,35 +53,37 @@ export default function ArticlesList() {
         }}
             category={item.category}
             title={item.title}
-            leadingSentence={item.leadingSentence}/>)
+            leadingSentence={item.leadingSentence}
+            />)
     };
 
     const Item = ({imageUrl, category, title, leadingSentence}) => (
         <Pressable onPress={handlePress}>
-            <View style={styles.articlesWrapper}>
+            <View style={{paddingLeft: 20}}>
                 <Image
                     resizeMode='cover'
                     source={imageUrl}
                     style={{
-                    width: windowWidth - 5,
-                    height: 250
+                    width: windowWidth - 40,
+                    height: 195,
+                    borderRadius: 25,
                 }}/>
-                <Text style={styles.category}>{category}</Text>
                 <Text
                     numberOfLines={2}
                     style={{
                     fontWeight: 'bold',
                     textTransform: 'uppercase',
-                    fontSize: 18
+                    fontSize: 18,
+                    paddingTop: 15,
                 }}>{title}</Text>
                 <Text style={styles.leadingSentence}>{leadingSentence}</Text>
             </View>
         </Pressable>
-
     );
 
     return (
         <SafeAreaView>
+            <SearchBar/>
             <CategoryList/>
             <FlatList
                 data={POSTS}
@@ -98,7 +94,6 @@ export default function ArticlesList() {
                 onRefresh={handleRefresh}
                 initialNumToRender={10}
                 ItemSeparatorComponent={Platform.OS !== 'android' && (({highlighted}) => (<View style={styles.separator}/>))}
-                ListHeaderComponent={Header}
                 ListFooterComponent={Footer}/>
         </SafeAreaView>
     );
@@ -111,14 +106,13 @@ const styles = StyleSheet.create({
         paddingBottom: 8
     },
     leadingSentence: {
-        color: "#9d9d9d",
-        paddingTop: 5,
-        paddingBottom: 8
+        color: "#000000",
+        paddingTop: 10,
+        paddingBottom: 18
     },
     separator: {
-        height: 50,
+        height: 20,
         width: "100%",
-        backgroundColor: '#ededed'
     },
     header: {
         width: windowWidth,

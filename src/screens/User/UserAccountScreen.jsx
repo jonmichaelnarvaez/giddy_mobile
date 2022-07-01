@@ -43,14 +43,6 @@ export default function UserAccountScreen() {
                 </Pressable>
 
                 <Divider/>
-                <Pressable onPress={() => navigation.navigate('Favorites')}>
-                    <View style={styles.contentWrapper}>
-                        <Text>Favorites</Text>
-                        <EvilIcons name="chevron-right" size={24} color="black"/>
-                    </View>
-                </Pressable>
-
-                <Divider/>
                 <Pressable onPress={() => navigation.navigate('Preferences')}>
                     <View style={styles.contentWrapper}>
                         <Text>Preferences</Text>

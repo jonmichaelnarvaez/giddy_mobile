@@ -25,22 +25,6 @@ function HomeScreen() {
 
     const navigation = useNavigation();
 
-    // test information
-    const vacation = {
-        key: 'vacation',
-        color: 'red',
-        selectedDotColor: 'blue'
-    };
-    const massage = {
-        key: 'massage',
-        color: 'blue',
-        selectedDotColor: 'blue'
-    };
-    const workout = {
-        key: 'workout',
-        color: 'green'
-    };
-
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar hidden/>
@@ -48,12 +32,13 @@ function HomeScreen() {
                 <View
                     style={{
                     height: '50%',
-                    width: '100%'
+                    width: '100%',
+                
                 }}>
                     <CalendarList
                         horizontal={true}
                         style={{
-                        height: 350
+                        height: 350,
                     }}
                         markingType={'period'}
                         theme={{
@@ -86,27 +71,8 @@ function HomeScreen() {
                         scrollEnabled={true}
                         showScrollIndicator={false}
                         markedDates={{
-                        '2022-06-16': {
-                            dots: [
-                                vacation, massage, workout
-                            ],
-                            selected: true,
-                            marked: true,
-                            selectedColor: '#aad0f8'
-                        },
-                        '2022-07-17': {
-                            marked: true
-                        },
-                        '2022-08-18': {
-                            marked: true,
-                            dotColor: 'red',
-                            activeOpacity: 0
-                        },
-                        '2022-09-19': {
-                            disabled: true,
-                            disableTouchEvent: true
-                        }
-                    }}/>
+                            '2022-06-04': {disabled: true, startingDay: true, color: '#BCE6E9', endingDay: true, textColor: "#ededed"}
+                          }}/>
                 </View>
                 <Text style={styles.today}>Today</Text>
                 <View style={styles.contentContainer}>

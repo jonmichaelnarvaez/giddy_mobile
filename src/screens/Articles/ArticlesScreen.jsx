@@ -13,30 +13,18 @@ import {POSTS} from "../../model/Articles";
 // custom components
 import CategoryList from "../../components/Article/CategoryList";
 import ArticlesList from "../../components/Article/Articles";
+import { ZoomInUp, Layout, ZoomOut } from "react-native-reanimated";
 
 const windowWidth = Dimensions
     .get("window")
     .width;
+    
 const ArticlesScreen = () => {
-    const [scrollYValue,
-        setScrollYValue] = useState(new Animated.Value(0));
-
-    const clampedScroll = Animated.diffClamp(Animated.add(scrollYValue.interpolate({
-        inputRange: [
-            0, 1
-        ],
-        outputRange: [
-            0, 1
-        ],
-        extrapolateLeft: 'clamp'
-    }), new Animated.Value(0),), 0, 50,)
-
     return (
         <>
-    
-        <View style={styles.postContainer}>
+        <Animated.View entering={ZoomInUp} exiting={ZoomOut} layout={Layout.delay(200)}  style={styles.postContainer}>
             <ArticlesList/>
-        </View>
+        </Animated.View>
         </>
     );
 };

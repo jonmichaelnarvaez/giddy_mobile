@@ -9,21 +9,21 @@ import {
   StackedBarChart
 } from "react-native-chart-kit";
 
-const screenWidth = Dimensions.get("screen").width;
+const windowWidth = Dimensions.get("window").width;
 
 const DATA = {
-  labels: ["This", "is", "where", "data", "goes", "!"],
+  labels: [],
   datasets: [
     {
       data: [20, 45, 28, 80, 99, 43],
       color: () => '#aad0f8', // optional
     }
   ],
-  legend: ["Data Title"]
+  legend: []
 };
 
 const chartConfig = {
-  backgroundGradientFrom: "#ededed",
+  backgroundGradientFrom: "#ffff",
   backgroundGradientFromOpacity: 1,
   backgroundGradientTo: "#ededed",
   backgroundGradientToOpacity: 1,
@@ -36,11 +36,11 @@ const chartConfig = {
 
 const AnalyticsScreen = () => {
     return (
-      <SafeAreaView style={styles.container}>
-        <View>
+      <SafeAreaView>
+        <View style={styles.container}>
           <LineChart
           data={DATA}
-          width={screenWidth}
+          width={windowWidth}
           height={220}
           chartConfig={chartConfig} 
           bezier
@@ -50,8 +50,6 @@ const AnalyticsScreen = () => {
     );
   };
 
-  
-
   export default AnalyticsScreen;
 
   const styles = StyleSheet.create({
@@ -59,6 +57,7 @@ const AnalyticsScreen = () => {
       flex: 1, 
       justifyContent: 'flex-start',
       alignItems: 'flex-start',
-      marginTop: '25%', 
+      marginTop: '5%',
+      width: windowWidth / 2
     },
   });
