@@ -1,45 +1,44 @@
 import React from 'react'
-import {StyleSheet, Text, View, Dimensions} from 'react-native'
+import { StyleSheet, Text, View, Dimensions } from 'react-native'
 // third party libraries
-import { Fontisto } from '@expo/vector-icons';
-import { Button, Divider } from 'react-native-paper'
+import {Button, Divider} from 'react-native-paper';
+import { Fontisto} from '@expo/vector-icons'
 
 const windowWidth = Dimensions.get('window').width
-
-export default function AddScreen() {
-    return (
-        <View style={styles.container}>
+export default function FertilityAddScreen() {
+  return (
+    <View style={styles.container}>
             <View style={styles.contentContainer}>
                 <Text>
-                    Activity
+                    Last Period
                 </Text>
                 <Fontisto name="intersex" size={24} color="black" />
             </View>
             <Divider/>
             <View style={styles.contentContainer}>
                 <Text>
-                    Partners
+                    Was your flow heavy or light?
                 </Text>
                 <Fontisto name="intersex" size={24} color="black" />
             </View>
             <Divider/>
             <View style={styles.contentContainer}>
                 <Text>
-                    Protection
+                    Fatigue or soreness 
                 </Text>
                 <Fontisto name="intersex" size={24} color="black" />
             </View>
             <Divider/>
             <View style={styles.contentContainer}>
                 <Text>
-                    Duration
+                    Mood
                 </Text>
                 <Fontisto name="intersex" size={24} color="black" />
             </View>
             <Divider/>
             <View style={styles.contentContainer}>
                 <Text>
-                    Initiated by
+                    Symptoms 
                 </Text>
                 <Fontisto name="intersex" size={24} color="black" />
             </View>
@@ -53,7 +52,7 @@ export default function AddScreen() {
             <Divider/>
             <Button style={{margin: 20}} mode='contained' color="#161c45">Submit </Button>
         </View>
-    )
+  )
 }
 
 const styles = StyleSheet.create({

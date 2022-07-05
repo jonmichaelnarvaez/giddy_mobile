@@ -79,7 +79,7 @@ function HomeScreen() {
                     <Text style={{fontWeight: '200'}}>Create your first event </Text>
                     <Pressable onPress={() => navigation.navigate('New Event')}>
                     <View style={styles.addEvent}>
-                        <Feather name="plus" color="#ededed" size={20}/>
+                        <Feather name="plus" color="#BCE6E9" size={20}/>
                     </View>
                     </Pressable>
                 </View>
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
       
   },
   addEvent: {
-      backgroundColor: "#161c45",
+      backgroundColor: "#0B2B50",
       height: 35,
       width: 35,
       borderRadius: 25,
