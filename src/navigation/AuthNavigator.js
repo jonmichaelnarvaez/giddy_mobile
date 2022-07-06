@@ -28,7 +28,8 @@ const AuthStack = () => {
                 name="On Boarding"
                 component={OnboardingScreen}
                 options={{
-                headerShown: false,
+                headerShown: true,
+                headerTransparent: true,
                 headerTitle: (props) => <LogoTitle {...props}/>
             }}/>
             <Stack.Screen
@@ -45,7 +46,7 @@ const AuthStack = () => {
                 headerTransparent: true,
                 headerTitle: (props) => <LogoTitle {...props}/>,
                 headerBackButtonMenuEnabled: false,
-                headerBackTitleStyle: {color: "#aad0f8"}
+                headerBackTitleStyle: {color: "#BCE6E9"}
             }}/>
         </Stack.Navigator>
     )

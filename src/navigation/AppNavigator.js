@@ -40,7 +40,7 @@ const App = () => {
             <Stack.Group screenOptions={{presentation: 'modal'}}>
                 <Stack.Screen options={{headerTransparent: true,
                 headerTitle: (props) => <LogoTitle {...props}/>
-                }} name="New Event" component={FertilityAddScreen}/>
+                }} name="New Event" component={AddScreen}/>
             </Stack.Group>
         </Stack.Navigator>
     )
