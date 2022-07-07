@@ -70,25 +70,25 @@ const OnboardingScreen = () => {
         onDone={() => navigation.navigate("Authenticate")}
         pages={[
           {
-            backgroundColor: '#aad0f8',
+            backgroundColor: '#D55015',
             image: <Image resizeMode="center"  style={{height: 130, width: 370,  justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
             title: 'Sexual Health Tracker',
-            subtitle: 'A New Way to Track your ED',
+            subtitle: 'Keep track of your Sex Life',
           },
           {
             backgroundColor: '#161c45',
             image: <Image resizeMode="center" style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
             title: 'ED Tracker',
-            subtitle: 'A New way to Track your shit...',
+            subtitle: 'Keep track of your ED',
           },
           {
-            backgroundColor: '#e9bcbe',
+            backgroundColor: '#500B45',
             image: <Image  resizeMode="center"  style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
             title: 'Period & Ovulation',
             subtitle: "Keep Track of your Period & Ovulation Cycle",
           },
           {
-            backgroundColor: '#161c45',
+            backgroundColor: '#0B2B50',
             image: <Image  resizeMode="center" style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
             title: 'Giddy',
             subtitle: "The worlds leading Sexual Health Platform",

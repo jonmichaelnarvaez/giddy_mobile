@@ -16,102 +16,120 @@ import {Octicons} from '@expo/vector-icons';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 // animation
 import {View as MotiView} from 'moti'
+// fonts
+
+import SplashScreen from 'expo-splash-screen';
+import {
+  useFonts,
+  Lato_400Regular_Italic,
+} from '@expo-google-fonts/lato';
+
+
 
 export default function AuthenticateScreen() {
     const navigation = useNavigation();
 
     const [isOpened,
-        setIsOpended] = useState(true)
+        setIsOpened] = useState(true)
 
     const [email,
         setEmail] = useState('');
     const [password,
         setPassword] = useState('');
+    
+        let [fontsLoaded] = useFonts({
+            Lato_400Regular_Italic,
+        })
+        if(!fontsLoaded) {
+            return <SplashScreen/>
+        } else {
+            return (
+                <SafeAreaView style={styles.container}>
+                    <View style={styles.topView}>
+                        <Image
+                            style={{
+                            width: 250,
+                            height: 350
+                        }}
+                            source={require("../../assets/logos/Giddy_blue.png")}
+                            resizeMode="center"/>
+                    </View>
+                    <MotiView
+                        transition={{
+                        type: "timing",
+                        duration: 1000,
+                        delay: 50
+                    }}
+                        from={{
+                        opacity: 0
+                    }}
+                        animate={{
+                        opacity: isOpened
+                            ? 1
+                            : 0
+                    }}
+                        exit={{
+                        opacity: 0
+                    }}
+                        style={styles.bottomView}>
+                        <Text style={styles.heading}>Hey there,{`\n`}
+                            good lookin'</Text>
+                        <View style={styles.formView}>
+                            <TextInput
+                                keyboardType='email-address'
+                                allowFontScaling
+                                autoCapitalize='none'
+                                autoCorrect={false}
+                                placeholderTextColor={"#d6d6d7"}
+                                placeholder='Email'
+                                style={styles.textInput}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}/>
+                        </View>
+                        <View style={styles.formView}>
+                            <TextInput
+                                allowFontScaling
+                                autoCapitalize='none'
+                                autoCorrect={false}
+                                secureTextEntry
+                                placeholderTextColor={"#d6d6d7"}
+                                placeholder='password'
+                                style={styles.textInput}
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}/>
+                        </View>
+                        <View style={styles.submitButton}>
+                            <Button mode='contained' color='#aad0f8'>
+                                Submit
+                            </Button>
+                        </View>
+                        <View style={styles.forgotPasswordView}>
+                            {/* Do we need to add a register screen? If we can onboard with
+                          just email and password, a new user to the DB should prompt an
+                          agreement page & create a new user. */}
+                            {/* <Text style={styles.registerText}>Register</Text> */}
+        
+                            <Text style={styles.forgotText}>Reset Password</Text>
+        
+                        </View>
+                        <Divider color="#ededed"/>
+                        <View style={styles.registerView}>
+                            <Button onPress={() => Alert.alert("Facial Recognition")}>
+                            <Image source={require('../../assets/icons/thumb.png')} style={{width: 35, height: 35}} resizeMode="contain"/>
+                            </Button>
+                            <Button
+                                onLongPress={() => Alert.alert("Wow, that was a long press! Just tap it")}
+                                onPress={() => navigation.navigate('Passcode')}>
+                                <Image source={require('../../assets/icons/numbers.png')} style={{width: 35, height: 35}} resizeMode="contain"/>
+                            </Button>
+                        </View>
+                    </MotiView>
+        
+                </SafeAreaView>
+            )
+        }
 
-    return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.topView}>
-                <Image
-                    style={{
-                    width: 250,
-                    height: 350
-                }}
-                    source={require("../../assets/logos/Giddy_blue.png")}
-                    resizeMode="center"/>
-            </View>
-            <MotiView
-                transition={{
-                type: "timing",
-                duration: 1000,
-                delay: 50
-            }}
-                from={{
-                opacity: 0
-            }}
-                animate={{
-                opacity: isOpened
-                    ? 1
-                    : 0
-            }}
-                exit={{
-                opacity: 0
-            }}
-                style={styles.bottomView}>
-                <Text style={styles.heading}>Hey there,{`\n`}
-                    good looking.</Text>
-                <View style={styles.formView}>
-                    <TextInput
-                        keyboardType='email-address'
-                        allowFontScaling
-                        autoCapitalize='none'
-                        autoCorrect={false}
-                        placeholderTextColor={"#d6d6d7"}
-                        placeholder='Email'
-                        style={styles.textInput}
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}/>
-                </View>
-                <View style={styles.formView}>
-                    <TextInput
-                        allowFontScaling
-                        autoCapitalize='none'
-                        autoCorrect={false}
-                        secureTextEntry
-                        placeholderTextColor={"#d6d6d7"}
-                        placeholder='password'
-                        style={styles.textInput}
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}/>
-                </View>
-                <View style={styles.submitButton}>
-                    <Button mode='contained' color='#aad0f8'>
-                        Submit
-                    </Button>
-                </View>
-                <View style={styles.forgotPasswordView}>
-                    {/* Do we need to add a register screen? If we can onboard with
-                  just email and password, a new user to the DB should prompt an
-                  agreement page & create a new user. */}
-                    {/* <Text style={styles.registerText}>Register</Text> */}
-
-                    <Text style={styles.forgotText}>Reset Password</Text>
-
-                </View>
-                <Divider color="#ededed"/>
-                <View style={styles.registerView}>
-                    <Button onPress={() => Alert.alert("Facial Recognition")}>
-                        <MaterialCommunityIcons name="face-recognition" size={30} color="#ededed"/>
-                    </Button>
-                    <Button
-                        onLongPress={() => Alert.alert("Wow, that was a long press! Just tap it")}
-                        onPress={() => navigation.navigate('Passcode')}>
-                        <Octicons name="number" size={30} color="#ededed"/>
-                    </Button>
-                </View>
-            </MotiView>
-
-        </SafeAreaView>
-    )
+    
 }
 
 const styles = StyleSheet.create({
@@ -139,7 +157,8 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontWeight: "bold",
         marginLeft: 30,
-        marginTop: 50
+        marginTop: 50,
+        fontFamily: "Lato_400Regular_Italic"
     },
     formView: {
         width: '100%',
