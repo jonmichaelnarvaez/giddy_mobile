@@ -21,14 +21,14 @@ export default function SexualHealthNotifications() {
         <SafeAreaView>
             <Text style={styles.categoryTitle}>Sexual Health Notifications</Text>
             <View style={styles.contentWrapper}>
-                <Text>Partner Notifications</Text>
+                <Text>Daily Reminders</Text>
                 <Switch
                     value={partnerNotifications}
                     onValueChange={togglePartnerNotifications}/>
             </View>
             <Divider/>
             <View style={styles.contentWrapper}>
-                <Text>New Analytics</Text>
+                <Text>Partner Updates</Text>
                 <Switch value={analytics} onValueChange={toggleAnalytics}/>
             </View>
             <Divider/>

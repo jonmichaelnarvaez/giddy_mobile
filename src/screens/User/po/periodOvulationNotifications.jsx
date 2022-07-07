@@ -24,12 +24,7 @@ export default function PeriodOvulationNotifications() {
     <SafeAreaView>
       <Text style={styles.categoryTitle}>Period & Ovulation Notifications</Text>
       <View style={styles.contentWrapper}>
-        <Text>Period Predications</Text>
-        <Switch value={periodPredictions} onValueChange={togglePeriodPredictions}/>
-      </View>
-      <Divider/>
-      <View style={styles.contentWrapper}>
-        <Text>Period Notification</Text>
+        <Text>Daily Reminders</Text>
         <Switch value={periodNotifications} onValueChange={togglePeriodNotifications}/>
       </View>
       <Divider/>
