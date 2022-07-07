@@ -11,22 +11,20 @@ import {
 // navigation
 import {useNavigation} from '@react-navigation/native';
 import {Button, Divider} from 'react-native-paper'
-// icons
-import {Octicons} from '@expo/vector-icons';
-import {MaterialCommunityIcons} from '@expo/vector-icons';
 // animation
 import {View as MotiView} from 'moti'
+// splash screen
+import * as SplashScreen from 'expo-splash-screen';
 // fonts
-
-import SplashScreen from 'expo-splash-screen';
-import {
-  useFonts,
-  Lato_400Regular_Italic,
-} from '@expo-google-fonts/lato';
-
+// import * as Font from 'expo-font';
+// import {
+//   useFonts,
+//   Lato_400Regular_Italic,
+// } from '@expo-google-fonts/lato';
 
 
-export default function AuthenticateScreen() {
+
+const AuthenticateScreen = () => {
     const navigation = useNavigation();
 
     const [isOpened,
@@ -37,12 +35,6 @@ export default function AuthenticateScreen() {
     const [password,
         setPassword] = useState('');
     
-        let [fontsLoaded] = useFonts({
-            Lato_400Regular_Italic,
-        })
-        if(!fontsLoaded) {
-            return <SplashScreen/>
-        } else {
             return (
                 <SafeAreaView style={styles.container}>
                     <View style={styles.topView}>
@@ -127,10 +119,10 @@ export default function AuthenticateScreen() {
         
                 </SafeAreaView>
             )
+
         }
 
-    
-}
+export default AuthenticateScreen;
 
 const styles = StyleSheet.create({
     container: {
@@ -158,7 +150,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginLeft: 30,
         marginTop: 50,
-        fontFamily: "Lato_400Regular_Italic"
+        // fontFamily: "Lato_400Regular_Italic"
     },
     formView: {
         width: '100%',

@@ -83,9 +83,9 @@ const OnboardingScreen = () => {
           },
           {
             backgroundColor: '#500B45',
-            image: <Image  resizeMode="center"  style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
-            title: 'Period & Ovulation',
-            subtitle: "Keep Track of your Period & Ovulation Cycle",
+            image: <Image  resizeMode="contain"  style={{height: 200, width: 300, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/icons/fertility.png')} />,
+            title: 'Fertility',
+            subtitle: "Keep Track of your Fertility Cycle",
           },
           {
             backgroundColor: '#0B2B50',

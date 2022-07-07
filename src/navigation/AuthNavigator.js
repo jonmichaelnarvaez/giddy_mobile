@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Pressable, Image} from 'react-native';
 // stacks & Navigator
 import TabNavigator from './TabNavigator';
@@ -8,6 +8,9 @@ import Authenticate from '../screens/Onboarding/Authenticate'
 import PassCodeV1 from '../screens/Onboarding/Password';
 // navigation
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+// async storage
+// import {AsyncStorage} from '@react-native-async-storage/async-storage'
+
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +24,7 @@ function LogoTitle() {
 }
 
 const AuthStack = () => {
-
+// need to add async storage function to only call the on onbarding screens one time
     return (
         <Stack.Navigator>
             <Stack.Screen
