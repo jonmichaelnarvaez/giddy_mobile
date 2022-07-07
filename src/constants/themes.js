@@ -1,12 +1,12 @@
 const dualTheme = {
-    PRIMARY_COLOR: '#D6D6D7',
-    SECONDARY_COLOR: '#73737d',
-    TERTIARY: '#fff',
+    PRIMARY_COLOR: '#737373',
+    SECONDARY_COLOR: '#d6d6d7',
+    TERTIARY: '#f5f5f5',
 };
 const edTheme = {
     PRIMARY_COLOR: '#0B2B50',
     SECONDARY_COLOR: '#BCE6E9',
-    TERTIARY: '#fff',
+    TERTIARY: '#f5f5f5',
 };
 
 const fertilityTheme = {
