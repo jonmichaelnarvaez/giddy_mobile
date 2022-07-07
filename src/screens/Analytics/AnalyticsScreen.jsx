@@ -64,6 +64,27 @@ const AnalyticsScreen = () => {
             </View>
             <ScrollView style={{height: '100%'}}>
                 <View style={styles.contentWrapper}>
+                    <Text># of Erections</Text>
+                    <Text>1234</Text>
+                </View>
+                <Divider style={{
+                    marginTop: 15
+                }}/>
+                <View style={styles.contentWrapper}>
+                    <Text># of time you had sex</Text>
+                    <Text>1234</Text>
+                </View>
+                <Divider style={{
+                    marginTop: 15
+                }}/>
+                <View style={styles.contentWrapper}>
+                    <Text>Analytics</Text>
+                    <Text>1234</Text>
+                </View>
+                <Divider style={{
+                    marginTop: 15
+                }}/>
+                <View style={styles.contentWrapper}>
                     <Text>Analytics</Text>
                     <Text>1234</Text>
                 </View>

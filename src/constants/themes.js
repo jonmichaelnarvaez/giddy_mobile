@@ -13,12 +13,11 @@ const fertilityTheme = {
     PRIMARY_COLOR: '#500b45',
     SECONDARY_COLOR: '#e9bcbe',
     TERTIARY: '#F5F5F5',
-
 }
 
 const sexTheme = {
-    PRIMARY_COLOR: '#054B36',
-    SECONDARY_COLOR: '#C0E9BC',
+    PRIMARY_COLOR: '#D55015',
+    SECONDARY_COLOR: '#FFE08F',
     TERTIARY: '#f5f5f5',
 };
 export { dualTheme, edTheme, fertilityTheme, sexTheme };

@@ -159,6 +159,7 @@ export const userPhoneCheck = async ({phoneNumber}) => {
   return{step:2,phone:phoneNumber,message};
 }
 
+
 export const resendUserPhoneCheck = async ({phoneNumber}) => {
   RCTNetworking.clearCookies(() => {});
   const token = await AsyncStorage.getItem('regAuthToken')
