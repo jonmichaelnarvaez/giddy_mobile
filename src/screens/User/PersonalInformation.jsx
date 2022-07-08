@@ -3,16 +3,17 @@ import React, {useState} from 'react'
 // third party libraries
 import {Avatar, Button, Divider} from 'react-native-paper'
 import { MotiView } from 'moti'
-// import { useNavigation } from '@react-navigation/native'
-
+// storage
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 //icons
 import {EvilIcons} from '@expo/vector-icons'
 
 
 const windowWidth = Dimensions.get('screen').width
 
+
+
 export default function PersonalInformation() {
-  // const navigation = useNavigation();
 
   const [isOpened, setIsOpened] = useState(true)
 
@@ -49,7 +50,8 @@ export default function PersonalInformation() {
             <Divider/>
     </MotiView>
     <MotiView transition={{type: "timing", duration: 1500, delay: 300}} from={{opacity: 0}} animate={{opacity: isOpened ? 1 : 0}} exit={{opacity: 0}} style={styles.containerTwo}>
-      <Button color="#c60000" mode="contained"  onPress={() => Alert.alert('Call deleteData from drupal backend')}>
+      {/* call profile delete api here */}
+      <Button onPress={() => {}} color="#c60000" mode="contained" >
           Delete your data
         </Button>
     </MotiView>
