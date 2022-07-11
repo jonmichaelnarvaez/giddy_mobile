@@ -1,3 +1,4 @@
+import React from "react";
 import {
     SafeAreaView,
     Text,
@@ -6,17 +7,18 @@ import {
     View,
     ScrollView
 } from "react-native";
-import React from "react";
+// navigation
+import { useRoute } from "@react-navigation/native";
 
-export default function ArticleDetailScreen({route}) {
-
-    const {posts} = route.params;
+export default function ArticleDetailScreen() {  
+    
+    const route = useRoute();
 
     return (
-        <SafeAreaView key={posts.id} style={styles.container}>
+        <SafeAreaView key={route.params.id} style={styles.container}>
             <ImageBackground
                 source={{
-                uri: posts.imageUrl
+                uri: route.params.imageUrl
             }}
                 style={styles.image}
                 resizeMode="cover">
@@ -24,17 +26,17 @@ export default function ArticleDetailScreen({route}) {
                     style={{
                     flex: 1,
                     justifyContent: "center",
-                    alignItems: 'center'
+                    alignpostss: 'center'
                 }}>
-                    <Text style={styles.title}>{posts.title}</Text>
-                    <Text style={styles.author}>Written by: {posts.author}</Text>
+                    <Text style={title}>{route.params.title}</Text>
+                    <Text style={author}>Written by: {route.params.author}</Text>
                 </View>
             </ImageBackground>
             <ScrollView style={{
                 padding: 12
             }}>
                 <Text style={styles.text}>
-                    {posts.copy}</Text>
+                    {route.params.copy}</Text>
             </ScrollView>
         </SafeAreaView>
     );
@@ -44,7 +46,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "flex-start",
-        alignItems: "flex-start"
+        alignpostss: "flex-start"
     },
     image: {
         width: 400,
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
 
         justifyContent: "center",
-        alignItems: "center",
+        alignpostss: "center",
         color: "#fff"
     },
     text: {

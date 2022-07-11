@@ -23,10 +23,21 @@ const windowWidth = Dimensions
     .width
 
 export default function ArticlesList() {
+    
     const navigation = useNavigation();
 
-    const handlePress = ({posts}) => {
-        navigation.navigate('Article Detail', {posts});
+    const handlePress = () => {
+        navigation.navigate({
+            screen: 'Article Detail',
+            params: {
+            id: id,
+            imageUrl: imageUrl,
+            title: title,
+            category: category,
+            leadingSentence: leadingSentence
+            },
+            marge: true,
+        });
     };
 
     const [refreshing,
@@ -35,7 +46,6 @@ export default function ArticlesList() {
     const handleRefresh = () => {
         setRefreshing(prevState => !prevState)
     }
-
 
     const Footer = () => {
         return (
@@ -53,20 +63,21 @@ export default function ArticlesList() {
         }}
             category={item.category}
             title={item.title}
-            leadingSentence={item.leadingSentence}
-            />)
+            leadingSentence={item.leadingSentence}/>)
     };
 
-    const Item = ({imageUrl, category, title, leadingSentence}) => (
+    const Item = ({imageUrl, title, leadingSentence}) => (
         <Pressable onPress={handlePress}>
-            <View style={{paddingLeft: 20}}>
+            <View style={{
+                paddingLeft: 20
+            }}>
                 <Image
                     resizeMode='cover'
                     source={imageUrl}
                     style={{
                     width: windowWidth - 40,
                     height: 195,
-                    borderRadius: 25,
+                    borderRadius: 25
                 }}/>
                 <Text
                     numberOfLines={2}
@@ -74,7 +85,7 @@ export default function ArticlesList() {
                     fontWeight: 'bold',
                     textTransform: 'uppercase',
                     fontSize: 18,
-                    paddingTop: 15,
+                    paddingTop: 15
                 }}>{title}</Text>
                 <Text style={styles.leadingSentence}>{leadingSentence}</Text>
             </View>
@@ -112,7 +123,7 @@ const styles = StyleSheet.create({
     },
     separator: {
         height: 20,
-        width: "100%",
+        width: "100%"
     },
     header: {
         width: windowWidth,

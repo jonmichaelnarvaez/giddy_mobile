@@ -1,18 +1,13 @@
 import React, {useState} from "react";
 import {
     Animated,
-    View,
     StyleSheet,
-    Text,
+    View,
     Dimensions,
-    ScrollView
 } from "react-native";
-import SearchBar from "../../components/Search/SearchBar";
-// dummy data
-import {POSTS} from "../../model/Articles";
 // custom components
-import CategoryList from "../../components/Article/CategoryList";
 import ArticlesList from "../../components/Article/Articles";
+// animation
 import { ZoomInUp, Layout, ZoomOut } from "react-native-reanimated";
 
 const windowWidth = Dimensions

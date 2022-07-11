@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Alert, Image, Pressable, Dimensions } from 'react-native'
+import { StyleSheet, Text, View, Pressable, Dimensions } from 'react-native'
 import React, {useState} from 'react'
 // third party libraries
 import {Avatar, Button, Divider} from 'react-native-paper'
@@ -8,10 +8,7 @@ import { MotiView } from 'moti'
 //icons
 import {EvilIcons} from '@expo/vector-icons'
 
-
 const windowWidth = Dimensions.get('screen').width
-
-
 
 export default function PersonalInformation() {
 
@@ -20,8 +17,7 @@ export default function PersonalInformation() {
   return (
     <>
     <MotiView style={styles.container} transition={{type: "timing", duration: 1000, delay: 100}} from={{opacity: 0}} animate={{opacity: isOpened ? 1 : 0}} exit={{opacity: 0}}>
-          <View style={styles.avatarContainer}>
-          <Pressable>
+          <View style={styles.avatarContainer}>  
               <Avatar.Image
                   size={110}
                   style={{
@@ -29,22 +25,22 @@ export default function PersonalInformation() {
                   margin: 0,
                   padding: 0,
               }}
-                  source={require('../../assets/images/avatar.jpg')}/>
-          </Pressable>
-          <MotiView style={styles.userName}  transition={{type: "timing", duration: 1000, delay: 100}} from={{opacity: 0}} animate={{opacity: isOpened ? 1 : 0}} exit={{opacity: 0}}>
-            <Text>Jon-Michael Narvaez</Text>
-            <Pressable onPress={() => alert('Edit your profile')}>
-              <View style={styles.editProfile}>
-              <Text style={styles.editProfileText}>Edit profile</Text>
-              </View>
-            </Pressable>
-          </MotiView>
+              // add user imageUrl params 
+                  source={require('../../assets/images/avatar.jpg')}
+                  />
           </View>
     </MotiView>
     <Divider style={{backgroundColor: 'transparent', padding: 10}}/>
     <MotiView style={{margin: 0, padding: 0}} transition={{type: "timing", duration: 1500, delay: 300}} from={{opacity: 0}} animate={{opacity: isOpened ? 1 : 0}} exit={{opacity: 0}}>
             <View style={styles.contentWrapper}>
-              <Text>What do we want to show here?</Text>
+              <Text>Edit your profile</Text>
+              <EvilIcons name="chevron-right" size={25} color={"#171717"}/>
+            </View>
+            <Divider/>
+    </MotiView>
+    <MotiView style={{margin: 0, padding: 0}} transition={{type: "timing", duration: 1500, delay: 300}} from={{opacity: 0}} animate={{opacity: isOpened ? 1 : 0}} exit={{opacity: 0}}>
+            <View style={styles.contentWrapper}>
+              <Text>Refer your partner</Text>
               <EvilIcons name="chevron-right" size={25} color={"#171717"}/>
             </View>
             <Divider/>
@@ -63,8 +59,9 @@ const styles = StyleSheet.create({
   container:{
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    paddingTop: '25%',
-    paddingLeft: "7%"
+    paddingTop: '30%',
+    paddingLeft: "35%",
+    paddingBottom: "5%"
   },
   containerTwo: {
     flex: 1,
@@ -75,6 +72,8 @@ const styles = StyleSheet.create({
   },
   avatarContainer:{
     flexDirection: 'row',
+    justifyContent  : 'center',
+    alignItems: 'center',
   },
   contentWrapper: {
     flexDirection: "row",

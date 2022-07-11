@@ -67,6 +67,7 @@ const CalendarStack = () => {
                 options={{
                 headerTitle: (props) => <LogoTitle {...props}/>,
                 headerShown: true,
+                // pass imageUrl from route params here to show user profile image
                 headerRight: () => (
                     <Pressable onPress={() => navigation.navigate("Account")}>
                         <Avatar.Image
