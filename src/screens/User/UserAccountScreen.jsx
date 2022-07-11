@@ -27,6 +27,7 @@ export default function UserAccountScreen() {
 
     return (
         <SafeAreaView style={styles.container}>
+            {/* convert to dynamic data based on users tracker & information */}
             <ImageBackground
                 source={require('../../assets/images/account.jpg')}
                 style={styles.imageWrapper}

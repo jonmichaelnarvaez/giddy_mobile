@@ -41,7 +41,7 @@ export default function PersonalInformation() {
     <MotiView style={{margin: 0, padding: 0}} transition={{type: "timing", duration: 1500, delay: 300}} from={{opacity: 0}} animate={{opacity: isOpened ? 1 : 0}} exit={{opacity: 0}}>
             <View style={styles.contentWrapper}>
               <Text>Refer your partner</Text>
-              <EvilIcons name="chevron-right" size={25} color={"#171717"}/>
+              <EvilIcons name="share-google" size={25} color="black" />
             </View>
             <Divider/>
     </MotiView>
