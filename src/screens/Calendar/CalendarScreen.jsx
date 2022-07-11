@@ -7,9 +7,11 @@ import {
     Text,
     Dimensions,
     Pressable,
+    ScrollView,
 } from 'react-native';
 // icons
 import {Feather} from "@expo/vector-icons"
+import { Octicons } from '@expo/vector-icons';
 // calendar
 import {CalendarList} from 'react-native-calendars';
 // navigation
@@ -28,7 +30,7 @@ function HomeScreen() {
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar hidden/>
-            <View>
+            <ScrollView>
                 <View
                     style={{
                     height: '50%',
@@ -75,6 +77,7 @@ function HomeScreen() {
                           }}/>
                 </View>
                 <Text style={styles.today}>Today</Text>
+                <View>
                 <View style={styles.contentContainer}>
                     <Text style={{fontWeight: '200'}}>Create your first event </Text>
                     <Pressable onPress={() => navigation.navigate('New Event')}>
@@ -83,7 +86,16 @@ function HomeScreen() {
                     </View>
                     </Pressable>
                 </View>
-            </View>
+                <View style={styles.contentContainer}>
+                    <Text style={{fontWeight: '200'}}>Entry History</Text>
+                    <Pressable onPress={() => navigation.navigate('Entry History')}>
+                    <View style={styles.addEvent}>
+                    <Octicons name="history" size={20} color="#BCE6E9" />
+                    </View>
+                    </Pressable>
+                </View>
+                </View>
+            </ScrollView>
 
         </SafeAreaView>
     );
@@ -130,7 +142,7 @@ const styles = StyleSheet.create({
       textTransform: 'uppercase',
       fontWeight: 'bold',
       fontSize: 25,
-      paddingTop: "13%",
+      paddingTop: "10%",
       paddingLeft: 25
   },
   

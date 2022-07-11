@@ -30,7 +30,8 @@ import ArticlesNotifications from '../screens/User/articles/articlesNotification
 import SexualHealthNotifications from '../screens/User/sh/sexualHealthNotifications';
 import EdNotifications from '../screens/User/ed/edNotifications';
 import PeriodOvulationNotifications from '../screens/User/po/periodOvulationNotifications';
-import FavoritesScreen from '../screens/User/FavoriteScreen'
+import FavoritesScreen from '../screens/User/FavoriteScreen';
+import EntryHistory from '../screens/Calendar/EntryHistory';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -105,6 +106,10 @@ const CalendarStack = () => {
                 headerTitle: (props) => <LogoTitle {...props}/>,
             }}/>
            <Stack.Group screenOptions={{presentation: 'modal'}}>
+            <Stack.Screen name="Entry History" component={EntryHistory} options={{
+                headerTransparent: true,
+                headerTitle: (props) => <LogoTitle {...props}/>,
+            }}/>
             <Stack.Screen name="Article Notifications" component={ArticlesNotifications} options={{
                 headerTransparent: true,
                 headerTitle: (props) => <LogoTitle {...props}/>,

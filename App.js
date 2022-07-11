@@ -5,12 +5,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import AppStack from './src/navigation/AppNavigator'
 // import AuthStack from './src/navigation/AuthNavigator';
 import SplashScreen from "./src/components/Splash/SplashScreen";
+import {connect} from 'react-redux'
 
-export default function App() {
+const App = () => {
     const [isLoading,
         setIsLoading] = useState(false);
 
     useEffect(() => {
+        // this is for testing purposes only - do not leave function. It will slow down
+        // the application.
         setTimeout(() => {
             setIsLoading(true);
         }, 2000);
@@ -20,13 +23,16 @@ export default function App() {
         <NavigationContainer>
             {!isLoading
                 ? (
-                <SplashScreen/>
+                    <SplashScreen/>
                 // add authentication logic here
-                ) :  (
-                     < AppStack />
-                     )}
+                )
+                : (< AppStack />)}
         </NavigationContainer>
-
 
     );
 }
+
+// const mapStateToProps = state => ({auth: state.auth}); export default
+// connect(mapStateToProps)(App);
+
+export default App;

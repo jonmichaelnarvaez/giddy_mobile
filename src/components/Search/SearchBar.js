@@ -22,7 +22,7 @@ const SearchBar = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    bottom: 50,
+    bottom: 40,
     width: windowWidth - 40,
     left: 20,
     backgroundColor: 'transparent'
