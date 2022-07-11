@@ -12,9 +12,11 @@ export default function PeriodOvulationNotifications() {
   // period predictions
   const [periodPredictions, setPeriodPredictions] = useState(false);
   const togglePeriodPredictions = () => setPeriodPredictions(!periodPredictions);
+  
   // period notifications
   const [periodNotifications, setPeriodNotifications] = useState(false);
   const togglePeriodNotifications = () => setPeriodNotifications(!periodNotifications);
+  
   // fertility predictions
   const [fertilityPredictions, setFertilityPredictions] = useState(false);
   const toggleFertilityPredictions = () => setFertilityPredictions(!fertilityPredictions);
@@ -35,7 +37,7 @@ export default function PeriodOvulationNotifications() {
       <Divider/>
       <View style={styles.contentWrapper}>
         <Text>Fertility Notifications</Text>
-        <Switch/>
+        <Switch value={periodPredictions} onValueChange={(value) => toggleFertilityPredictions}/>
       </View>
       <Divider/>
     </SafeAreaView>

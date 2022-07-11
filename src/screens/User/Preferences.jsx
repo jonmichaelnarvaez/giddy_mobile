@@ -40,13 +40,13 @@ export default function PreferenceScreen() {
             }
 
             if (asyncEdTracker !== null) {
-                isEdSwitchOn(JSON.parse(asyncEdTracker));
+                setIsEdSwitchOn(JSON.parse(asyncEdTracker));
             } else {
                 setIsEdSwitchOn(false);
             }
 
             if (asyncFertilityTracker !== null) {
-                isOvulationSwitchOn(JSON.parse(asyncFertilityTracker));
+                setIsOvulationSwitchOn(JSON.parse(asyncFertilityTracker));
             } else {
                 setIsOvulationSwitchOn(false);
             }

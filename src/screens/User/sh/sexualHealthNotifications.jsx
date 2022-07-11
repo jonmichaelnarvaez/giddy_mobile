@@ -1,22 +1,71 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, Dimensions} from 'react-native';
 //react-native-paper
 import {Switch, Divider} from 'react-native-paper';
+// storage
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const windowWidth = Dimensions
     .get("window")
     .width
 
 export default function SexualHealthNotifications() {
+
+    const readPreference = async () => {
+        try {
+            const asyncPartnerNotifications = await AsyncStorage.getItem('partnerNotifications');
+            const asyncDailyNotifications = await AsyncStorage.getItem('dailyNotifications');
+
+            if(asyncPartnerNotifications !== null) {
+                partnerNotifications(JSON.parse(asyncPartnerNotifications));
+            } else {
+                setPartnerNotifications(false);
+            }
+
+            if(asyncDailyNotifications !== null) {
+                dailyNotifications(JSON.parse(asyncDailyNotifications));
+            } else { 
+                setDailyNotifications(false);
+            }
+
+        } catch (e) {
+            alert('Error: ' + e.message);
+            
+        }
+    };
+
+    const savePreferences = async (toggleType, toggleTypeState) => {
+        try {
+            await AsyncStorage.setItem(toggleType, JSON.stringify(toggleTypeState));
+        } catch (e) {
+            alert('Error: ' + e.message);
+        }
+    };
+
+    useEffect(() => {
+        readPreference();
+    }, [])
+
+
     // partner notification
     const [partnerNotifications,
         setPartnerNotifications] = useState(false);
-    const togglePartnerNotifications = () => setPartnerNotifications(!partnerNotifications);
-    // new analytics
-    const [analytics,
-        setAnalytics] = useState(false);
-    const toggleAnalytics = () => setAnalytics(!analytics);
 
+    // toggle switch for partner notifications
+    const togglePartnerNotifications = () => {
+    setPartnerNotifications(!partnerNotifications);
+    savePreferences('partnerNotifications', !partnerNotifications);    
+    }
+
+    // new analytics
+    const [dailyNotifications,
+        setDailyNotifications] = useState(false);
+
+    const toggleDailyNotifications = () => {
+    setDailyNotifications(!dailyNotifications);
+    savePreferences('dailyNotifications', !dailyNotifications);
+    };  
+    
     return (
         <SafeAreaView>
             <Text style={styles.categoryTitle}>Sexual Health Notifications</Text>
@@ -24,12 +73,15 @@ export default function SexualHealthNotifications() {
                 <Text>Daily Reminders</Text>
                 <Switch
                     value={partnerNotifications}
-                    onValueChange={togglePartnerNotifications}/>
+                    onValueChange={(value) => togglePartnerNotifications(value)}
+                    />
             </View>
             <Divider/>
             <View style={styles.contentWrapper}>
                 <Text>Partner Updates</Text>
-                <Switch value={analytics} onValueChange={toggleAnalytics}/>
+                <Switch 
+                value={dailyNotifications}
+                onValueChange={(value) => toggleDailyNotifications(value)}/>
             </View>
             <Divider/>
         </SafeAreaView>

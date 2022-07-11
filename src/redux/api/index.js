@@ -299,7 +299,7 @@ export const userProfileImage = async (image,step) =>{
   const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
   let token = '';
   if(step == 'reg'){
-    console.log('reg step')
+    // console.log('reg step')
     token = await AsyncStorage.getItem('regAuthToken')
   }else{
     token = await AsyncStorage.getItem('authToken')
@@ -322,22 +322,22 @@ export const userProfileImage = async (image,step) =>{
     useUtf8Charset: true
   }
   Upload.startUpload(options).then((uploadId) => {
-    console.log('Upload started')
+    // console.log('Upload started')
     Upload.addListener('progress', uploadId, (data) => {
-      console.log(`Progress: ${data.progress}%`)
+      // console.log(`Progress: ${data.progress}%`)
     })
     Upload.addListener('error', uploadId, (data) => {
-      console.log(`Error: ${data.error}%`)
+      // console.log(`Error: ${data.error}%`)
     })
     Upload.addListener('cancelled', uploadId, (data) => {
-      console.log(`Cancelled!`)
+      // console.log(`Cancelled!`)
     })
     Upload.addListener('completed', uploadId, (data) => {
       // data includes responseCode: number and responseBody: Object
-      console.log('Completed!')
+      // console.log('Completed!')
     })
   }).catch((err) => {
-    console.log('Upload error!', err)
+    // console.log('Upload error!', err)
   })
 }
 
@@ -418,8 +418,7 @@ export const userLogin = async ({ email, password }) => {
     };
 
   } catch (err) {
-      // need to add error handling here
-      console.log(err.response.data);
+      alert('Error: ' + err.response.data + err.message);;
     }
 };
 
@@ -442,7 +441,7 @@ export const getUserData = async () => {
 
     const userData = apiResponse.data.data.attributes;
     const userDataIncludes = apiResponse.data.included[0].attributes.uri.url;
-    console.log(userData)
+    // // console.log(userData)
     return{
       email:userData.mail,
       firstName:userData.field_first_name,
@@ -1066,10 +1065,10 @@ export const recommendedQuizAnswers = async (values) => {
 }
 
 export const submitSuggestedGroup = async (values) => {
-  console.log('API call',values);
+  // console.log('API call',values);
   const uids = await AsyncStorage.getItem('userUidData')
   let parsedUids = JSON.parse(uids);
-  console.log(uids.uuid)
+  // console.log(uids.uuid)
   RCTNetworking.clearCookies(() => {});
   const token = await AsyncStorage.getItem('authToken')
   const response = await drupalApi.post(
@@ -1138,7 +1137,7 @@ export const getModEvents = async () => {
   if(response.data.events.length > 0){
     response.data.events.map(event => event.sessions.map((session, key) => {
       if (event.moderator == ''){
-        console.log(event)
+        // console.log(event)
       }
     }))
   }
