@@ -15,10 +15,11 @@ export default function TrackerScreen() {
 
     const [isChecked,
         setIsChecked] = useState(true);
-         const [btnDisabled, setBtnDisabled] = useState(true);
+         
 
         const handleSubmit = () => {
-            if(isChecked !== 1 && isChecked <= 0) {
+            
+            if(isChecked >= 2 || isChecked === 0) {
                 alert("Please select one tracker. You can choose up to one more tracker later.");
             } else {
                 navigation.navigate('Quiz');
@@ -70,7 +71,6 @@ export default function TrackerScreen() {
             </View>
             <View style={styles.buttonContainer}>
                 <Button
-                    disabled={!btnDisabled}
                     onPress={handleSubmit}
                     mode='contained'
                     color="#0b2b50">Take a Quiz</Button>

@@ -12,7 +12,7 @@ const App = () => {
         setIsLoading] = useState(false);
 
     useEffect(() => {
-        // this is for testing purposes only - do not leave function. It will slow down
+        // this is for testing purposes only - do not leave time-out. It will slow down
         // the application.
         setTimeout(() => {
             setIsLoading(true);
