@@ -7,7 +7,7 @@ const INITIAL_REGISTRATION_STATE ={
     gender:"",
     state:"",
     phone:"",
-    tokens:"",
+    tracker: [],
     error:null
 }
 

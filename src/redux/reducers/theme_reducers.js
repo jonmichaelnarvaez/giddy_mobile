@@ -1,6 +1,6 @@
 const INITIAL_THEME_STATE = {};
 
-export default function (state = INITIAL_REGISTRATION_STATE, action) {
+export default function (state = INITIAL_THEME_STATE, action) {
     switch (action.type) {
         case 'DEFAULT_THEME':
             return {

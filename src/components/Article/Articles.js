@@ -27,16 +27,12 @@ export default function ArticlesList() {
     const navigation = useNavigation();
 
     const handlePress = () => {
-        navigation.navigate({
-            screen: 'Article Detail',
-            params: {
+        navigation.navigate('Article Detail', { 
             id: id,
             imageUrl: imageUrl,
             title: title,
             category: category,
-            leadingSentence: leadingSentence
-            },
-            marge: true,
+            leadingSentence: leadingSentence,
         });
     };
 

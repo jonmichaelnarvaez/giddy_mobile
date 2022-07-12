@@ -10,8 +10,8 @@ const currentTime = (Date.now())/100
 const currentDatetimeTime = (Date.now())/1000
 
 const TimeConverter = (timeOptions,time,duration = 0) =>{
-  let endtime = (Number(duration)*3600*1000)
-  let date = (Number(time)*1000)+endtime;
+  let endTime = (Number(duration)*3600*1000)
+  let date = (Number(time)*1000)+endTime;
   date = (new Intl.DateTimeFormat('en-US',timeOptions).format(date));
   return date;
 }
@@ -51,10 +51,15 @@ export const registerUser = async ({ username, email, password }) => {
 };
 
 export const registerUserMoreData = async ({firstname, lastname, dateofbirth, gender, state}) =>{
+  
   RCTNetworking.clearCookies(() => {});
+  
   const uids = await AsyncStorage.getItem('userUidData')
+  
   let parsedUids = JSON.parse(uids);
+  
   const token = await AsyncStorage.getItem('regAuthToken')
+  
   const response = await drupalApi.patch(
     `/jsonapi/user/user/${parsedUids.uuid}`, 
     { 
@@ -681,7 +686,8 @@ export const getUserCalendar = async () => {
   RCTNetworking.clearCookies(() => {});
   const token = await AsyncStorage.getItem('authToken')
   const response = await drupalApi.get(
-    `/se_events/events/user`,
+    // change speakeasily to giddy mobile se => gm 
+    `/gm_events/events/user`,
     {
       headers:{
         'Content-Type': 'application/json',
@@ -690,9 +696,11 @@ export const getUserCalendar = async () => {
       }
     }
   );
+
   const sortedEventsList =[];
   if(response.data.user_events.length > 0){
     response.data.user_events.map(event => event.sessions.map((session, key) => {
+      
       let startTime = TimeConverter(startTimeOption,session.time)
       let endTime = TimeConverter(endTimeOption,session.time,event.duration )
       let pastEvents
@@ -704,21 +712,19 @@ export const getUserCalendar = async () => {
       }
       sortedEventsList.push({
         name:event.name,
-        tokenCost:event.token_cost,
+        // tokenCost:event.token_cost,
         uuid:event.uuid,
         id:event.id,
-        maxSeats:event.max_seats,
-        seatsTaken:event.seats_taken,
-        moderator:event.moderator,
+        // moderator:event.moderator,
         category:event.category,
-        conferenceId:event.conference_id,
+        // conferenceId:event.conference_id,
         description:event.description,
         summary:event.summary,
-        duration:event.duration,
+        // duration:event.duration,
         type:event.type,
-        totalTokenCost:event.total_token_cost,
-        sessionId:session.id,
-        sessionUuid:session.uuid,
+        // totalTokenCost:event.total_token_cost,
+        // sessionId:session.id,
+        // sessionUuid:session.uuid,
         time:session.time,
         startTime:startTime,
         endTime:endTime,

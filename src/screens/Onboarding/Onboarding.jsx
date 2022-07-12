@@ -26,7 +26,7 @@ const Dots = ({selected}) => {
 
 const Skip = ({...props}) => (
     <TouchableOpacity
-       OnPress={() => navigation.navigate('Authenticate')}
+       OnPress={() => navigation.navigate('Select a Tracker')}
         style={{marginHorizontal:10}}
         {...props}
     >
@@ -45,7 +45,7 @@ const Next = ({...props}) => (
 
 const Done = ({...props}) => (
     <TouchableOpacity
-    onPress={() => navigation.navigate('Authenticate')}
+    onPress={() => navigation.navigate('Select a Tracker')}
         style={{marginHorizontal:10}}
         {...props}
     >
@@ -66,8 +66,8 @@ const OnboardingScreen = () => {
         NextButtonComponent={Next}
         DoneButtonComponent={Done}
         DotComponent={Dots}
-        onSkip={() => navigation.navigate("Authenticate")}
-        onDone={() => navigation.navigate("Authenticate")}
+        onSkip={() => navigation.navigate("Select a Tracker")}
+        onDone={() => navigation.navigate("Select a Tracker")}
         pages={[
           {
             backgroundColor: '#D55015',

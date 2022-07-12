@@ -4,23 +4,48 @@ import {Pressable, Image} from 'react-native';
 import TabNavigator from './TabNavigator';
 // screens
 import OnboardingScreen from '../screens/Onboarding/Onboarding';
+import TrackerScreen from '../screens/Onboarding/Trackers';
 import Authenticate from '../screens/Onboarding/Authenticate'
 import PassCodeV1 from '../screens/Onboarding/Password';
+import EdTrackerQuestions from '../screens/TrackerQuestions/Ed/EdTrackerQuestions';
+
 // navigation
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-// async storage
-// import {AsyncStorage} from '@react-native-async-storage/async-storage'
 
 
 const Stack = createNativeStackNavigator();
 
 function LogoTitle() {
-    return (<Image
+    return (
+    <Image
         style={{
         height: 35,
         width: 100
     }}
         source={require('../assets/logos/Giddy_white.png')}/>)
+}
+function TrackerTitle() {
+    return (<Image
+        style={{
+        height: 35,
+        width: 100
+    }}
+        source={require('../assets/logos/Giddy_blue.png')}/>)
+}
+
+const QuizStack = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen 
+            name="Ed Quiz"
+             component={EdTrackerQuestions} 
+             options={{
+                headerShown: false,
+                headerBackButtonMenuEnabled: false,
+                headerBackVisible: false,
+            }}/>
+        </Stack.Navigator>
+    )
 }
 
 const AuthStack = () => {
@@ -33,13 +58,36 @@ const AuthStack = () => {
                 options={{
                 headerShown: true,
                 headerTransparent: true,
-                headerTitle: (props) => <LogoTitle {...props}/>
+                headerTitle: (props) => <LogoTitle {...props} />,
+                
             }}/>
+            <Stack.Screen
+            name="Select a Tracker"
+            component={TrackerScreen}
+            options={{
+                headerShown: true,
+                headerTransparent: true,
+                headerTitle: (props) => <TrackerTitle {...props}/>,
+                headerBackButtonMenuEnabled: false,
+                headerBackVisible: false,
+            }}
+            />
+            <Stack.Screen
+            name='Quiz'
+            component={QuizStack}
+            options={{
+                headerShown: true,
+                headerTransparent: true,
+                headerTitle: (props) => <TrackerTitle {...props}/>,
+                headerBackButtonMenuEnabled: false,
+                headerBackVisible: false,
+            }}
+            />
             <Stack.Screen
                 name="Authenticate"
                 component={Authenticate}
                 options={{
-                headerShown: false
+                headerShown: false,
             }}/>
             <Stack.Screen
                 name="Passcode"

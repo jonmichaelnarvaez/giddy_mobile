@@ -39,9 +39,6 @@ function HomeScreen() {
                 }}>
                     <CalendarList
                         horizontal={true}
-                        style={{
-                        height: 350,
-                    }}
                         markingType={'period'}
                         theme={{
                         backgroundColor: '#ffffff',

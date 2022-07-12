@@ -43,7 +43,9 @@ function LogoTitle() {
         height: 35,
         width: 100
     }}
-        source={require('../assets/logos/Giddy_blue.png')}/>)
+        source={require('../assets/logos/Giddy_blue.png')}
+        />
+        )
 }
 function GiddyToday() {
     return (<Image

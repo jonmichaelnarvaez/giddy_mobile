@@ -1,0 +1,48 @@
+{
+    "questions": [
+        {
+            "question": "Are you a Veteran or Active Military?",
+            "answers": [
+                "Veteran",
+                "Active Military",
+                "Civilian"
+            ]
+        },
+        {
+            "question": "Which do you have more of a difficulty doing getting or keeping an erection?",
+            "answers": [
+                "Getting",
+                "Keeping",
+                "Both"
+            ]
+        },
+        {
+            "question": "How often do you experience ED?",
+            "answers": [
+                "Less than 50%",
+                "More than 50%"
+            ]
+        },
+        {
+            "question": "Which other ED products have you tried?",
+            "answers": [
+                "Erectile Dysfunction Pills ",
+                "Pumps or Penis Rings"
+            ]
+        },
+        {
+            "question": "Do you have any of these medical conditions?",
+            "answers": [
+                "Heart Disease",
+                "Obesity",
+                "High blood pressure",
+                "Other"
+            ]
+        },
+        {
+            "question": "Are you taking any medications?",
+            "answers": []
+        }
+        
+    ]
+}

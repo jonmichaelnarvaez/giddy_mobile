@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 // app stack
 import AppStack from './src/navigation/AppNavigator'
-// import AuthStack from './src/navigation/AuthNavigator';
+import AuthStack from './src/navigation/AuthNavigator';
 import SplashScreen from "./src/components/Splash/SplashScreen";
 import {connect} from 'react-redux'
 
@@ -26,7 +26,7 @@ const App = () => {
                     <SplashScreen/>
                 // add authentication logic here
                 )
-                : (< AppStack />)}
+                : (< AuthStack />)}
         </NavigationContainer>
 
     );

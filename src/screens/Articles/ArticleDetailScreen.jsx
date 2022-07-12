@@ -7,12 +7,8 @@ import {
     View,
     ScrollView
 } from "react-native";
-// navigation
-import { useRoute } from "@react-navigation/native";
 
-export default function ArticleDetailScreen() {  
-    
-    const route = useRoute();
+export default function ArticleDetailScreen({route}) {  
 
     return (
         <SafeAreaView key={route.params.id} style={styles.container}>
@@ -26,7 +22,7 @@ export default function ArticleDetailScreen() {
                     style={{
                     flex: 1,
                     justifyContent: "center",
-                    alignpostss: 'center'
+                    alignItems: 'center'
                 }}>
                     <Text style={title}>{route.params.title}</Text>
                     <Text style={author}>Written by: {route.params.author}</Text>
