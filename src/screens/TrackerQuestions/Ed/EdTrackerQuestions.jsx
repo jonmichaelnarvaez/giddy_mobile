@@ -1,14 +1,24 @@
+import React, {useState, useEffect} from 'react'
 import {StyleSheet, Text, View} from 'react-native'
-import React from 'react'
 // data
 import EdData from "../Ed/ED.json";
 import {TouchableOpacity} from 'react-native-gesture-handler';
 // navigation
 import {useNavigation} from '@react-navigation/native'
+// confetti
+import ConfettiCannon from 'react-native-confetti-cannon';
 
 export default function EdTrackerQuestions() {
   
+  const [skeet, setSkeet] = useState();
   const navigation = useNavigation();
+
+  const handlePress = () => {
+    setSkeet(false);
+    setTimeout(() => {
+      setSkeet(true);
+    }, 200)
+  };
 
     return (
         <View style={styles.container}>
@@ -16,18 +26,23 @@ export default function EdTrackerQuestions() {
                 <Text style={styles.questionText}>Are you a Veteran or Active Milliary?</Text>
             </View>
             <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Authenticate")}>
+                <TouchableOpacity style={styles.button} onPress={handlePress}>
                     <Text style={styles.buttonText}>
                         Yes
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.NoButton}>
+                <TouchableOpacity style={styles.NoButton} onPress={() => {
+                        navigation.navigate('Authenticate')
+                    }}>
                     <Text >
                         No
                     </Text>
                 </TouchableOpacity>
 
             </View>
+            {skeet ? (
+          <ConfettiCannon count={600} origin={{ x: -10, y: 0 }} />
+        ) : null}
         </View>
     )
 }
