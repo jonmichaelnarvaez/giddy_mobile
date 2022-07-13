@@ -9,16 +9,17 @@ import {useNavigation} from '@react-navigation/native'
 import ConfettiCannon from 'react-native-confetti-cannon';
 
 export default function EdTrackerQuestions() {
-  
-  const [skeet, setSkeet] = useState();
-  const navigation = useNavigation();
 
-  const handlePress = () => {
-    setSkeet(false);
-    setTimeout(() => {
-      setSkeet(true);
-    }, 200)
-  };
+    const [skeet,
+        setSkeet] = useState();
+    const navigation = useNavigation();
+
+    const handlePress = () => {
+        setSkeet(false);
+        setTimeout(() => {
+            setSkeet(true);
+        }, 200)
+    };
 
     return (
         <View style={styles.container}>
@@ -31,22 +32,42 @@ export default function EdTrackerQuestions() {
                         Yes
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.NoButton} onPress={() => {
-                        navigation.navigate('Authenticate')
-                    }}>
+                <TouchableOpacity
+                    style={styles.NoButton}>
                     <Text >
                         No
                     </Text>
                 </TouchableOpacity>
 
             </View>
-            {skeet ? (
-          <ConfettiCannon count={600} origin={{ x: -10, y: 0 }} />
-        ) : null}
+            {skeet
+                ? (<ConfettiCannon
+                    colors={[
+                    "#161c45",
+                    "#0b2b50",
+                    '#bce6e9',
+                    '#500B45',
+                    "#e9bcb3",
+                    '#d55015',
+                    '#ffe08f',
+                    '#f5f5f5',
+                    "#737373"
+                ]}
+                    explosionSpeed={300}
+                    fallSpeed={1500}
+                    count={600}
+                    origin={{
+                    x: -10,
+                    y: 0
+                }}
+                onAnimationEnd={() => {
+                  navigation.navigate('Authenticate')
+                }}
+                />)
+                : null}
         </View>
     )
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -74,23 +95,23 @@ const styles = StyleSheet.create({
         top: 50
     },
     button: {
-      backgroundColor: "#161c45",
-      width: 50,
-      height: 50, 
-      borderRadius: 20,
-      justifyContent: 'center',
-      alignItems: 'center',
+        backgroundColor: "#161c45",
+        width: 50,
+        height: 50,
+        borderRadius: 20,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     NoButton: {
-      borderColor: "#161c45",
-      borderWidth: 2,
-      width: 50,
-      height: 50, 
-      borderRadius: 20,
-      justifyContent: 'center',
-      alignItems: 'center',
+        borderColor: "#161c45",
+        borderWidth: 2,
+        width: 50,
+        height: 50,
+        borderRadius: 20,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    buttonText :{
-      color: "#fff"
+    buttonText: {
+        color: "#fff"
     }
 })

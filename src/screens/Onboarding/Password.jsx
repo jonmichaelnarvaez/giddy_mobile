@@ -161,7 +161,7 @@ export default function PassCodeV1() {
       <PassCodeKeyboard
         onPress={(char) => {
           if (char === 'delete') {
-            console.log('delete');
+            // console.log('delete');
             setPasscode((passcode) =>
               passcode.length === 0
                 ? []
@@ -172,7 +172,7 @@ export default function PassCodeV1() {
           if (passcode.length === passcodeLength) {
             return;
           }
-          console.log('setkey: ', char);
+          // console.log('setkey: ', char);
 
           const newPasscode = [...passcode, char];
           setPasscode((passcode) => newPasscode);

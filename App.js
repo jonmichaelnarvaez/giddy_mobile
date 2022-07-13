@@ -26,7 +26,7 @@ const App = () => {
                     <SplashScreen/>
                 // add authentication logic here
                 )
-                : (< AppStack />)}
+                : (< AuthStack />)}
         </NavigationContainer>
 
     );

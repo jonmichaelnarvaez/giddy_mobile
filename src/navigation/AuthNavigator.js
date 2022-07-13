@@ -49,7 +49,6 @@ const QuizStack = () => {
 }
 
 const AuthStack = () => {
-// need to add async storage function to only call the on onbarding screens one time
     return (
         <Stack.Navigator>
             <Stack.Screen
@@ -95,7 +94,7 @@ const AuthStack = () => {
                 options={{
                 headerShown: true,
                 headerTransparent: true,
-                headerTitle: (props) => <LogoTitle {...props}/>,
+                headerTitle: (props) => <TrackerTitle {...props}/>,
                 headerBackButtonMenuEnabled: false,
                 headerBackTitleStyle: {color: "#BCE6E9"}
             }}/>
