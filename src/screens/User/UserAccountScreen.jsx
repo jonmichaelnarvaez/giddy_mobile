@@ -29,7 +29,7 @@ export default function UserAccountScreen() {
         <SafeAreaView style={styles.container}>
             {/* convert to dynamic data based on users tracker & information */}
             <ImageBackground
-                source={require('../../assets/images/account.jpg')}
+                source={require('../../assets/images/ed_header.png')}
                 style={styles.imageWrapper}
                 resizeMode="cover">
                 <Text style={styles.imageText}>Hey, JM</Text>
@@ -117,7 +117,9 @@ const styles = StyleSheet.create({
         width: windowWidth,
         height: 200,
         paddingLeft: 20,
-        paddingBottom: 20
+        paddingBottom: 20,
+        backgroundColor: '#161c45',
+        opacity: 0.77
     },
     contentWrapper: {
         flexDirection: "row",

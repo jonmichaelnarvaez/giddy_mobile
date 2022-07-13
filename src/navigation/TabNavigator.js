@@ -4,8 +4,7 @@ import {
     View,
     Text,
     Pressable,
-    Image,
-    Alert
+    Image
 } from 'react-native';
 // react native paper
 import {Avatar} from 'react-native-paper';
@@ -32,6 +31,10 @@ import EdNotifications from '../screens/User/ed/edNotifications';
 import PeriodOvulationNotifications from '../screens/User/po/periodOvulationNotifications';
 import FavoritesScreen from '../screens/User/FavoriteScreen';
 import EntryHistory from '../screens/Calendar/EntryHistory';
+// haptic's
+import * as Haptics from 'expo-haptics';
+
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -204,6 +207,7 @@ const SearchStack = () => {
 const TabNavigator = () => {
     return (
         <Tab.Navigator
+            onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}
             screenOptions={{
             headerShown: false,
             tabBarInactiveTintColor: '#fff',
