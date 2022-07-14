@@ -81,7 +81,7 @@ const CalendarStack = () => {
                             backgroundColor: '#777',
                             
                         }}
-                            source={require('../assets/images/avatar.jpg')}/>
+                            source={require('../assets/images/avatar_old.jpg')}/>
                     </Pressable>
                 ),
                 headerTransparent: true,

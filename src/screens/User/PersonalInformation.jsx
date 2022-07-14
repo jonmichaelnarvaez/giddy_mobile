@@ -26,7 +26,7 @@ export default function PersonalInformation() {
                   padding: 0,
               }}
               // add user imageUrl params 
-                  source={require('../../assets/images/avatar.jpg')}
+                  source={require('../../assets/images/avatar_old.jpg')}
                   />
           </View>
     </MotiView>
