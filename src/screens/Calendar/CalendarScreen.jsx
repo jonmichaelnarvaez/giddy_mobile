@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
       textTransform: 'uppercase',
       fontWeight: 'bold',
       fontSize: 25,
-      paddingTop: "10%",
+      paddingTop: "5%",
       paddingLeft: 25
   },
   
