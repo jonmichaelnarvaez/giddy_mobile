@@ -57,11 +57,14 @@ export default function EdTrackerQuestions() {
                     fallSpeed={1500}
                     count={600}
                     origin={{
-                    x: -10,
+                    x: -100,
                     y: 0
                 }}
                 onAnimationEnd={() => {
-                  navigation.navigate('Authenticate')
+                    setTimeout(() => {
+                        navigation.navigate("Authenticate") 
+                    }, 500)
+                  
                 }}
                 />)
                 : null}
