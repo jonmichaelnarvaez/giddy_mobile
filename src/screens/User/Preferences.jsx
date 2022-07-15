@@ -102,6 +102,7 @@ export default function PreferenceScreen() {
                 <View style={styles.contentWrapper}>
                     <Text>Fertility Tracker</Text>
                     <Switch
+                    trackColor={{true: "#e9bcbe", false: "grey"}}
                         onPress={() => null}
                         value={isOvulationSwitchOn}
                         onValueChange={(value) => onToggleOvulationSwitch(value)}/>
@@ -109,12 +110,12 @@ export default function PreferenceScreen() {
                 <Divider/>
                 <View style={styles.contentWrapper}>
                     <Text>ED Tracker</Text>
-                    <Switch value={isEdSwitchOn} onValueChange={(value) => onToggleEdSwitch(value)}/>
+                    <Switch value={isEdSwitchOn} onValueChange={(value) => onToggleEdSwitch(value)} trackColor={{true: '#BCE6E9'}}/>
                 </View>
                 <Divider/>
                 <View style={styles.contentWrapper}>
                     <Text>Sexual Health Tracker</Text>
-                    <Switch value={isSexualSwitchOn} onValueChange={(value) => onToggleSexualSwitch(value)}/>
+                    <Switch trackColor={{true: "#FFE08F", false: "grey"}} value={isSexualSwitchOn} onValueChange={(value) => onToggleSexualSwitch(value)}/>
                 </View>
                 <Divider/>
                 <Text style={styles.categoryTitle}>notifications</Text>

@@ -40,7 +40,7 @@ export default function PersonalInformation() {
     </MotiView>
     <MotiView style={{margin: 0, padding: 0}} transition={{type: "timing", duration: 1500, delay: 300}} from={{opacity: 0}} animate={{opacity: isOpened ? 1 : 0}} exit={{opacity: 0}}>
             <View style={styles.contentWrapper}>
-              <Text>Refer your partner</Text>
+              <Text>Refer your partner or a friend</Text>
               <EvilIcons name="share-google" size={25} color="black" />
             </View>
             <Divider/>

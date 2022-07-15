@@ -26,7 +26,7 @@ const App = () => {
                     <SplashScreen/>
                 // add authentication logic here if false show auth stack else show appstack
                 ) // : isAuthenticated ? (<AuthStack)
-                : (< AuthStack />)}
+                : (< AppStack />)}
         </NavigationContainer>
 
     );

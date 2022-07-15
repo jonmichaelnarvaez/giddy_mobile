@@ -6,52 +6,22 @@ import {
     View,
     SafeAreaView,
     Image,
-    Alert
+    Alert,
+    ActivityIndicator
 } from 'react-native'
 // navigation
 import {useNavigation} from '@react-navigation/native';
 // third party libraries
 import {Button, Divider} from 'react-native-paper'
-import {View as MotiView} from 'moti'
-import SplashScreen from '../../components/Splash/SplashScreen';
-import {
-  useFonts,
-  Lato_400Regular_Italic,
-} from '@expo-google-fonts/lato';
+// import SplashScreen from '../../components/Splash/SplashScreen';
+// import {
+//   useFonts,
+//   Lato_400Regular_Italic,
+// } from '@expo-google-fonts/lato';
 
 
 const AuthenticateScreen = () => {
     const navigation = useNavigation();
-    
-    const [appIsReady, setAppIsReady] = useState(false);
-
-    useEffect(() => {
-      (async () => {
-        try {
-          await SplashScreen.preventAutoHideAsync();
-          await Font.loadAsync({ Lato_400Regular_Italic });
-        }
-        catch {
-          console.warn('Failed to load')
-        }
-        finally {
-          setAppIsReady(true);
-        }
-      })();
-    }, []);
-  
-    const onLayout = useCallback(() => {
-      if (appIsReady) {
-        SplashScreen.hideAsync();
-      }
-    }, [appIsReady]);
-  
-    if (!appIsReady) {
-      return null;
-    }
-
-    const [isOpened,
-        setIsOpened] = useState(false);
         
     const [email,
         setEmail] = useState('');
@@ -61,23 +31,8 @@ const AuthenticateScreen = () => {
     
             return (
                 <SafeAreaView style={styles.container}>
-                    <MotiView  
-                    transition={{
-                        type: "timing",
-                        duration: 1000,
-                        delay: 50
-                    }}
-                        from={{
-                        opacity: 0
-                    }}
-                        animate={{
-                        opacity: isOpened
-                            ? 1
-                            : 0
-                    }}
-                        exit={{
-                        opacity: 0
-                    }}
+                    <View  
+                
                         style={styles.topView}>
                         <Image
                             style={{
@@ -86,24 +41,9 @@ const AuthenticateScreen = () => {
                         }}
                             source={require("../../assets/logos/Giddy_blue.png")}
                             resizeMode="center"/>
-                    </MotiView>
-                    <MotiView
-                        transition={{
-                        type: "timing",
-                        duration: 1000,
-                        delay: 50
-                    }}
-                        from={{
-                        opacity: 0
-                    }}
-                        animate={{
-                        opacity: isOpened
-                            ? 1
-                            : 0
-                    }}
-                        exit={{
-                        opacity: 0
-                    }}
+                    </View>
+                    <View
+                    
                         style={styles.bottomView}>
                         <Text style={styles.heading}>Hey there,{`\n`}
                             good lookin'</Text>
@@ -156,7 +96,7 @@ const AuthenticateScreen = () => {
                                 <Image source={require('../../assets/icons/numbers.png')} style={{width: 35, height: 35}} resizeMode="contain"/>
                             </Button>
                         </View>
-                    </MotiView>
+                    </View>
         
                 </SafeAreaView>
             )
