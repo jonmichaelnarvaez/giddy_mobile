@@ -1,9 +1,13 @@
 import React, {useState} from 'react'
 import {StyleSheet, Text, View, Dimensions} from 'react-native'
-import BouncyCheckbox from "react-native-bouncy-checkbox";
-import { Button } from 'react-native-paper';
 // navigation
 import { useNavigation } from '@react-navigation/native';
+// third party libraries
+import BouncyCheckbox from "react-native-bouncy-checkbox";
+import { Button } from 'react-native-paper';
+import { useFonts, Lato_400Regular, Lato_400Regular_Italic, Lato_700Bold } from '@expo-google-fonts/lato';
+import SplashScreen from '../../components/Splash/SplashScreen';
+
 
 // TODO: add redux && asyncstorage
 
@@ -11,6 +15,17 @@ const windowWidth = Dimensions.get('window').width
     
 
 export default function TrackerScreen() {
+    let fontsLoaded = useFonts({
+        Lato_400Regular,
+        Lato_400Regular_Italic,
+        Lato_700Bold
+    })
+
+    if (!fontsLoaded) {
+        return <SplashScreen/>
+    }
+
+
     const navigation = useNavigation();
 
     const [isChecked,
@@ -27,7 +42,8 @@ export default function TrackerScreen() {
         }
 
     return (
-        <View style={styles.container}>
+        <View
+        style={styles.container}>
             <View style={styles.trackerCard}>
                 <Text style={styles.header}>Select your Tracker</Text>
             </View>
@@ -40,6 +56,7 @@ export default function TrackerScreen() {
                     textStyle={{
                     color: '#333',
                     textDecorationLine: "none",
+                    fontFamily: "Lato_400Regular_Italic"
                 }}
                     onPress={(value) => setIsChecked(value)}/>
             </View>
@@ -54,6 +71,7 @@ export default function TrackerScreen() {
                     textStyle={{
                     color: '#333',
                     textDecorationLine: "none",
+                    fontFamily: "Lato_400Regular_Italic"
                 }}
                     onPress={(value) => setIsChecked(value)}/>
             </View>
@@ -66,6 +84,7 @@ export default function TrackerScreen() {
                     textStyle={{
                     color: '#333',
                     textDecorationLine: "none",
+                    fontFamily: "Lato_400Regular_Italic"
                 }}
                     onPress={(value) => setIsChecked(value)}/>
             </View>
@@ -73,7 +92,9 @@ export default function TrackerScreen() {
                 <Button
                     onPress={handleSubmit}
                     mode='contained'
-                    color="#0b2b50">Take a Quiz</Button>
+                    color="#0b2b50">
+                        <Text
+                        style={{fontFamily: 'Lato_700Bold'}}>Take a Quiz</Text></Button>
             </View>
         </View>
     )
@@ -101,9 +122,10 @@ const styles = StyleSheet.create({
         marginBottom: 50
     },
     header: {
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: 'bold',
-        left: 10
+        left: 10,
+        fontFamily: 'Lato_400Regular'
     },
     bouncyCheck: {
         left: 10,

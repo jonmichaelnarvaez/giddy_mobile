@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {StyleSheet, Text, View} from 'react-native'
+import {View as MotiView} from 'moti'
 // data
 import EdData from "../Ed/ED.json";
 import {TouchableOpacity} from 'react-native-gesture-handler';
@@ -7,9 +8,21 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native'
 // confetti
 import ConfettiCannon from 'react-native-confetti-cannon';
+// fonts
+import {useFonts, Lato_400Regular} from '@expo-google-fonts/lato';
 
 export default function EdTrackerQuestions() {
+    
+    let fontsLoaded = useFonts({
+        Lato_400Regular
+    });
 
+    if(!fontsLoaded) {
+        return <SplashScreen/>
+    }
+    
+    const [isOpened,
+        setIsOpened] = useState(true)
     const [skeet,
         setSkeet] = useState();
     const navigation = useNavigation();
@@ -22,7 +35,22 @@ export default function EdTrackerQuestions() {
     };
 
     return (
-        <View style={styles.container}>
+        <MotiView transition={{
+            type: "timing",
+            duration: 1000,
+            delay: 50
+        }}
+            from={{
+            opacity: 0
+        }}
+            animate={{
+            opacity: isOpened
+                ? 1
+                : 0
+        }}
+            exit={{
+            opacity: 0
+        }} style={styles.container}>
             <View style={styles.card}>
                 <Text style={styles.questionText}>Are you a Veteran or Active Milliary?</Text>
             </View>
@@ -53,9 +81,10 @@ export default function EdTrackerQuestions() {
                     '#f5f5f5',
                     "#737373"
                 ]}
-                    explosionSpeed={300}
+                    explosionSpeed={200}
                     fallSpeed={1500}
                     count={600}
+                    // fadeOUt={true} fade confetti at the end of animation
                     origin={{
                     x: -100,
                     y: 0
@@ -68,7 +97,7 @@ export default function EdTrackerQuestions() {
                 }}
                 />)
                 : null}
-        </View>
+        </MotiView>
     )
 }
 const styles = StyleSheet.create({
@@ -89,7 +118,8 @@ const styles = StyleSheet.create({
     questionText: {
         fontSize: 20,
         fontWeight: '600',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'Lato_400Regular'
     },
     buttonContainer: {
         flexDirection: "row",
@@ -115,6 +145,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     buttonText: {
-        color: "#fff"
+        color: "#fff",
+        fontFamily: 'Lato_400Regular'
     }
 })

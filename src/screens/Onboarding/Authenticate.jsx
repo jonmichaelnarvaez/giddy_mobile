@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import {
     TextInput,
     StyleSheet,
@@ -10,34 +10,75 @@ import {
 } from 'react-native'
 // navigation
 import {useNavigation} from '@react-navigation/native';
+// third party libraries
 import {Button, Divider} from 'react-native-paper'
-// animation
 import {View as MotiView} from 'moti'
-// splash screen
-import * as SplashScreen from 'expo-splash-screen';
-// fonts
-// import * as Font from 'expo-font';
-// import {
-//   useFonts,
-//   Lato_400Regular_Italic,
-// } from '@expo-google-fonts/lato';
-
+import SplashScreen from '../../components/Splash/SplashScreen';
+import {
+  useFonts,
+  Lato_400Regular_Italic,
+} from '@expo-google-fonts/lato';
 
 
 const AuthenticateScreen = () => {
     const navigation = useNavigation();
+    
+    const [appIsReady, setAppIsReady] = useState(false);
+
+    useEffect(() => {
+      (async () => {
+        try {
+          await SplashScreen.preventAutoHideAsync();
+          await Font.loadAsync({ Lato_400Regular_Italic });
+        }
+        catch {
+          console.warn('Failed to load')
+        }
+        finally {
+          setAppIsReady(true);
+        }
+      })();
+    }, []);
+  
+    const onLayout = useCallback(() => {
+      if (appIsReady) {
+        SplashScreen.hideAsync();
+      }
+    }, [appIsReady]);
+  
+    if (!appIsReady) {
+      return null;
+    }
 
     const [isOpened,
-        setIsOpened] = useState(true)
-
+        setIsOpened] = useState(false);
+        
     const [email,
         setEmail] = useState('');
+
     const [password,
         setPassword] = useState('');
     
             return (
                 <SafeAreaView style={styles.container}>
-                    <View style={styles.topView}>
+                    <MotiView  
+                    transition={{
+                        type: "timing",
+                        duration: 1000,
+                        delay: 50
+                    }}
+                        from={{
+                        opacity: 0
+                    }}
+                        animate={{
+                        opacity: isOpened
+                            ? 1
+                            : 0
+                    }}
+                        exit={{
+                        opacity: 0
+                    }}
+                        style={styles.topView}>
                         <Image
                             style={{
                             width: 250,
@@ -45,7 +86,7 @@ const AuthenticateScreen = () => {
                         }}
                             source={require("../../assets/logos/Giddy_blue.png")}
                             resizeMode="center"/>
-                    </View>
+                    </MotiView>
                     <MotiView
                         transition={{
                         type: "timing",
@@ -150,7 +191,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginLeft: 30,
         marginTop: 50,
-        // fontFamily: "Lato_400Regular_Italic"
+        fontFamily: "Lato_400Regular_Italic"
     },
     formView: {
         width: '100%',

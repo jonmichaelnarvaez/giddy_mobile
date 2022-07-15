@@ -1,15 +1,17 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+// navigation
 import { useNavigation } from '@react-navigation/native';
+// third party libraries
 import Onboarding from 'react-native-onboarding-swiper';
 import { StatusBar } from 'expo-status-bar';
-
+import {useFonts, Lato_400Regular, Lato_400Regular_Italic}from '@expo-google-fonts/lato';
+import SplashScreen from '../../components/Splash/SplashScreen';
 
 
 const Dots = ({selected}) => {
-    let backgroundColor;
-
-    backgroundColor = selected ? 'rgba(255, 255, 255, 0.8)' : 'rgba(255, 255, 255, 0.3)';
+  let backgroundColor;
+  backgroundColor = selected ? 'rgba(255, 255, 255, 0.8)' : 'rgba(255, 255, 255, 0.3)';
 
     return (
         <View 
@@ -30,7 +32,7 @@ const Skip = ({...props}) => (
         style={{marginHorizontal:10}}
         {...props}
     >
-        <Text style={{fontSize:16, color:"#ededed"}}>Skip</Text>
+        <Text style={{fontSize:16, color:"#ededed", fontFamily: 'Lato_400Regular'}}>Skip</Text>
     </TouchableOpacity>
 );
 
@@ -39,7 +41,7 @@ const Next = ({...props}) => (
         style={{marginHorizontal:10}}
         {...props}
     >
-        <Text style={{fontSize:16, color:"#ededed"}}>Next</Text>
+        <Text style={{fontSize:16, color:"#ededed", fontFamily: "Lato_400Regular"}}>Next</Text>
     </TouchableOpacity>
 );
 
@@ -49,14 +51,22 @@ const Done = ({...props}) => (
         style={{marginHorizontal:10}}
         {...props}
     >
-        <Text style={{fontSize:16,  color:"#ededed"}}>Done</Text>
+        <Text style={{fontSize:16,  color:"#ededed", fontFamily: 'Lato_400Regular'}}>Done</Text>
     </TouchableOpacity>
 );
 
 
 const OnboardingScreen = () => {
-
   const navigation = useNavigation();
+  
+  let fontsLoaded = useFonts({
+    Lato_400Regular,
+    Lato_400Regular_Italic
+  });
+
+  if (!fontsLoaded){
+    return <SplashScreen/>
+  }
 
     return (
       <>
@@ -68,18 +78,20 @@ const OnboardingScreen = () => {
         DotComponent={Dots}
         onSkip={() => navigation.navigate("Select a Tracker")}
         onDone={() => navigation.navigate("Select a Tracker")}
+        titleStyles={styles.headerText}
+        subTitleStyles={styles.subText}
         pages={[
-          {
-            backgroundColor: '#D55015',
-            image: <Image resizeMode="center"  style={{height: 130, width: 370,  justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
-            title: 'Sexual Health Tracker',
-            subtitle: 'Keep track of your Sex Life',
-          },
           {
             backgroundColor: '#161c45',
             image: <Image resizeMode="center" style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
             title: 'ED Tracker',
             subtitle: 'Keep track of your ED',
+          },
+          {
+            backgroundColor: '#D55015',
+            image: <Image resizeMode="center"  style={{height: 130, width: 370,  justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
+            title: 'Sexual Health Tracker',
+            subtitle: 'Keep track of your Sex Life',
           },
           {
             backgroundColor: '#500B45',
@@ -107,4 +119,10 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     justifyContent: 'center'
   },
+  headerText: {
+    fontFamily: 'Lato_400Regular'
+  },
+  subText: {
+    fontFamily: 'Lato_400Regular_Italic'
+  }
 });
