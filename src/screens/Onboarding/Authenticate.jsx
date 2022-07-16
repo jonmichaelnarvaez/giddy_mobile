@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react'
+import React, {useState} from 'react'
 import {
     TextInput,
     StyleSheet,
@@ -13,21 +13,27 @@ import {
 import {useNavigation} from '@react-navigation/native';
 // third party libraries
 import {Button, Divider} from 'react-native-paper'
-// import SplashScreen from '../../components/Splash/SplashScreen';
-// import {
-//   useFonts,
-//   Lato_400Regular_Italic,
-// } from '@expo-google-fonts/lato';
-
+// redux
+import { useDispatch, useSelector } from 'react-redux';
+import { signInUser, signupUser } from '../../redux/slices/AuthSlice';
 
 const AuthenticateScreen = () => {
-    const navigation = useNavigation();
-        
+    const dispatch = useDispatch();
+        const [auth ,setAuth] = useState("signIn");
+
     const [email,
         setEmail] = useState('');
 
     const [password,
         setPassword] = useState('');
+        
+        const AuthenticateUser = () => {
+         if(auth == "signIn") {
+            dispatch(signInUser({email, password}))
+         } else {
+            dispatch(signupUser({email, password}))
+         }
+        }
     
             return (
                 <SafeAreaView style={styles.container}>
@@ -72,27 +78,28 @@ const AuthenticateScreen = () => {
                                 onChange={(e) => setPassword(e.target.value)}/>
                         </View>
                         <View style={styles.submitButton}>
-                            <Button mode='contained' color='#aad0f8'>
-                                Submit
+                            { auth =="signIn" ?
+                            <Button onPress={() => setAuth("signup")} mode='contained' color='#aad0f8'>
+                                Sign-Up
                             </Button>
+                            :
+                            <Button onLongPress={() => AuthenticateUser()} onPress={() => setAuth("signIn")} mode='contained' color='#aad0f8'>
+                                Sign-In
+                            </Button>
+                            }                            
                         </View>
                         <View style={styles.forgotPasswordView}>
-                            {/* Do we need to add a register screen? If we can onboard with
-                          just email and password, a new user to the DB should prompt an
-                          agreement page & create a new user. */}
-                            {/* <Text style={styles.registerText}>Register</Text> */}
         
                             <Text style={styles.forgotText}>Reset Password</Text>
         
                         </View>
                         <Divider color="#ededed"/>
                         <View style={styles.registerView}>
-                            <Button onPress={() => Alert.alert("Facial Recognition")}>
+                            <Button onPress={() => Alert.alert("Biometrics Recognition")}>
                             <Image source={require('../../assets/icons/thumb.png')} style={{width: 35, height: 35}} resizeMode="contain"/>
                             </Button>
                             <Button
-                                onLongPress={() => Alert.alert("Wow, that was a long press! Just tap it")}
-                                onPress={() => navigation.navigate('Passcode')}>
+                                onPress={() => alert('Hold the button a little longer 😉')}>
                                 <Image source={require('../../assets/icons/numbers.png')} style={{width: 35, height: 35}} resizeMode="contain"/>
                             </Button>
                         </View>

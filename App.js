@@ -5,34 +5,54 @@ import {NavigationContainer} from '@react-navigation/native';
 import AppStack from './src/navigation/AppNavigator'
 import AuthStack from './src/navigation/AuthNavigator';
 import SplashScreen from "./src/components/Splash/SplashScreen";
-import {connect} from 'react-redux'
+// middleware
+import {configureStore} from '@reduxjs/toolkit';
+import { useSelector, useDispatch, Provider } from 'react-redux';
+import authReducer, {addToken} from "./src/redux/slices/AuthSlice";
+
+
+
+const AppWrapper = () => {
+    const store = configureStore({
+        reducer: {
+            user: authReducer,
+    }})
+    return (
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    )
+}
 
 const App = () => {
+   
+    const token = useSelector(state => state.user.token)
+   
+    const dispatch = useDispatch()
+
     const [isLoading,
-        setIsLoading] = useState(false);
+        setIsLoading] = useState(true);
 
     useEffect(() => {
-        // this is for testing purposes only - do not leave time-out. It will slow down
-        // the application.
-        setTimeout(() => {
-            setIsLoading(true);
-        }, 2000);
+        dispatch(addToken());
     }, []);
 
     return (
-        <NavigationContainer>
-            {!isLoading
-                ? (
-                    <SplashScreen/>
-                // add authentication logic here if false show auth stack else show appstack
-                ) // : isAuthenticated ? (<AuthStack)
-                : (< AppStack />)}
-        </NavigationContainer>
+        <Provider store={store}>
+            <NavigationContainer>
+                {isLoading
+                    ? (
+                        <SplashScreen/>
+                    )  : token  ? (
+                    <AppStack/>
+                    )
+                    : (
+                    <AuthStack />
+                    )}
+            </NavigationContainer>
+         </Provider> 
 
     );
 }
-
-// const mapStateToProps = state => ({auth: state.auth}); export default
-// connect(mapStateToProps)(App);
 
 export default App;
