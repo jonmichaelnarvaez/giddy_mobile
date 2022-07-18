@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const url = "https://";
+// const url = "https://";
 
 
 export const fetch2 = async (api, body) => {

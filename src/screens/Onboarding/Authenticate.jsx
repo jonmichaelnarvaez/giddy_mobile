@@ -18,8 +18,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signInUser, signupUser } from '../../redux/slices/AuthSlice';
 
 const AuthenticateScreen = () => {
-    const dispatch = useDispatch();
-        const [auth ,setAuth] = useState("signIn");
+    // const dispatch = useDispatch();
+    // const [auth ,setAuth] = useState("signIn");
 
     const [email,
         setEmail] = useState('');
@@ -27,13 +27,13 @@ const AuthenticateScreen = () => {
     const [password,
         setPassword] = useState('');
         
-        const AuthenticateUser = () => {
-         if(auth == "signIn") {
-            dispatch(signInUser({email, password}))
-         } else {
-            dispatch(signupUser({email, password}))
-         }
-        }
+        // const AuthenticateUser = () => {
+        //  if(auth == "signIn") {
+        //     dispatch(signInUser({email, password}))
+        //  } else {
+        //     dispatch(signupUser({email, password}))
+        //  }
+        // }
     
             return (
                 <SafeAreaView style={styles.container}>
@@ -78,15 +78,15 @@ const AuthenticateScreen = () => {
                                 onChange={(e) => setPassword(e.target.value)}/>
                         </View>
                         <View style={styles.submitButton}>
-                            { auth =="signIn" ?
+                            {/* { auth =="signIn" ?
                             <Button onPress={() => setAuth("signup")} mode='contained' color='#aad0f8'>
                                 Sign-Up
                             </Button>
                             :
-                            <Button onLongPress={() => AuthenticateUser()} onPress={() => setAuth("signIn")} mode='contained' color='#aad0f8'>
+                            <Button  onPress={() => setAuth("signIn")} mode='contained' color='#aad0f8'>
                                 Sign-In
                             </Button>
-                            }                            
+                            }                             */}
                         </View>
                         <View style={styles.forgotPasswordView}>
         

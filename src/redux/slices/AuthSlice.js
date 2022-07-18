@@ -55,6 +55,8 @@ const authReducer = createSlice({
         },
         [signinUser.fulfilled] : (state, {payload: {error, token}}) => {
             state.loading = false;
+            // if error is true the send an alert else set the users Token and
+            // save to users device.
             if(error) {
                 state.error = error
                 alert(error)

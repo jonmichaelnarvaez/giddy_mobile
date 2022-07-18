@@ -83,25 +83,25 @@ const OnboardingScreen = () => {
         pages={[
           {
             backgroundColor: '#161c45',
-            image: <Image resizeMode="center" style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
+            image: <Image resizeMode="contain" style={{height: 200, width: 300, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/sticker/Eddie_M.png')} />,
             title: 'ED Tracker',
             subtitle: 'Keep track of your ED',
           },
           {
             backgroundColor: '#D55015',
-            image: <Image resizeMode="center"  style={{height: 130, width: 370,  justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
+            image: <Image resizeMode="contain"  style={{height: 200, width: 300,  justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/sticker/Condom_M.png')} />,
             title: 'Sexual Health Tracker',
             subtitle: 'Keep track of your Sex Life',
           },
           {
             backgroundColor: '#500B45',
-            image: <Image  resizeMode="contain"  style={{height: 200, width: 300, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/icons/fertility.png')} />,
+            image: <Image  resizeMode="contain"  style={{height: 200, width: 300, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/sticker/Uterus_M.png')} />,
             title: 'Fertility',
             subtitle: "Keep Track of your Fertility Cycle",
           },
           {
             backgroundColor: '#0B2B50',
-            image: <Image  resizeMode="center" style={{height: 130, width: 370, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/logos/Giddy_white.png')} />,
+            image: <Image  resizeMode="contain" style={{height: 200, width: 300, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/sticker/GLogo_M.png')} />,
             title: 'Giddy',
             subtitle: "The worlds leading Sexual Health Platform",
           },
