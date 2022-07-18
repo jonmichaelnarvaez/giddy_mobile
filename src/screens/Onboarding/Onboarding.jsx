@@ -84,25 +84,25 @@ const OnboardingScreen = () => {
           {
             backgroundColor: '#161c45',
             image: <Image resizeMode="contain" style={{height: 200, width: 300, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/sticker/Eddie_M.png')} />,
-            title: 'ED Tracker',
+            title: 'Erectile Dysfunction',
             subtitle: 'Keep track of your ED',
           },
           {
             backgroundColor: '#D55015',
             image: <Image resizeMode="contain"  style={{height: 200, width: 300,  justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/sticker/Condom_M.png')} />,
-            title: 'Sexual Health Tracker',
+            title: 'Sexual Health',
             subtitle: 'Keep track of your Sex Life',
           },
           {
             backgroundColor: '#500B45',
             image: <Image  resizeMode="contain"  style={{height: 200, width: 300, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/sticker/Uterus_M.png')} />,
-            title: 'Fertility',
+            title: 'Fertility & Ovulation',
             subtitle: "Keep Track of your Fertility Cycle",
           },
           {
             backgroundColor: '#0B2B50',
             image: <Image  resizeMode="contain" style={{height: 200, width: 300, justifyContent: 'center', alignItems: 'center'}} source={require('../../assets/sticker/GLogo_M.png')} />,
-            title: 'Giddy',
+            title: 'Get Me Giddy',
             subtitle: "The worlds leading Sexual Health Platform",
           },
         ]}

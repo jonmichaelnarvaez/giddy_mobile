@@ -4,7 +4,8 @@ import {
     View,
     Text,
     Pressable,
-    Image
+    Image,
+    Alert
 } from 'react-native';
 // react native paper
 import {Avatar} from 'react-native-paper';

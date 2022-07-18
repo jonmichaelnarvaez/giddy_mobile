@@ -23,7 +23,7 @@ const App = () => {
     // const dispatch = useDispatch()
 
     const [isLoading,
-        setIsLoading] = useState(true);
+        setIsLoading] = useState(false);
 
     // useEffect(() => {
     //     dispatch(addToken());
@@ -44,7 +44,10 @@ const App = () => {
         //     </NavigationContainer>
         //  </Provider> 
         <NavigationContainer>
-            <AuthStack/>
+            {isLoading ? (
+                <SplashScreen/>
+            ):
+            <AppStack/>}
         </NavigationContainer>
 
     );
