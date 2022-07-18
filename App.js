@@ -7,9 +7,9 @@ import AuthStack from './src/navigation/AuthNavigator';
 import SplashScreen from "./src/components/Splash/SplashScreen";
 // middleware
 import {configureStore} from '@reduxjs/toolkit';
-import { useSelector, useDispatch, Provider } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import authReducer, {addToken} from "./src/redux/slices/AuthSlice";
-
+import {Provider} from 'redux'
 
 
 const AppWrapper = () => {

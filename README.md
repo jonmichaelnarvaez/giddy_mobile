@@ -4,7 +4,8 @@ Built with [Expo Bare Workflow](https://docs.expo.dev/introduction/managed-vs-ba
 - [ ] Create iOS & Android Certificates & Team Access
 - [x] User Flow && design kick-off **June 13, 2022**
 - [x] Delegate deliverables to Team Leads **June 13, 2022** [Asana Mobile](https://app.asana.com/0/1202390205827772/calendar)
-- [x] Create app components && complete application UI **_Passed to Design on 06/17/2022_**
+- [x] Create app components && complete application UI **_Passed to Design on 06/17/2022 * pending final deliverables 07/16/22_**
+- [ ] Finalize app store configuration is Xcode
 - [x] Begin middleware creation && connect drupal api's  **_Active Development_**
 - [ ] Run Test & QA
 - [ ] Submit application && art work to iOS and Android markets
