@@ -46,7 +46,7 @@ const App = () => {
         <NavigationContainer>
             {isLoading ? (
                 <SplashScreen/>
-            ):
+            ) :
             <AppStack/>}
         </NavigationContainer>
 

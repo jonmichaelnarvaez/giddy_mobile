@@ -100,15 +100,6 @@ export default function PreferenceScreen() {
             <SafeAreaView>
                 <Text style={styles.categoryTitle}>Select a Tracker</Text>
                 <View style={styles.contentWrapper}>
-                    <Text>Fertility Tracker</Text>
-                    <Switch
-                    trackColor={{true: "#e9bcbe", false: "grey"}}
-                        onPress={() => null}
-                        value={isOvulationSwitchOn}
-                        onValueChange={(value) => onToggleOvulationSwitch(value)}/>
-                </View>
-                <Divider/>
-                <View style={styles.contentWrapper}>
                     <Text>ED Tracker</Text>
                     <Switch value={isEdSwitchOn} onValueChange={(value) => onToggleEdSwitch(value)} trackColor={{true: '#BCE6E9'}}/>
                 </View>
@@ -118,7 +109,23 @@ export default function PreferenceScreen() {
                     <Switch trackColor={{true: "#FFE08F", false: "grey"}} value={isSexualSwitchOn} onValueChange={(value) => onToggleSexualSwitch(value)}/>
                 </View>
                 <Divider/>
+                <View style={styles.contentWrapper}>
+                    <Text>Fertility Tracker</Text>
+                    <Switch
+                    trackColor={{true: "#e9bcbe", false: "grey"}}
+                        onPress={() => null}
+                        value={isOvulationSwitchOn}
+                        onValueChange={(value) => onToggleOvulationSwitch(value)}/>
+                </View>
+                <Divider/>
+                
                 <Text style={styles.categoryTitle}>notifications</Text>
+                <Pressable onPress={() => navigation.navigate('EdNotifications')}>
+                    <View style={styles.contentWrapper}>
+                        <Text>Erectile Dysfunction</Text>
+                        <EvilIcons name="chevron-right" size={24} color="black"/>
+                    </View>
+                </Pressable>
                 <Pressable onPress={() => navigation.navigate('Sexual Notifications')}>
                     <View style={styles.contentWrapper}>
                         <Text>Sexual Health</Text>
@@ -128,14 +135,7 @@ export default function PreferenceScreen() {
                 <Divider/>
                 <Pressable onPress={() => navigation.navigate('Period Ovulation')}>
                     <View style={styles.contentWrapper}>
-                        <Text>Period & Ovulation</Text>
-                        <EvilIcons name="chevron-right" size={24} color="black"/>
-                    </View>
-                </Pressable>
-                <Divider/>
-                <Pressable onPress={() => navigation.navigate('EdNotifications')}>
-                    <View style={styles.contentWrapper}>
-                        <Text>Erectile Dysfunction</Text>
+                        <Text>Fertility Tracker</Text>
                         <EvilIcons name="chevron-right" size={24} color="black"/>
                     </View>
                 </Pressable>
