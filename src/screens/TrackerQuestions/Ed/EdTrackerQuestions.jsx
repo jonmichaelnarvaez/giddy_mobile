@@ -52,7 +52,7 @@ export default function EdTrackerQuestions() {
             opacity: 0
         }} style={styles.container}>
             <View style={styles.card}>
-                <Text style={styles.questionText}>Are you a Veteran or Active Milliary?</Text>
+                <Text style={styles.questionText}>Have you been diagnosed with Erectile Dysfunction?</Text>
             </View>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity style={styles.button} onPress={handlePress}>
@@ -61,6 +61,7 @@ export default function EdTrackerQuestions() {
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
+                    onPress={() => alert("Suggest telehealth Service")}
                     style={styles.NoButton}>
                     <Text >
                         No

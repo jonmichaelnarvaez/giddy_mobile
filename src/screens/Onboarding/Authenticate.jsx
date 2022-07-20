@@ -87,7 +87,9 @@ const AuthenticateScreen = () => {
                                 Sign-In
                             </Button>
                             }                             */}
+                            <Button color='#aad0f8' mode='contained' onPress={() => alert("Push to main screen")}>Sign-In/Up</Button>
                         </View>
+                        
                         <View style={styles.forgotPasswordView}>
         
                             <Text style={styles.forgotText}>Reset Password</Text>
@@ -133,7 +135,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 30
     },
     heading: {
-        color: "#aad0f8",
+        color: "#f5f5f5",
         fontSize: 40,
         fontWeight: "bold",
         marginLeft: 30,

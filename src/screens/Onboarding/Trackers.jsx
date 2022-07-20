@@ -29,12 +29,12 @@ export default function TrackerScreen() {
     const navigation = useNavigation();
 
     const [isChecked,
-        setIsChecked] = useState(true);
+        setIsChecked] = useState(false);
          
 
         const handleSubmit = () => {
             
-            if(isChecked >= 2 || isChecked === 0) {
+            if(!isChecked > 3 || !isChecked ) {
                 alert("Please select one tracker. You can choose up to one more tracker later.");
             } else {
                 navigation.navigate('Quiz');

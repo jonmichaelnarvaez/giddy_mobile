@@ -53,7 +53,7 @@ function HomeScreen() {
                         selectedDotColor: '#aad0f8',
                         arrowColor: 'orange',
                         disabledArrowColor: '#d9e1e8',
-                        monthTextColor: '#161c45',
+                        monthTextColor: '#aad0f8',
                         indicatorColor: '#161c45',
                         textDayFontWeight: '300',
                         textMonthFontWeight: 'bold',
