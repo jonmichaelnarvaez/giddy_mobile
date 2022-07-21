@@ -15,7 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 import {Button, Divider} from 'react-native-paper'
 // redux
 import { useDispatch, useSelector } from 'react-redux';
-import { signInUser, signupUser } from '../../redux/slices/AuthSlice';
+
 
 const AuthenticateScreen = () => {
     // const dispatch = useDispatch();
@@ -26,19 +26,11 @@ const AuthenticateScreen = () => {
 
     const [password,
         setPassword] = useState('');
-        
-        // const AuthenticateUser = () => {
-        //  if(auth == "signIn") {
-        //     dispatch(signInUser({email, password}))
-        //  } else {
-        //     dispatch(signupUser({email, password}))
-        //  }
-        // }
+
     
             return (
                 <SafeAreaView style={styles.container}>
                     <View  
-                
                         style={styles.topView}>
                         <Image
                             style={{
@@ -91,7 +83,6 @@ const AuthenticateScreen = () => {
                         </View>
                         
                         <View style={styles.forgotPasswordView}>
-        
                             <Text style={styles.forgotText}>Reset Password</Text>
         
                         </View>

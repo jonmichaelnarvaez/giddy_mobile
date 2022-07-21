@@ -1,7 +1,7 @@
 import drupalApi from "./drupal";
 import {Platform} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Upload from 'react-native-background-upload'
+// import Upload from 'react-native-background-upload'
 
 const RCTNetworking = require('react-native/Libraries/Network/RCTNetworking');
 const startTimeOption = { year: 'numeric', month: 'short', day: 'numeric',  hour: 'numeric', minute: 'numeric'};
