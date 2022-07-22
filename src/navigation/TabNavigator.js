@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     StyleSheet,
     View,
     Text,
     Pressable,
     Image,
-    Alert
+    Alert,
+    Platform
 } from 'react-native';
 // react native paper
 import {Avatar} from 'react-native-paper';
@@ -206,6 +207,22 @@ const SearchStack = () => {
 }
 
 const TabNavigator = () => {
+    const [visible, setVisible] = useState(true);
+const keyboardWillShow = () =>{
+    setVisible(false);
+}
+const keyboardWillHide = () =>{
+    setVisible(true);
+}
+
+useEffect(() => {
+    const keyboardWillShowSub = Keyboard.addListener(Platform.select({android: "keyboardDidShow", ios: "KeyboardWillShow"}), keyboardWillShow);
+    const keyboardWillHideSub = Keyboard.addListener(Platform.select({android: "keyboardDidHide", ios: "KeyboardWillHide"}), keyboardWillHide);
+    return () =>{
+        keyboardWillShowSub.remove();
+        keyboardWillHideSub.remove();
+    }
+}, [])
     return (
         <Tab.Navigator
             onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}
@@ -223,6 +240,9 @@ const TabNavigator = () => {
                 backgroundColor: '#0B2B50',
                 borderRadius: 20,
                 height: 80,
+            },
+            tabBarOptions: {
+                keyboardHidesTabBar: true,
             }
         }}>
             <Tab.Screen
