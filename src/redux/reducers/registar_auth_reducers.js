@@ -4,6 +4,8 @@ const INITIAL_REGISTRATION_STATE ={
     error:null
 }
 
+// reset to fit the changes coming from Content.
+
 export default function (state=INITIAL_REGISTRATION_STATE,action){
     
     switch(action.type){
