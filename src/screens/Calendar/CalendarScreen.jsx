@@ -20,12 +20,24 @@ import { useNavigation } from '@react-navigation/native';
 import PushNotification from 'react-native-push-notification';
 
 const handleNotifications = (item) => {
+    // clear old notifications as new one come in
+    PushNotification.cancelAllLocalNotifications();
+    
+    // for testing purposes only
     PushNotification.localNotification({
         channelId: "test-channel",
         title: "test-title",
         message: "test-message",
         repeatType: 'day',
-        repeatTime: "21:00:00 UTC"
+    });
+
+    PushNotification.localNotification({
+        channelId: "test-channel",
+        title: 'test-title-scheduled',
+        message: "test-message-scheduled",
+        // will show 20 seconds after pushed - outside of app.
+        date: new Date(Date.now() + 20 * 1000),
+        allowWhileIdle: true,
     })
 };
 
