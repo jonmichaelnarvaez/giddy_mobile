@@ -16,7 +16,18 @@ import { Octicons } from '@expo/vector-icons';
 import {CalendarList} from 'react-native-calendars';
 // navigation
 import { useNavigation } from '@react-navigation/native';
+// push notifications-android
+import PushNotification from 'react-native-push-notification';
 
+const handleNotifications = (item) => {
+    PushNotification.localNotification({
+        channelId: "test-channel",
+        title: "test-title",
+        message: "test-message",
+        repeatType: 'day',
+        repeatTime: "21:00:00 UTC"
+    })
+};
 
 const windowWidth = Dimensions
     .get('window')
