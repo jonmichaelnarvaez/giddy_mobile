@@ -32,18 +32,24 @@ export const registerUser = async ({ username, email, password }) => {
       const uuid = regUser.uuid[0].value;
       const uid = regUser.uid[0].value;
       const userUids = {uuid:uuid, uid:uid};
+
       await AsyncStorage.setItem('userUidData', JSON.stringify(userUids))
+
       const user = {};
+      
       const login = async (username, password, user) => {
         const response = await drupalApi.post(
           '/user/login?_format=json',
           { "name":username, "pass":password},
         );
+      
         user = response.data;
         await AsyncStorage.setItem('regAuthToken', user.access_token)
         return (user)
       }
+      
       await login(username, password);
+      
       return{step:1,error:null}
     } catch (err) {
       return{error:err.response.data};
