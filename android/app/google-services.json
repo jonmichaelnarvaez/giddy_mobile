@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "706327131834",
+    "project_id": "giddy-mobile",
+    "storage_bucket": "giddy-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706327131834:android:c333d7f1dec5c9c6e1f483",
+        "android_client_info": {
+          "package_name": "com.giddymobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706327131834-u0o49s8jeu5327vmpogboqiqqjfkhslt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG5Hj5wlxWS2bBZiYzMW8wPIK5ceXb2aM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "706327131834-u0o49s8jeu5327vmpogboqiqqjfkhslt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "706327131834-1sqc58ab2flk220noe1h51e2503o7r0c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.getmegiddy.com"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
