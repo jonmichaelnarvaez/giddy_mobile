@@ -8,6 +8,7 @@ import {
     Dimensions,
     Pressable,
     ScrollView,
+    TouchableOpacity,
 } from 'react-native';
 // icons
 import {Feather} from "@expo/vector-icons"
@@ -19,26 +20,55 @@ import { useNavigation } from '@react-navigation/native';
 // push notifications-android
 import PushNotification from 'react-native-push-notification';
 
-const handleNotifications = (item) => {
-    // clear old notifications as new one come in
+const getCorrectDate = () => {
+    const date = new Date();
+    date.setDate(date.getDate() + 1);
+    date.setHours(23);
+    date.setMinutes(54);
+    return date;
+  };
+
+const handleNotifications = (item, index) => {
+    // clear old notifications as new one come in android
     PushNotification.cancelAllLocalNotifications();
+    //clear old notifications as new one come in iOS
+    PushNotificationIOS.removeAllDeliveredNotifications();
     
     // for testing purposes only
     PushNotification.localNotification({
+        id: index,
         channelId: "test-channel",
         title: "test-title",
         message: "test-message",
         repeatType: 'day',
+        bigText: "this is a continued sentence for test purposes.",
+        color: "#161c45"
+    });
+    // local notifications for iOS
+    PushNotificationIOS.presentLocalNotification({
+        id: index,
+        alertTitle: 'This is the test title',
+        alertBody: 'This is an iOS notification test',
+
     });
 
-    PushNotification.localNotification({
+    PushNotification.localNotificationSchedule({
         channelId: "test-channel",
         title: 'test-title-scheduled',
         message: "test-message-scheduled",
         // will show 20 seconds after pushed - outside of app.
         date: new Date(Date.now() + 20 * 1000),
         allowWhileIdle: true,
-    })
+    });
+    
+    PushNotificationIOS.scheduleLocalNotification({
+        fireDate: getCorrectDate(),
+        alertTitle: "Did you log today activities?",
+        alertBody: "This is a test message",
+        repeatInterval: 'day'
+    });
+    // Gets the current badge number for the app icon on the home screen
+    PushNotificationIOS.getApplicationIconBadgeNumber(() => {});
 };
 
 const windowWidth = Dimensions
@@ -96,7 +126,9 @@ function HomeScreen() {
                             '2022-06-04': {disabled: true, startingDay: true, color: '#BCE6E9', endingDay: true, textColor: "#ededed"}
                           }}/>
                 </View>
+                <TouchableOpacity onPress={handleNotifications}>
                 <Text style={styles.today}>Today</Text>
+                </TouchableOpacity>
                 <View>
                 <View style={styles.contentContainer}>
                     <Text style={{fontWeight: '200'}}>Create your first event </Text>

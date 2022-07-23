@@ -41,6 +41,10 @@
 	<string>$(PRODUCT_NAME) uses health records to enhance your experince and perdictions.</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>$(PRODUCT_NAME) would like to send you reminders.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>SplashScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

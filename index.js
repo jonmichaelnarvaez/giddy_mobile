@@ -6,13 +6,19 @@ import App from './App';
 import 'react-native-gesture-handler';
 import 'react-native-reanimated'
 // push notifications - android
-import PushNotifications from 'react-native-push-notification'
+import PushNotification from 'react-native-push-notification'
+
+// logbox
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['new NativeEventEmitter']); // Ignore log notification by message
+LogBox.ignoreAllLogs(); //Ignore all log notifications
+
 
 PushNotification.configure({
     onNotification: function(notification) {
         console.log('NOTIFICATION', notification);
     },
-    requestPermissions: Platform.OS === 'ios'
+    requestPermissions: Platform.OS === 'ios',
 })
 
 // register with Expo
