@@ -36,6 +36,8 @@
   [[RCTAppleHealthKit new] initializeBackgroundObservers:bridge];
 
   ...
+  
+  [FIRApp configure];
 
   return YES;
 }

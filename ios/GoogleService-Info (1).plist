@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>706327131834-1sqc58ab2flk220noe1h51e2503o7r0c.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.706327131834-1sqc58ab2flk220noe1h51e2503o7r0c</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAQYliiavdO9nm1dEQaUAFvF2dxtQ9b-pc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>706327131834</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.getmegiddy.com</string>
+	<key>PROJECT_ID</key>
+	<string>giddy-mobile</string>
+	<key>STORAGE_BUCKET</key>
+	<string>giddy-mobile.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:706327131834:ios:1e9d3cefdea998d2e1f483</string>
+</dict>
+</plist>

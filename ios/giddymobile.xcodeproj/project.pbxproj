@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,11 @@
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		841E60EC288322FF0014B52B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841E60EB288322FF0014B52B /* HealthKit.framework */; };
 		84A1176128563E2C000AC8E6 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 84A1176028563E2C000AC8E6 /* Fonts */; };
+		84BB70FD288C62C0003E3244 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BB70FC288C62C0003E3244 /* GoogleService-Info (1).plist */; };
+		84BB7100288C6605003E3244 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 84BB70FF288C6605003E3244 /* FirebaseAnalytics */; };
+		84BB7102288C6605003E3244 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 84BB7101288C6605003E3244 /* FirebaseAnalyticsOnDeviceConversion */; };
+		84BB7104288C6605003E3244 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 84BB7103288C6605003E3244 /* FirebaseCrashlytics */; };
+		84BB7106288C6605003E3244 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 84BB7105288C6605003E3244 /* FirebaseFunctions */; };
 		84DC8451288A24EF00811D71 /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84DC8450288A24EF00811D71 /* Stickers.xcassets */; };
 		84DC8455288A24EF00811D71 /* Giddy_Stickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84DC844E288A24EF00811D71 /* Giddy_Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		96905EF65AED1B983A6B3ABC /* libPods-giddymobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-giddymobile.a */; };
@@ -58,6 +63,7 @@
 		841E60EA288322FF0014B52B /* giddymobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = giddymobile.entitlements; path = giddymobile/giddymobile.entitlements; sourceTree = "<group>"; };
 		841E60EB288322FF0014B52B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		84A1176028563E2C000AC8E6 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
+		84BB70FC288C62C0003E3244 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 		84DC844E288A24EF00811D71 /* Giddy_Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Giddy_Stickers.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DC8450288A24EF00811D71 /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		84DC8452288A24EF00811D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +80,10 @@
 			files = (
 				96905EF65AED1B983A6B3ABC /* libPods-giddymobile.a in Frameworks */,
 				841E60EC288322FF0014B52B /* HealthKit.framework in Frameworks */,
+				84BB7104288C6605003E3244 /* FirebaseCrashlytics in Frameworks */,
+				84BB7106288C6605003E3244 /* FirebaseFunctions in Frameworks */,
+				84BB7100288C6605003E3244 /* FirebaseAnalytics in Frameworks */,
+				84BB7102288C6605003E3244 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +101,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				84BB70FC288C62C0003E3244 /* GoogleService-Info (1).plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
 			);
 			name = giddymobile;
@@ -204,6 +215,12 @@
 				84DC8454288A24EF00811D71 /* PBXTargetDependency */,
 			);
 			name = giddymobile;
+			packageProductDependencies = (
+				84BB70FF288C6605003E3244 /* FirebaseAnalytics */,
+				84BB7101288C6605003E3244 /* FirebaseAnalyticsOnDeviceConversion */,
+				84BB7103288C6605003E3244 /* FirebaseCrashlytics */,
+				84BB7105288C6605003E3244 /* FirebaseFunctions */,
+			);
 			productName = giddymobile;
 			productReference = 13B07F961A680F5B00A75B9A /* giddymobile.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +268,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				84BB70FE288C6605003E3244 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -268,6 +288,7 @@
 			files = (
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				84BB70FD288C62C0003E3244 /* GoogleService-Info (1).plist in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
 				84A1176128563E2C000AC8E6 /* Fonts in Resources */,
 			);
@@ -410,7 +431,10 @@
 				);
 				INFOPLIST_FILE = giddymobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -436,7 +460,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = giddymobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -499,7 +526,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
 				LIBRARY_SEARCH_PATHS = "\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -549,7 +579,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
 				LIBRARY_SEARCH_PATHS = "\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -648,6 +681,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		84BB70FE288C6605003E3244 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84BB70FF288C6605003E3244 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84BB70FE288C6605003E3244 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		84BB7101288C6605003E3244 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84BB70FE288C6605003E3244 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		84BB7103288C6605003E3244 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84BB70FE288C6605003E3244 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		84BB7105288C6605003E3244 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84BB70FE288C6605003E3244 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }

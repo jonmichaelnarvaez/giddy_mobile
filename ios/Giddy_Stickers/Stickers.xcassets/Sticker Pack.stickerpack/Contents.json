@@ -1,9 +1,74 @@
 {
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   },
   "properties" : {
     "grid-size" : "regular"
-  }
+  },
+  "stickers" : [
+    {
+      "filename" : "AllPride_M.sticker"
+    },
+    {
+      "filename" : "BirthControl_M.sticker"
+    },
+    {
+      "filename" : "BreastCancer_M.sticker"
+    },
+    {
+      "filename" : "Calendar_M.sticker"
+    },
+    {
+      "filename" : "CervicalCancer_M.sticker"
+    },
+    {
+      "filename" : "Condom_M.sticker"
+    },
+    {
+      "filename" : "Eddie_M.sticker"
+    },
+    {
+      "filename" : "Eggplant_M.sticker"
+    },
+    {
+      "filename" : "GiddyLogo_M.sticker"
+    },
+    {
+      "filename" : "GLogo_M.sticker"
+    },
+    {
+      "filename" : "IUD_M.sticker"
+    },
+    {
+      "filename" : "Menstruation_M.sticker"
+    },
+    {
+      "filename" : "Papaya_M.sticker"
+    },
+    {
+      "filename" : "Peach_M.sticker"
+    },
+    {
+      "filename" : "Period_M.sticker"
+    },
+    {
+      "filename" : "PregnancyTest_M.sticker"
+    },
+    {
+      "filename" : "Pride_M.sticker"
+    },
+    {
+      "filename" : "ProstateCancer_M.sticker"
+    },
+    {
+      "filename" : "Sperm_M.sticker"
+    },
+    {
+      "filename" : "Transgender_M.sticker"
+    },
+    {
+      "filename" : "Uterus_M.sticker"
+    }
+  ]
 }
