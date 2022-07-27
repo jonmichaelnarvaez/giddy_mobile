@@ -36,8 +36,6 @@ import EntryHistory from '../screens/Calendar/EntryHistory';
 // haptic's
 import * as Haptics from 'expo-haptics';
 
-
-
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
@@ -52,6 +50,7 @@ function LogoTitle() {
         />
         )
 }
+
 function GiddyToday() {
     return (<Image
     resizeMode='center'
@@ -218,7 +217,8 @@ const keyboardWillHide = () =>{
 useEffect(() => {
     const keyboardWillShowSub = Keyboard.addListener(Platform.select({android: "keyboardDidShow", ios: "KeyboardWillShow"}), keyboardWillShow);
     const keyboardWillHideSub = Keyboard.addListener(Platform.select({android: "keyboardDidHide", ios: "KeyboardWillHide"}), keyboardWillHide);
-    return () =>{
+    return () => {
+        
         keyboardWillShowSub.remove();
         keyboardWillHideSub.remove();
     }

@@ -5,14 +5,19 @@ import App from './App';
 // required for tab navigation
 import 'react-native-gesture-handler';
 import 'react-native-reanimated'
+import RCTDeviceEventEmitter from 'react-native/Libraries/EventEmitter/RCTDeviceEventEmitter';
+RCTDeviceEventEmitter.emit('remoteNotificationReceived', {
+    remote: true,
+    aps: {
+      alert: 'Sample notification',
+      badge: '+1',
+      sound: 'default',
+      category: 'REACT_NATIVE',
+      'content-available': 1,
+    },
+  });
 // push notifications - android
 import PushNotification from 'react-native-push-notification'
-
-// logbox
-import { LogBox } from 'react-native';
-LogBox.ignoreLogs(['new NativeEventEmitter']); // Ignore log notification by message
-LogBox.ignoreAllLogs(); //Ignore all log notifications
-
 
 PushNotification.configure({
     onNotification: function(notification) {

@@ -20,7 +20,7 @@
       ]
     ],
     "ios": {
-      "bundleIdentifier": "clear"
+      "bundleIdentifier": "org.name.giddymobile"
     }
   }
 }
