@@ -1,13 +1,15 @@
 # GIDDY MOBILE
 Built with [Expo Bare Workflow](https://docs.expo.dev/introduction/managed-vs-bare/#bare-workflow).
-# Application Lifecycle Events
+# Application TODO List
+- [ ] Wait for endpoint and base URL from backend support & redux re-factoring + additions.
 - [ ] Create iOS & Android Certificates & Team Access
+- [ ] Create TestFlight Access for the team.
 - [x] User Flow && design kick-off **June 13, 2022**
 - [x] Delegate deliverables to Team Leads **June 13, 2022** [Asana Mobile](https://app.asana.com/0/1202390205827772/calendar)
 - [x] Wait for content and design on feedback and UI updates 
-- [ ] Refractor codebase for optimizations.
+- [ ] Refractor uncontrolled components for optimization.
 - [ ] Finalize app store configuration is Xcode
-- [ ] Wait for endpoint and base URL from backend support & redux re-factoring + additions.
+- [ ] Finalize play store configuration is Android Studio
 - [ ] Run Test & QA
 - [ ] Submit application && art work to iOS and Android markets
 # Architecture
