@@ -16,6 +16,7 @@ Drupal was chosen at the conception of Giddy's online presence and where all of 
 ![drupal   react native](https://user-images.githubusercontent.com/105945733/174606053-8c16836f-ffef-4aff-8c5f-4b04591c435b.jpeg)
 
 # Notifications
+We are using Firebase as the provider for external notifications and scheduling internal notifications to the native operating system.
 
 ![firebase react native](https://blog.logrocket.com/wp-content/uploads/2020/11/Push-notifications-in-React-Native-APNs-FCM.png)
 
