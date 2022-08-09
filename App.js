@@ -10,9 +10,9 @@ import { PersistGate } from 'redux-persist/integration/react';
 import {store, persistor} from './src/redux/store';
 
 function App() {
-    
+    // loading state
     const [isLoading, setIsLoading] = useState(true)
-
+// get notifications permissions
     
         return (
             <Provider store={store}>

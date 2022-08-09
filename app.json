@@ -6,17 +6,17 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "web": {
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaSyAV2IyNVWCVQIOl872reW9nS-ey3OrVKvE",
+          "measurementId": "G-H8MK54HMKF"
+        }
+      }
+    },
     "plugins": [
       [
-        "expo-notifications",
-        {
-          "icon": "./local/assets/notification-icon.png",
-          "color": "#ffffff",
-          "sounds": [
-            "./local/assets/notification-sound.wav",
-            "./local/assets/notification-sound-other.wav"
-          ]
-        }
+        "expo-notifications"
       ]
     ],
     "ios": {
