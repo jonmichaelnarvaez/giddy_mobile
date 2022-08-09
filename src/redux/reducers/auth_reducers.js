@@ -11,7 +11,7 @@ const INITIAL_USER_STATE ={
     gender:"",
     state:"",
     phone:"",
-    // token:[],
+    token:[],
     isAuth: false,
     isLoading: false,
     error:null,
