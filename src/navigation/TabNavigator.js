@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     StyleSheet,
     View,
@@ -206,23 +206,6 @@ const SearchStack = () => {
 }
 
 const TabNavigator = () => {
-    const [visible, setVisible] = useState(true);
-const keyboardWillShow = () =>{
-    setVisible(false);
-}
-const keyboardWillHide = () =>{
-    setVisible(true);
-}
-
-useEffect(() => {
-    const keyboardWillShowSub = Keyboard.addListener(Platform.select({android: "keyboardDidShow", ios: "KeyboardWillShow"}), keyboardWillShow);
-    const keyboardWillHideSub = Keyboard.addListener(Platform.select({android: "keyboardDidHide", ios: "KeyboardWillHide"}), keyboardWillHide);
-    return () => {
-        
-        keyboardWillShowSub.remove();
-        keyboardWillHideSub.remove();
-    }
-}, [])
     return (
         <Tab.Navigator
             onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}

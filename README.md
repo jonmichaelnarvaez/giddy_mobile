@@ -33,12 +33,13 @@ Although Expo is some what new to the industry they have made tremendous strides
 - You must have [Node JS](https://nodejs.org) installed.
 - You must have [Watchman](https://watchman.org) installed.
 - Create your branch
-- Run `expo install expo-dev-client` to install dev client on your simulator.
+- Run `expo run:ios` to install dev client on your iOS simulator.
+- Run `expo run:android` to install dev client on your Android simulator
 
 ###### Start with iOS
 > You will need to replace the simulator number for it to work properly.
 ```
-yarn start   -----> opens ios simulator
+expo run:ios   -----> opens ios simulator with dev client
 ```
 ###### Add new dependencies
 > Why not yarn or npm? Expo manager keeps track of all the dependencies to ensure they co-exist inside the application.

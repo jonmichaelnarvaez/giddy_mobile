@@ -15,26 +15,13 @@ import {useNavigation} from '@react-navigation/native';
 import {Button, Divider} from 'react-native-paper'
 // redux
 import { useDispatch, useSelector } from 'react-redux';
-// push notifications for android
-import PushNotification from 'react-native-push-notification';
 
-const createChannels = () => {
-    PushNotification.createChannel(
-        {
-            channelId:"test-channel",
-            channelName: "test-channel"
-        }
-    )
-};
 
 
 const AuthenticateScreen = () => {
     // const dispatch = useDispatch();
     // const [auth ,setAuth] = useState("signIn");
 
-    useEffect(() => {
-        createChannels();
-    }, [])
 
     const [email,
         setEmail] = useState('');

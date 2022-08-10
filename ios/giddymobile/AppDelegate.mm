@@ -17,16 +17,22 @@
 #import <React/RCTSurfacePresenter.h>
 #import <React/RCTSurfacePresenterBridgeAdapter.h>
 #import <ReactCommon/RCTTurboModuleManager.h>
+#import <Firebase/Firebase.h>
 
 #import <react/config/ReactNativeConfig.h>
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+  
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self
                                             launchOptions:launchOptions];
+  
+  if (![FIRApp defaultApp]) {
+      [FIRApp configure];
+  }
 
   ...
   /* Add Background initializer for HealthKit  */
