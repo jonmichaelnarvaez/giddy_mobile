@@ -19,14 +19,11 @@ import { Platform, Text } from 'react-native';
 function App() {
     // state hooks
     // const [isLoading, setIsLoading] = useState(false)
+    
         return (
-            
-                
-                     <NavigationContainer>
-                            <AppStack/>
-                        </NavigationContainer>
-                
-            
+            <NavigationContainer>
+                <AppStack/>
+            </NavigationContainer>
         );
     
 }

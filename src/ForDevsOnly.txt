@@ -1,0 +1,33 @@
+Needs to be complete before launch
+
+1. Setup certificates and access key for iOS and Android.
+2. Redux Refracturing to fit app features
+    2.1 Add theme to support each tracker
+    2.2 API's Needed
+        A. Create new user
+            - id
+            - first_name
+            - last_name
+            - email
+            - phone
+            - address
+            - gender
+            - birthDate
+            - location
+            - isAuthenticated
+            - isActive
+            - favorites
+            - Tracker logs
+            - entry history
+        B. Sign-in user
+        C. Articles
+            - name
+            - description
+            - author
+            - content
+            - date
+            -search query
+            - categories
+        D. Symptom Tracker
+            - we still do not have an API for this.
+        

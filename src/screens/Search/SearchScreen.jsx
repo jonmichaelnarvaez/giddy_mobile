@@ -26,7 +26,9 @@ export default function SearchScreen() {
             }}/>
             <ScrollView
                 style={styles.searchResults}>
-                <Text>What are we searching here?!</Text>
+                <Text>Add your symptom's above 👆</Text>
+                {/* Display list of symptom's below*/}
+                {/* Display a flatList*/}
             </ScrollView>
         </SafeAreaView>
     )

@@ -1,17 +1,37 @@
 const INITIAL_THEME_STATE = {
-    primary: "#0b2b50",
-    secondary: "#bce6e9",
-    tertiary: "#f5f5f5",
+    defaultTheme: {
+    PRIMARY_COLOR: '#737373',
+    SECONDARY_COLOR: '#d6d6d7',
+    TERTIARY: '#f5f5f5',
+    LOGO: require('../assets/logos/Giddy_blue.png'),
+    },
+    edTheme: {
+    PRIMARY_COLOR: '#0B2B50',
+    SECONDARY_COLOR: '#BCE6E9',
+    TERTIARY: '#f5f5f5',
+    LOGO: require('../assets/logos/Giddy_blue.png'),
+    },
+    sexTheme: {
+    PRIMARY_COLOR: '#D55015',
+    SECONDARY_COLOR: '#FFE08F',
+    TERTIARY: '#f5f5f5',
+    LOGO: require('../assets/logo/Sexual_health.png'),
+    },
+    fertilityTheme: {
+        PRIMARY_COLOR: '#500b45',
+        SECONDARY_COLOR: '#e9bcbe',
+        TERTIARY: '#F5F5F5',
+        LOGO: require('../assets/Period_tracker.png'),
+    },
 };
 
 export default function (state = INITIAL_THEME_STATE, action) {
-    switch (action.type) {
-        case 'DEFAULT_THEME':
-            return {
-                ...state,
-                ...action.payload
-            };
-        default:
-            return state;
+switch (action.type) {
+    case 'CHANGE_THEME':
+    if (state.theme == defaultTheme) {
+        return {...state, defaultTheme}
+    }
+    default:
+        return state;
     }
 };
