@@ -35,6 +35,9 @@ import FavoritesScreen from '../screens/User/FavoriteScreen';
 import EntryHistory from '../screens/Calendar/EntryHistory';
 // haptic's
 import * as Haptics from 'expo-haptics';
+// analytics
+import * as Analytics from 'expo-firebase-analytics';
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();

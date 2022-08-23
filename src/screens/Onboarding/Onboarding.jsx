@@ -26,6 +26,8 @@ const Dots = ({selected}) => {
     );
 }
 
+
+
 const Skip = ({...props}) => (
     <TouchableOpacity
        OnPress={() => navigation.navigate('Select a Tracker')}

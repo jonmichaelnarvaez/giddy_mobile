@@ -15,6 +15,8 @@ import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 import storage from '@react-native-async-storage/async-storage';
 import { Platform, Text } from 'react-native';
+// flash messages
+import FlashMessage from 'react-native-flash-message';
 
 function App() {
     // state hooks
@@ -22,7 +24,9 @@ function App() {
     
         return (
             <NavigationContainer>
+                    {/* add ternary logic for user login or register */}
                 <AppStack/>
+                <FlashMessage position='top'/>
             </NavigationContainer>
         );
     
