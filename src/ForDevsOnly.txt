@@ -1,7 +1,8 @@
-Needs to be complete before launch
+This is a current list of TODOs for the application to be ready for production.
 
 1. Setup certificates and access key for iOS and Android.
-2. Redux Refracturing to fit app features
+2. Create user accounts for Content and Marketing to access application Apple & Google.
+2. Redux Refracturing to fit app features : collaborate with Data Team to see what is needed to track analytics.
     2.1 Add theme to support each tracker
     2.2 API's Needed
         A. Create new user

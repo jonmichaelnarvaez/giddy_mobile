@@ -23,7 +23,7 @@ We are using Firebase as the provider for external notifications and scheduling 
 ![firebase react native](https://blog.logrocket.com/wp-content/uploads/2020/11/Push-notifications-in-React-Native-APNs-FCM.png)
 
 # Analytics with Expo
-I chose expo because of their developer experience and how simple it is to connect to each operating systems native APIs. Directly connected to Firebase Analytics you can pull real time data from Firebase Analytics and query large data sets using Firebase Extensions.
+I chose expo because of their developer experience and how simple it is to connect to each operating systems native APIs. Directly connected to Firebase Analytics you can pull real time data from Firebase Analytics and query large data sets using Firebase Extensions. Using SQL commands to query custom search per department request.
 
 ![ Expo Firebase Analytics](https://docs.expo.dev/versions/latest/sdk/firebase-analytics/#analyticslogeventname-properties)
 
