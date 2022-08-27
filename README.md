@@ -1,5 +1,10 @@
 # GIDDY MOBILE
 Built with [Expo Bare Workflow](https://docs.expo.dev/introduction/managed-vs-bare/#bare-workflow).
+
+The Giddy Mobile Application is a multi-tracker application targeting ED Health, Sexual Health, and Fertility Health. At the conception of a users journey they will be welcomed by
+a set of on-boarding screens followed by a tracker selector. Once the user has chosen their tracker they will be asked a series of questions to help build their profile and then directed to the landing screen in their chosen theme. They should have some type of tool-tip to help guide them through the entire application as they visit a screen for the first time.
+
+Use this link to see full description and user flow charts: [Google Presentation](https://docs.google.com/presentation/d/156fy8vdW7onhMNmQBIzCBvc61tCPd_45vx3FuUFQl1E/edit#slide=id.p)
 # Application TODO List
 - [ ] Wait for endpoint and base URL from backend support & redux re-factoring + additions.
 - [ ] Create iOS & Android Certificates & Team Access
@@ -10,7 +15,7 @@ Built with [Expo Bare Workflow](https://docs.expo.dev/introduction/managed-vs-ba
 - [ ] Refractor uncontrolled components for optimization.
 - [ ] Finalize app store configuration is Xcode
 - [ ] Finalize play store configuration is Android Studio
-- [ ] Run Test & QA
+- [ ] Run Test(s) & QA
 - [ ] Submit application && art work to iOS and Android markets
 # Architecture
 Drupal was chosen at the conception of Giddy's online presence and where all of the current data and analytics originate. Due to the state of business we were more inclined to build an application that was heavy front-end with a focus on great UX. This architecture allowed us to cut build time by 75% and launch and application in less than a month. Our front-end was built using React Native Expo's bare-workflow and redux for the application middleware. 

@@ -20,7 +20,7 @@ const Dots = ({selected}) => {
                 height: 6,
                 marginHorizontal: 3,
                 borderRadius: 3,
-                backgroundColor
+
             }}
         />
     );

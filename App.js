@@ -1,4 +1,5 @@
 import React,  {useState, useEffect, useRef} from 'react';
+import { Platform, Text } from 'react-native';
 // navigation
 import {NavigationContainer} from '@react-navigation/native';
 // app stack
@@ -14,17 +15,15 @@ import Constants from 'expo-constants';
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 import storage from '@react-native-async-storage/async-storage';
-import { Platform, Text } from 'react-native';
 // flash messages
 import FlashMessage from 'react-native-flash-message';
 
 function App() {
     // state hooks
-    // const [isLoading, setIsLoading] = useState(false)
     
         return (
             <NavigationContainer>
-                    {/* add ternary logic for user login or register */}
+                    {/* add ternary logic for user login or register; you'll need to work with JT to discuss backend connections */}
                 <AppStack/>
                 <FlashMessage position='top'/>
             </NavigationContainer>
