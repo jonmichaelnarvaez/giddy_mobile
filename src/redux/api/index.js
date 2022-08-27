@@ -3,6 +3,11 @@ import {Platform} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import Upload from 'react-native-background-upload'
 
+// !!DEVELOPER!!
+// This is JT's pre-existing redux code; the plan was to refractor all of this code to fit
+// what we needed to take the application to market.
+// Feel free to completely re-write to how you see fit.
+
 const RCTNetworking = require('react-native/Libraries/Network/RCTNetworking');
 const startTimeOption = { year: 'numeric', month: 'short', day: 'numeric',  hour: 'numeric', minute: 'numeric'};
 const endTimeOption = { hour: 'numeric', minute: 'numeric'};

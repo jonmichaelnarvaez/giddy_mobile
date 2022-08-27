@@ -1,3 +1,9 @@
+// !!DEVELOPER!!
+
+// Each theme has been approved except the dual theme. Design did not finish the mock-ups and 
+// I just went off the cuff. So you may get some kick back from that but I think its fine.
+
+
 const dualTheme = {
     PRIMARY_COLOR: '#737373',
     SECONDARY_COLOR: '#d6d6d7',

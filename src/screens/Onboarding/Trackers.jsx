@@ -8,8 +8,9 @@ import { Button } from 'react-native-paper';
 import { useFonts, Lato_400Regular, Lato_400Regular_Italic, Lato_700Bold } from '@expo-google-fonts/lato';
 import SplashScreen from '../../components/Splash/SplashScreen';
 
-
-// TODO: add redux && asyncstorage
+// !!DEVELOPER!!
+// add redux && asyncstorage to lock-in key pad code
+// work with JT & Eddie to make sure this is added to the api for authentication
 
 const windowWidth = Dimensions.get('window').width
     

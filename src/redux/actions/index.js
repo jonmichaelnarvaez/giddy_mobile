@@ -1,3 +1,9 @@
+// !!DEVELOPER!!
+// This is JT's pre-existing redux code; the plan was to refractor all of this code to fit
+// what we needed to take the application to market.
+// Feel free to completely re-write to how you see fit.
+
+
 import * as api from '../api'
 
 export const registerUser = (values) =>(
